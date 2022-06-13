@@ -41,7 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Categories.cs" />
+    <Compile Include="Entities\Food.cs" />
+    <Compile Include="Entities\Meal.cs" />
+    <Compile Include="Entities\MealDetails.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Enums\MealType.cs" />
+    <Compile Include="Enums\PortionType.cs" />
+    <Compile Include="Enums\UserType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
