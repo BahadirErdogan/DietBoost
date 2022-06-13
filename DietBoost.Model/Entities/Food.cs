@@ -23,7 +23,7 @@ namespace ProjeTaslak.Entities
         public decimal Protein { get; set; }
         public decimal PieceGram { get; set; }
         public decimal PortionGram { get; set; }
-        public decimal PieceCalorie { get { return PieceCalorie; } set{ value = (Calorie / 100) * PieceGram; }}
+        public decimal PieceCalorie { get { return PieceCalorie; } set { value = (Calorie / 100) * PieceGram; }}
         public decimal PortionCalorie { get { return PortionCalorie; } set { value = (Calorie / 100) * PortionGram; } }
         public decimal GramCalorie { get { return GramCalorie; } set { value = (Calorie / 100); } }
         public bool IsActive { get; set; }
