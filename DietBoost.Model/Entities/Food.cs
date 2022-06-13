@@ -10,11 +10,11 @@ namespace ProjeTaslak.Entities
     {
         public Food()
         {
-            MealDetails = new HashSet<MealDetails>();
+            MealDetails = new HashSet<MealDetail>();
         }
-        private decimal PieceCalorie;
-        private decimal PortionCalorie;
-        private decimal GramCalorie;
+        private decimal _pieceCalorie;
+        private decimal _portionCalorie;
+        private decimal _gramCalorie;
         public int FoodId { get; set; }
         public string Name { get; set; }
         public decimal Calorie { get; set; }
@@ -23,16 +23,16 @@ namespace ProjeTaslak.Entities
         public decimal Protein { get; set; }
         public decimal PieceGram { get; set; }
         public decimal PortionGram { get; set; }
-        public decimal PieceCalorie1 { set{ value = (Calorie / 100) * PieceGram; }}
-        public decimal PortionCalorie1 { set { value = (Calorie / 100) * PortionGram; } }
-        public decimal GramCalorie1 { set { value = (Calorie / 100); } }
+        public decimal PieceCalorie { set{ value = (Calorie / 100) * PieceGram; }}
+        public decimal PortionCalorie { set { value = (Calorie / 100) * PortionGram; } }
+        public decimal GramCalorie { set { value = (Calorie / 100); } }
         public bool IsActive { get; set; }
 
         public int CategoryID { get; set; }
 
 
-        public virtual ICollection<MealDetails> MealDetails { get; set; }
-        public virtual Categories Categories { get; set; }
+        public virtual ICollection<MealDetail> MealDetails { get; set; }
+        public virtual Category Categories { get; set; }
 
     }
 }
