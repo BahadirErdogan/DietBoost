@@ -18,6 +18,7 @@ namespace DietBoost.DAL.Configurations
                             
             HasRequired(a => a.Categories).WithMany(a => a.Foods).HasForeignKey(a => a.CategoryID);
 
+           
         }
         
     }
