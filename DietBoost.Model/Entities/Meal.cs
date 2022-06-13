@@ -14,9 +14,9 @@ namespace ProjeTaslak.Entities
             MealDetails = new HashSet<MealDetails>();
         }
         public int MealID { get; set; }
-        public string Name { get; set;}
-        public DateTime Date { get; set; }
         public MealType MealType { get; set; }
+        public DateTime Date { get; set; }
+
 
         public int UserID { get; set; }
 
