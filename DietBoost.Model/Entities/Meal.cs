@@ -11,7 +11,7 @@ namespace ProjeTaslak.Entities
     {
         public Meal()
         {
-            MealDetails = new HashSet<MealDetails>();
+            MealDetails = new HashSet<MealDetail>();
         }
         public int MealID { get; set; }
         public MealType MealType { get; set; }
@@ -20,7 +20,7 @@ namespace ProjeTaslak.Entities
 
         public int UserID { get; set; }
 
-        public virtual ICollection<MealDetails> MealDetails { get; set; }
+        public virtual ICollection<MealDetail> MealDetails { get; set; }
         public virtual User User { get; set; }
 
 

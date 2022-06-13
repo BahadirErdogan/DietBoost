@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ProjeTaslak.Entities
 {
-    public class MealDetails
+    public class MealDetail
     {
         public int MealID { get; set; }
         public int FoodID { get; set; }

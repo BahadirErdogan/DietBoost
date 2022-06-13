@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjeTaslak.Entities
 {
-    public class Categories
+    public class Category
     {
-        public Categories()
+        public Category()
         {
             Foods = new HashSet<Food>();
         }
