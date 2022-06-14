@@ -53,9 +53,18 @@
   <ItemGroup>
     <Compile Include="Configurations\MealConfiguration.cs" />
     <Compile Include="Configurations\MealDetailCofiguration.cs" />
+    <Compile Include="Configurations\UserConfigurations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DietBoost.Model\DietBoost.Model.csproj">
+      <Project>{4c38307f-c603-491f-b6de-95ea9ac73c4c}</Project>
+      <Name>DietBoost.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
