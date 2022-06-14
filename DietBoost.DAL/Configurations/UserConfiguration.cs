@@ -8,17 +8,23 @@ using System.Threading.Tasks;
 
 namespace DietBoost.DAL.Configurations
 {
-    public class UserConfigurations: EntityTypeConfiguration<User>
+    public class UserConfiguration: EntityTypeConfiguration<User>
     {
-        public UserConfigurations()
+        public UserConfiguration()
         {
-            HasMany(a => a.Meals).WithRequired(b => b.User).HasForeignKey(c => c.UserID);
-            HasKey(a => a.UserName);
+            
+            Property(a => a.UserName).HasMaxLength(40);
+            HasIndex(a => a.UserName);
+
+            //İlişki
+            HasMany(a => a.Meals).WithRequired(b => b.User).HasForeignKey(c => c.UserID);  
+            
+            //Kısıtlamalar
             Property(a => a.Phone).IsOptional();
             Property(b=> b.Password).IsRequired().HasMaxLength(32);
             Property(c=> c.FirstName).IsRequired().HasMaxLength(50);
             Property(c => c.LastName).IsRequired().HasMaxLength(50);
-            Ignore(c => c.Age);   
+            Ignore(c => c.Age);
 
         }
     }
