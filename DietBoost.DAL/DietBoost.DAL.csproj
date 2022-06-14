@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\FoodConfiguration.cs" />
     <Compile Include="Configurations\MealConfiguration.cs" />
     <Compile Include="Configurations\MealDetailCofiguration.cs" />
     <Compile Include="Configurations\UserConfigurations.cs" />
