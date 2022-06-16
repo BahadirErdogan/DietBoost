@@ -55,5 +55,10 @@ namespace DietBoost.DAL.Repositories
             deletedFood.IsActive = false;
             return context.SaveChanges() > 0;
         }
+
+        public List<Food> GetFilteredFood(string text)
+        {
+            return context.Foods.Where(a => a.Name.ToLower().Contains(text.ToLower())).ToList();
+        }
     }
 }

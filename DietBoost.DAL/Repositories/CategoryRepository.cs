@@ -24,5 +24,9 @@ namespace DietBoost.DAL.Repositories
             context.Categories.Add(category);
             return context.SaveChanges() > 0;
         }
+
+     
+
+
     }
 }

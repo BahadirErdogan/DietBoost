@@ -25,6 +25,22 @@ namespace DietBoost.DAL.Repositories
             return context.SaveChanges() > 0;
         }
 
+        public bool Update(User user)
+        {
+            User updatedUser = context.Users.Find(user.ID);
+            updatedUser.Weight = user.Weight;
+            updatedUser.WeightGoal = user.WeightGoal;
+            updatedUser.BirthDate = user.BirthDate;
+            updatedUser.FirstName = user.FirstName;
+            updatedUser.LastName = user.LastName;
+            updatedUser.Gender = user.Gender;
+            updatedUser.Length = user.Length;
+            updatedUser.Phone = user.Phone;
+
+            return context.SaveChanges() > 0;
+
+        }
+
         public User CheckLogin(string userName, string password)
         {
             User user = context.Users.Where(a => a.UserName == userName).SingleOrDefault();
@@ -46,9 +62,16 @@ namespace DietBoost.DAL.Repositories
             context.SaveChanges();
         }
 
-        public List<User> GetPassiveUsers()
+        public void UserDeactivated(User user)
         {
-            return context.Users.Where(a => !a.IsActive).ToList();
+            User deactivatedUser = context.Users.Find(user.ID);
+            deactivatedUser.IsActive = false;
+            context.SaveChanges();
+        }
+
+        public List<User> GetAllUsers()
+        {
+            return context.Users.ToList();
         }
 
         public User GetUserById(int userID)
