@@ -31,19 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAdminPanel));
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.lvUsers = new System.Windows.Forms.ListView();
             this.grpKullaniciAktivasyon = new System.Windows.Forms.GroupBox();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.nudGramPortion = new System.Windows.Forms.NumericUpDown();
+            this.nudGramPiece = new System.Windows.Forms.NumericUpDown();
+            this.nudProtein = new System.Windows.Forms.NumericUpDown();
+            this.nudCarbs = new System.Windows.Forms.NumericUpDown();
+            this.nudFat = new System.Windows.Forms.NumericUpDown();
+            this.nudCalorie = new System.Windows.Forms.NumericUpDown();
+            this.btnUpdateFood = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lvFoods = new System.Windows.Forms.ListView();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnChooseFile = new System.Windows.Forms.Button();
@@ -53,16 +55,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFullPath = new System.Windows.Forms.TextBox();
+            this.txtImagePath = new System.Windows.Forms.TextBox();
             this.btnExit = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtCategoryName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnAddCategory = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpKullaniciAktivasyon.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGramPortion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGramPiece)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCarbs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCalorie)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label10
@@ -78,39 +85,41 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView2);
+            this.groupBox1.Controls.Add(this.lvUsers);
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.groupBox1.Location = new System.Drawing.Point(560, 67);
+            this.groupBox1.Location = new System.Drawing.Point(572, 67);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(361, 396);
+            this.groupBox1.Size = new System.Drawing.Size(403, 540);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Activation";
             // 
-            // listView2
+            // lvUsers
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(18, 23);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(324, 351);
-            this.listView2.TabIndex = 19;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.lvUsers.HideSelection = false;
+            this.lvUsers.Location = new System.Drawing.Point(18, 23);
+            this.lvUsers.Name = "lvUsers";
+            this.lvUsers.Size = new System.Drawing.Size(366, 486);
+            this.lvUsers.TabIndex = 19;
+            this.lvUsers.UseCompatibleStateImageBehavior = false;
             // 
             // grpKullaniciAktivasyon
             // 
-            this.grpKullaniciAktivasyon.Controls.Add(this.numericUpDown6);
-            this.grpKullaniciAktivasyon.Controls.Add(this.numericUpDown5);
-            this.grpKullaniciAktivasyon.Controls.Add(this.numericUpDown4);
-            this.grpKullaniciAktivasyon.Controls.Add(this.numericUpDown3);
-            this.grpKullaniciAktivasyon.Controls.Add(this.numericUpDown2);
-            this.grpKullaniciAktivasyon.Controls.Add(this.numericUpDown1);
-            this.grpKullaniciAktivasyon.Controls.Add(this.button2);
-            this.grpKullaniciAktivasyon.Controls.Add(this.button1);
+            this.grpKullaniciAktivasyon.Controls.Add(this.cbCategory);
+            this.grpKullaniciAktivasyon.Controls.Add(this.label11);
+            this.grpKullaniciAktivasyon.Controls.Add(this.nudGramPortion);
+            this.grpKullaniciAktivasyon.Controls.Add(this.nudGramPiece);
+            this.grpKullaniciAktivasyon.Controls.Add(this.nudProtein);
+            this.grpKullaniciAktivasyon.Controls.Add(this.nudCarbs);
+            this.grpKullaniciAktivasyon.Controls.Add(this.nudFat);
+            this.grpKullaniciAktivasyon.Controls.Add(this.nudCalorie);
+            this.grpKullaniciAktivasyon.Controls.Add(this.btnUpdateFood);
+            this.grpKullaniciAktivasyon.Controls.Add(this.btnAddFood);
             this.grpKullaniciAktivasyon.Controls.Add(this.label9);
-            this.grpKullaniciAktivasyon.Controls.Add(this.listView1);
-            this.grpKullaniciAktivasyon.Controls.Add(this.textBox1);
+            this.grpKullaniciAktivasyon.Controls.Add(this.lvFoods);
+            this.grpKullaniciAktivasyon.Controls.Add(this.txtFoodName);
             this.grpKullaniciAktivasyon.Controls.Add(this.label8);
             this.grpKullaniciAktivasyon.Controls.Add(this.label7);
             this.grpKullaniciAktivasyon.Controls.Add(this.btnChooseFile);
@@ -120,107 +129,124 @@
             this.grpKullaniciAktivasyon.Controls.Add(this.label3);
             this.grpKullaniciAktivasyon.Controls.Add(this.label2);
             this.grpKullaniciAktivasyon.Controls.Add(this.label1);
-            this.grpKullaniciAktivasyon.Controls.Add(this.txtFullPath);
+            this.grpKullaniciAktivasyon.Controls.Add(this.txtImagePath);
             this.grpKullaniciAktivasyon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.grpKullaniciAktivasyon.Location = new System.Drawing.Point(4, 67);
             this.grpKullaniciAktivasyon.Margin = new System.Windows.Forms.Padding(4);
             this.grpKullaniciAktivasyon.Name = "grpKullaniciAktivasyon";
             this.grpKullaniciAktivasyon.Padding = new System.Windows.Forms.Padding(4);
-            this.grpKullaniciAktivasyon.Size = new System.Drawing.Size(548, 396);
+            this.grpKullaniciAktivasyon.Size = new System.Drawing.Size(560, 438);
             this.grpKullaniciAktivasyon.TabIndex = 21;
             this.grpKullaniciAktivasyon.TabStop = false;
             this.grpKullaniciAktivasyon.Text = "Add Food";
             // 
-            // numericUpDown6
+            // cbCategory
             // 
-            this.numericUpDown6.Location = new System.Drawing.Point(241, 211);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(88, 26);
-            this.numericUpDown6.TabIndex = 28;
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(241, 253);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(121, 28);
+            this.cbCategory.TabIndex = 30;
             // 
-            // numericUpDown5
+            // label11
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(241, 181);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(88, 26);
-            this.numericUpDown5.TabIndex = 27;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 250);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(81, 20);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Category:";
             // 
-            // numericUpDown4
+            // nudGramPortion
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(241, 151);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(88, 26);
-            this.numericUpDown4.TabIndex = 26;
+            this.nudGramPortion.Location = new System.Drawing.Point(274, 221);
+            this.nudGramPortion.Name = "nudGramPortion";
+            this.nudGramPortion.Size = new System.Drawing.Size(88, 26);
+            this.nudGramPortion.TabIndex = 28;
             // 
-            // numericUpDown3
+            // nudGramPiece
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(241, 121);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(88, 26);
-            this.numericUpDown3.TabIndex = 25;
+            this.nudGramPiece.Location = new System.Drawing.Point(274, 191);
+            this.nudGramPiece.Name = "nudGramPiece";
+            this.nudGramPiece.Size = new System.Drawing.Size(88, 26);
+            this.nudGramPiece.TabIndex = 27;
             // 
-            // numericUpDown2
+            // nudProtein
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(241, 91);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(88, 26);
-            this.numericUpDown2.TabIndex = 24;
+            this.nudProtein.Location = new System.Drawing.Point(274, 161);
+            this.nudProtein.Name = "nudProtein";
+            this.nudProtein.Size = new System.Drawing.Size(88, 26);
+            this.nudProtein.TabIndex = 26;
             // 
-            // numericUpDown1
+            // nudCarbs
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(241, 61);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(88, 26);
-            this.numericUpDown1.TabIndex = 23;
+            this.nudCarbs.Location = new System.Drawing.Point(274, 131);
+            this.nudCarbs.Name = "nudCarbs";
+            this.nudCarbs.Size = new System.Drawing.Size(88, 26);
+            this.nudCarbs.TabIndex = 25;
             // 
-            // button2
+            // nudFat
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Image = global::ProjeTaslak.Properties.Resources.save2;
-            this.button2.Location = new System.Drawing.Point(160, 331);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 50);
-            this.button2.TabIndex = 22;
-            this.button2.UseVisualStyleBackColor = true;
+            this.nudFat.Location = new System.Drawing.Point(274, 101);
+            this.nudFat.Name = "nudFat";
+            this.nudFat.Size = new System.Drawing.Size(88, 26);
+            this.nudFat.TabIndex = 24;
             // 
-            // button1
+            // nudCalorie
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::ProjeTaslak.Properties.Resources.add2;
-            this.button1.Location = new System.Drawing.Point(66, 331);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 21;
-            this.button1.UseVisualStyleBackColor = true;
+            this.nudCalorie.Location = new System.Drawing.Point(274, 71);
+            this.nudCalorie.Name = "nudCalorie";
+            this.nudCalorie.Size = new System.Drawing.Size(88, 26);
+            this.nudCalorie.TabIndex = 23;
+            // 
+            // btnUpdateFood
+            // 
+            this.btnUpdateFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnUpdateFood.ForeColor = System.Drawing.Color.Transparent;
+            this.btnUpdateFood.Image = global::ProjeTaslak.Properties.Resources.save2;
+            this.btnUpdateFood.Location = new System.Drawing.Point(160, 368);
+            this.btnUpdateFood.Name = "btnUpdateFood";
+            this.btnUpdateFood.Size = new System.Drawing.Size(75, 50);
+            this.btnUpdateFood.TabIndex = 22;
+            this.btnUpdateFood.UseVisualStyleBackColor = true;
+            // 
+            // btnAddFood
+            // 
+            this.btnAddFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddFood.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddFood.Image = global::ProjeTaslak.Properties.Resources.add2;
+            this.btnAddFood.Location = new System.Drawing.Point(66, 368);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(75, 50);
+            this.btnAddFood.TabIndex = 21;
+            this.btnAddFood.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(351, 18);
+            this.label9.Location = new System.Drawing.Point(364, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 20);
             this.label9.TabIndex = 20;
             this.label9.Text = "Foods:";
             // 
-            // listView1
+            // lvFoods
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(354, 38);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(180, 293);
-            this.listView1.TabIndex = 19;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvFoods.HideSelection = false;
+            this.lvFoods.Location = new System.Drawing.Point(368, 41);
+            this.lvFoods.Name = "lvFoods";
+            this.lvFoods.Size = new System.Drawing.Size(180, 305);
+            this.lvFoods.TabIndex = 19;
+            this.lvFoods.UseCompatibleStateImageBehavior = false;
             // 
-            // textBox1
+            // txtFoodName
             // 
-            this.textBox1.Location = new System.Drawing.Point(241, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 26);
-            this.textBox1.TabIndex = 18;
+            this.txtFoodName.Location = new System.Drawing.Point(274, 41);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.Size = new System.Drawing.Size(88, 26);
+            this.txtFoodName.TabIndex = 18;
             // 
             // label8
             // 
@@ -234,11 +260,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 256);
+            this.label7.Location = new System.Drawing.Point(18, 290);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 20);
+            this.label7.Size = new System.Drawing.Size(59, 20);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Picture:";
+            this.label7.Text = "Image:";
             // 
             // btnChooseFile
             // 
@@ -246,7 +272,7 @@
             this.btnChooseFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnChooseFile.ForeColor = System.Drawing.Color.Transparent;
             this.btnChooseFile.Image = global::ProjeTaslak.Properties.Resources.search_40px;
-            this.btnChooseFile.Location = new System.Drawing.Point(285, 272);
+            this.btnChooseFile.Location = new System.Drawing.Point(285, 306);
             this.btnChooseFile.Name = "btnChooseFile";
             this.btnChooseFile.Size = new System.Drawing.Size(40, 40);
             this.btnChooseFile.TabIndex = 7;
@@ -284,9 +310,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 20);
+            this.label3.Size = new System.Drawing.Size(120, 20);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Callorie (100g):";
+            this.label3.Text = "Calorie (100g):";
             // 
             // label2
             // 
@@ -306,12 +332,12 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "FoodName:";
             // 
-            // txtFullPath
+            // txtImagePath
             // 
-            this.txtFullPath.Location = new System.Drawing.Point(22, 281);
-            this.txtFullPath.Name = "txtFullPath";
-            this.txtFullPath.Size = new System.Drawing.Size(257, 26);
-            this.txtFullPath.TabIndex = 8;
+            this.txtImagePath.Location = new System.Drawing.Point(22, 315);
+            this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.Size = new System.Drawing.Size(257, 26);
+            this.txtImagePath.TabIndex = 8;
             // 
             // btnExit
             // 
@@ -319,18 +345,62 @@
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnExit.ForeColor = System.Drawing.Color.Transparent;
             this.btnExit.Image = global::ProjeTaslak.Properties.Resources.shutdown_40px;
-            this.btnExit.Location = new System.Drawing.Point(856, 12);
+            this.btnExit.Location = new System.Drawing.Point(925, 12);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(50, 48);
             this.btnExit.TabIndex = 22;
             this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtCategoryName);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.btnAddCategory);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.groupBox2.Location = new System.Drawing.Point(4, 513);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(564, 94);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Add Category";
+            // 
+            // txtCategoryName
+            // 
+            this.txtCategoryName.Location = new System.Drawing.Point(153, 42);
+            this.txtCategoryName.Name = "txtCategoryName";
+            this.txtCategoryName.Size = new System.Drawing.Size(172, 26);
+            this.txtCategoryName.TabIndex = 31;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(17, 43);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(130, 20);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Category Name:";
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAddCategory.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.Image = global::ProjeTaslak.Properties.Resources.add2;
+            this.btnAddCategory.Location = new System.Drawing.Point(473, 26);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(75, 50);
+            this.btnAddCategory.TabIndex = 31;
+            this.btnAddCategory.UseVisualStyleBackColor = true;
             // 
             // FrmAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
-            this.ClientSize = new System.Drawing.Size(934, 479);
+            this.ClientSize = new System.Drawing.Size(988, 625);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnExit);
@@ -343,12 +413,14 @@
             this.groupBox1.ResumeLayout(false);
             this.grpKullaniciAktivasyon.ResumeLayout(false);
             this.grpKullaniciAktivasyon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGramPortion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGramPiece)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudProtein)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCarbs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudFat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCalorie)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,20 +430,20 @@
 
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView lvUsers;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox grpKullaniciAktivasyon;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown nudGramPortion;
+        private System.Windows.Forms.NumericUpDown nudGramPiece;
+        private System.Windows.Forms.NumericUpDown nudProtein;
+        private System.Windows.Forms.NumericUpDown nudCarbs;
+        private System.Windows.Forms.NumericUpDown nudFat;
+        private System.Windows.Forms.NumericUpDown nudCalorie;
+        private System.Windows.Forms.Button btnUpdateFood;
+        private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListView lvFoods;
+        private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnChooseFile;
@@ -381,6 +453,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFullPath;
+        private System.Windows.Forms.TextBox txtImagePath;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtCategoryName;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnAddCategory;
     }
 }

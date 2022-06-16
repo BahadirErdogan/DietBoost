@@ -28,6 +28,7 @@ namespace ProjeTaslak.Entities
         public decimal PortionCalorie { get => _portionCalorie; set => _portionCalorie = (Calorie / 100) * PortionGram; }
         public decimal GramCalorie { get => _gramCalorie; set => _gramCalorie = (Calorie / 100); }
 
+        public string Image { get; set; }
         public bool IsActive { get; set; }
 
         public int CategoryID { get; set; }

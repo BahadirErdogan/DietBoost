@@ -16,7 +16,8 @@ namespace ProjeTaslak.Entities
         }
 
         public MealType MealType { get; set; }
- 
+        public DateTime MealDate { get; set; }
+
 
 
         public int UserID { get; set; }

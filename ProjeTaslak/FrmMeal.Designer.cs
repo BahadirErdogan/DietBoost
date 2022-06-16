@@ -43,7 +43,7 @@
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.cbMeals = new System.Windows.Forms.ComboBox();
-            this.btnRemoveMeal = new System.Windows.Forms.Button();
+            this.btnRemoveFood = new System.Windows.Forms.Button();
             this.btnUpdateMeal = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,19 +183,19 @@
             this.cbMeals.Size = new System.Drawing.Size(155, 28);
             this.cbMeals.TabIndex = 51;
             // 
-            // btnRemoveMeal
+            // btnRemoveFood
             // 
-            this.btnRemoveMeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemoveMeal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRemoveMeal.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRemoveMeal.Image = global::ProjeTaslak.Properties.Resources.remove2;
-            this.btnRemoveMeal.Location = new System.Drawing.Point(401, 262);
-            this.btnRemoveMeal.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRemoveMeal.Name = "btnRemoveMeal";
-            this.btnRemoveMeal.Size = new System.Drawing.Size(48, 50);
-            this.btnRemoveMeal.TabIndex = 50;
-            this.btnRemoveMeal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemoveMeal.UseVisualStyleBackColor = true;
+            this.btnRemoveFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemoveFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnRemoveFood.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRemoveFood.Image = global::ProjeTaslak.Properties.Resources.remove2;
+            this.btnRemoveFood.Location = new System.Drawing.Point(401, 262);
+            this.btnRemoveFood.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRemoveFood.Name = "btnRemoveFood";
+            this.btnRemoveFood.Size = new System.Drawing.Size(48, 50);
+            this.btnRemoveFood.TabIndex = 50;
+            this.btnRemoveFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRemoveFood.UseVisualStyleBackColor = true;
             // 
             // btnUpdateMeal
             // 
@@ -228,7 +228,7 @@
             this.Controls.Add(this.dtpDate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cbMeals);
-            this.Controls.Add(this.btnRemoveMeal);
+            this.Controls.Add(this.btnRemoveFood);
             this.Controls.Add(this.btnUpdateMeal);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -257,7 +257,7 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbMeals;
-        private System.Windows.Forms.Button btnRemoveMeal;
+        private System.Windows.Forms.Button btnRemoveFood;
         private System.Windows.Forms.Button btnUpdateMeal;
     }
 }
