@@ -1,4 +1,5 @@
-﻿using ProjeTaslak.Enums;
+﻿using DietBoost.Model.Entities;
+using ProjeTaslak.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace ProjeTaslak.Entities
 {
-    public class Meal
+    public class Meal : BaseEntity
     {
         public Meal()
         {
             MealDetails = new HashSet<MealDetail>();
         }
-        public int MealID { get; set; }
+
         public MealType MealType { get; set; }
-        public DateTime Date { get; set; }
+ 
 
 
         public int UserID { get; set; }

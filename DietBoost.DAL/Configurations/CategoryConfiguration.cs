@@ -8,15 +8,11 @@ using System.Threading.Tasks;
 
 namespace DietBoost.DAL.Configurations
 {
-    public class FoodConfiguration : EntityTypeConfiguration<Food>
+    public class CategoryConfiguration : EntityTypeConfiguration<Category>
     {
-        public FoodConfiguration()
+        public CategoryConfiguration()
         {
             HasKey(a => a.ID);
-            Property(a => a.Name).IsRequired().HasMaxLength(50);
-
-            HasRequired(a => a.Categories).WithMany(a => a.Foods).HasForeignKey(a => a.CategoryID);
         }
     }
-
 }
