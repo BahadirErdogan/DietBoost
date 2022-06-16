@@ -15,11 +15,15 @@ namespace ProjeTaslak
         public FrmFoodSearch()
         {
             InitializeComponent();
+            //cbCategories.DataSource()
+            //cbCategories.DisplayMember = "Name";
+            //cbCategories.ValueMember = "ID";
+
         }
 
         private void lvFoods_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

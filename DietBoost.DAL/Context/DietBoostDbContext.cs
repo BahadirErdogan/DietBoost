@@ -1,5 +1,6 @@
 ﻿using DietBoost.DAL.Configurations;
 using DietBoost.DAL.Strategy;
+using DietBoost.Model.Entities;
 using ProjeTaslak.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DietBoost.DAL.Context
 {
-    class DietBoostDbContext : DbContext
+    public class DietBoostDbContext : DbContext
     {
         public DietBoostDbContext() : base("conStr")
         {
@@ -22,6 +23,7 @@ namespace DietBoost.DAL.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Meal> Meals { get; set; }
         public DbSet<MealDetail> MealDetails { get; set; }
+        public DbSet<Password> Passwords { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelbuilder)
         {

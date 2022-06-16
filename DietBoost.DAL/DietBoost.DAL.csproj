@@ -59,6 +59,12 @@
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Context\DietBoostDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\FoodRepository.cs" />
+    <Compile Include="Repositories\MealDetailRepository.cs" />
+    <Compile Include="Repositories\MealRepository.cs" />
+    <Compile Include="Repositories\PasswordRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Strategy\DietBoostStrategy.cs" />
   </ItemGroup>
   <ItemGroup>

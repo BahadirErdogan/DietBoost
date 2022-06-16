@@ -14,6 +14,7 @@ namespace DietBoost.DAL.Configurations
         {
             HasKey(a => a.ID);
             Property(a=>a.CreationDate).IsRequired();
+            Property(a=>a.MealDate).IsRequired();
         }
     }
 }
