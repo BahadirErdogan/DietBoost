@@ -15,6 +15,7 @@ namespace ProjeTaslak.Entities
         public User()
         {
             Meals = new HashSet<Meal>();
+            Passwords=new HashSet<Password>();
         }
 
         public string UserName { get; set; }
@@ -23,19 +24,17 @@ namespace ProjeTaslak.Entities
         public string Gender { get; set; }
         public DateTime BirthDate { get; set; }
 
-        private int _age;
+        
 
         public int Age 
         {
-            get { return _age; }
+            get { return Age; }
             set
             {
-                _age = DateTime.Now.Year - BirthDate.Year;
+                Age = DateTime.Now.Year - BirthDate.Year;
             }
         }
         public string Phone { get; set; }
-        [MinLength(6)]
-        public string Password { get; set; }
         public decimal Weight { get; set; }
         public decimal WeightGoal { get; set; }
         public decimal Length { get; set; }
@@ -44,6 +43,7 @@ namespace ProjeTaslak.Entities
         public string FullName { get { return $"{FirstName} {LastName}"; } }
 
         public virtual ICollection<Meal> Meals { get; set; }
+        public virtual ICollection<Password> Passwords { get; set; }
 
     }
 }

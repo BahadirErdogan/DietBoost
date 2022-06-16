@@ -55,13 +55,9 @@
     <Compile Include="Configurations\FoodConfiguration.cs" />
     <Compile Include="Configurations\MealConfiguration.cs" />
     <Compile Include="Configurations\MealDetailCofiguration.cs" />
+    <Compile Include="Configurations\PasswordConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Context\DietBoostDbContext.cs" />
-    <Compile Include="Migrations\202206142218464_init.cs" />
-    <Compile Include="Migrations\202206142218464_init.designer.cs">
-      <DependentUpon>202206142218464_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strategy\DietBoostStrategy.cs" />
   </ItemGroup>
@@ -80,11 +76,6 @@
       <Project>{4C38307F-C603-491F-B6DE-95EA9AC73C4C}</Project>
       <Name>DietBoost.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206142218464_init.resx">
-      <DependentUpon>202206142218464_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -55,6 +55,7 @@
     <Compile Include="Entities\Food.cs" />
     <Compile Include="Entities\Meal.cs" />
     <Compile Include="Entities\MealDetail.cs" />
+    <Compile Include="Entities\Password.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\MealType.cs" />
     <Compile Include="Enums\PortionType.cs" />
