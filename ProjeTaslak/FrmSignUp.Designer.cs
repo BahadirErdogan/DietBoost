@@ -348,6 +348,11 @@
             // nudHeight
             // 
             this.nudHeight.Location = new System.Drawing.Point(171, 139);
+            this.nudHeight.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.nudHeight.Name = "nudHeight";
             this.nudHeight.Size = new System.Drawing.Size(150, 26);
             this.nudHeight.TabIndex = 60;
@@ -355,6 +360,11 @@
             // nudWeightGoal
             // 
             this.nudWeightGoal.Location = new System.Drawing.Point(171, 228);
+            this.nudWeightGoal.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
             this.nudWeightGoal.Name = "nudWeightGoal";
             this.nudWeightGoal.Size = new System.Drawing.Size(150, 26);
             this.nudWeightGoal.TabIndex = 59;
@@ -362,6 +372,11 @@
             // nudWeight
             // 
             this.nudWeight.Location = new System.Drawing.Point(171, 184);
+            this.nudWeight.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
             this.nudWeight.Name = "nudWeight";
             this.nudWeight.Size = new System.Drawing.Size(150, 26);
             this.nudWeight.TabIndex = 58;

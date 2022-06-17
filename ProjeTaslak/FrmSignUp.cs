@@ -25,7 +25,7 @@ namespace ProjeTaslak
 
         private void FrmSignUp_Load(object sender, EventArgs e)
         {
-            dtpBirthDay.MaxDate = DateTime.Now;
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

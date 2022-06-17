@@ -25,6 +25,7 @@ namespace DietBoost.DAL.Configurations
            
             Property(c=> c.FirstName).IsRequired().HasMaxLength(50);
             Property(c => c.LastName).IsRequired().HasMaxLength(50);
+
             Ignore(c => c.Age);
 
         }
