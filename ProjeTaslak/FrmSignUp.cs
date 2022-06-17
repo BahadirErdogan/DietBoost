@@ -62,6 +62,7 @@ namespace ProjeTaslak
 
                 bool check = userService.Insert(user);
                 MessageBox.Show(check ? "Thank you for registering.You can login after admin's approval." : "Registeration failed.");
+                this.Close();
             }
             catch (Exception ex)
             {

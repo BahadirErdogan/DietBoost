@@ -28,5 +28,6 @@ namespace DietBoost.BLL.Services
             }
             return categoryRepository.Insert(category);
         }
+
     }
 }

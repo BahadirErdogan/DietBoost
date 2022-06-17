@@ -28,6 +28,10 @@ namespace ProjeTaslak
 
         private void FrmAdminPanel_Load(object sender, EventArgs e)
         {
+            Reload();
+        }
+        private void Reload()
+        {
             ListUsers();
             ListFoods();
             FillCategoryComboBox();
@@ -47,6 +51,7 @@ namespace ProjeTaslak
                 food.Categories.Name = cbCategory.SelectedItem.ToString();
                 food.Image = txtImagePath.Text;
                 foodService.Insert(food);
+                MessageBox.Show("Food added successfully.");
             }
             catch (Exception ex)
             {
@@ -70,6 +75,7 @@ namespace ProjeTaslak
                 food.Categories.Name = cbCategory.SelectedItem.ToString();
                 food.Image = txtImagePath.Text;
                 foodService.Update(food);
+                MessageBox.Show("Food updated successfully.");
             }
             catch (Exception ex)
             {
@@ -104,7 +110,7 @@ namespace ProjeTaslak
                 }
                 else userService.UserDeactivated(userID);
 
-                ListUsers();
+                Reload();
             }
             catch (Exception ex)
             {
@@ -121,7 +127,7 @@ namespace ProjeTaslak
                 category.CreationDate = DateTime.Now;
 
                 categoryService.Insert(category);
-                FillCategoryComboBox();
+                Reload();
                 MessageBox.Show("Category is successfully added to the list.");
             }
             
@@ -130,20 +136,10 @@ namespace ProjeTaslak
         public void FillCategoryComboBox()
         {
             cbCategory.Items.Clear();
-            List<Category> categories = GetCategoryList();
-            foreach (var item in categories)
-            {
-                cbCategory.Items.Add(item.Name);
-            }
+            cbCategory.DataSource = categoryService.GetCategories();
+            cbCategory.DisplayMember = "Name";
+            cbCategory.ValueMember = "ID";
         }
-
-        public List<Category> GetCategoryList()
-        {
-            List<Category> categories = new List<Category>();
-            categories = categoryService.GetCategories();
-            return categories;
-        }
-
 
         private void ListFoods()
         {
@@ -173,7 +169,7 @@ namespace ProjeTaslak
                 }
                 else foodService.FoodDeactivated(food);
 
-                ListFoods();
+                Reload();
             }
             catch (Exception ex)
             {

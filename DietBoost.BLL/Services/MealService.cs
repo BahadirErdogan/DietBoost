@@ -1,5 +1,6 @@
 ﻿using DietBoost.DAL.Repositories;
 using ProjeTaslak.Entities;
+using ProjeTaslak.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,12 @@ namespace DietBoost.BLL.Services
         {
             if (string.IsNullOrWhiteSpace(meal.MealType.ToString()) || string.IsNullOrWhiteSpace(meal.MealDate.ToString())) throw new Exception("Meal Type and Meal Date are required.");
             return mealRepository.Update(meal);
+        }
+        public List<MealType> GetMealTypes()
+        {
+            List<MealType> mealTypes = new List<MealType>();
+            mealTypes = Enum.GetValues(typeof(MealType)).Cast<MealType>().ToList();
+            return mealTypes;
         }
     }
 }

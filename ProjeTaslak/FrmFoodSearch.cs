@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DietBoost.BLL.Services;
+using ProjeTaslak.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,23 +14,38 @@ namespace ProjeTaslak
 {
     public partial class FrmFoodSearch : Form
     {
+        MealService mealService;
+        FoodService foodService;
+        MealDetailService mealDetailService;
+        CategoryService categoryService;
         public FrmFoodSearch()
         {
             InitializeComponent();
-            //cbCategories.DataSource()
-            //cbCategories.DisplayMember = "Name";
-            //cbCategories.ValueMember = "ID";
-
-        }
-
-        private void lvFoods_SelectedIndexChanged(object sender, EventArgs e)
-        {
             
+            mealService = new MealService();
+            foodService = new FoodService();
+            mealDetailService = new MealDetailService();
+            categoryService = new CategoryService();
+            Reload();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Reload()
         {
 
+            FillListView();
+            FillCategoryComboBox();
         }
+
+        public void FillCategoryComboBox()
+        {
+            cbCategories.Items.Clear();
+            cbCategories.DataSource = categoryService.GetCategories();
+            cbCategories.DisplayMember = "Name";
+            cbCategories.ValueMember = "ID";
+        }
+        private void FillListView()
+        {
+      
+        }
+
     }
 }
