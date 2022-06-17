@@ -76,7 +76,19 @@ namespace ProjeTaslak
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             CheckStrength(txtPassword.Text);
+            CheckPasswordMatch();
         }
+
+
+        private void txtPasswordRepeat_TextChanged(object sender, EventArgs e)
+        {
+            CheckPasswordMatch();
+        }
+
+        /// <summary>
+        /// Belirlenen koşullara göre şifrenin gücünü bir label'a belirli renklerle yazdırır.
+        /// </summary>
+        /// <param name="password"></param>
         void CheckStrength(string password)
         {
             
@@ -102,5 +114,23 @@ namespace ProjeTaslak
 
         }
 
+
+
+        /// <summary>
+        /// 2 Textboxdaki şifrelerin eşleşip eşleşmediğinin kontrol eder. Eşleşiyorsa yeşil tik işaretini visible yapar.
+        /// </summary>
+        void CheckPasswordMatch()
+        {
+            if(txtPassword.Text == txtPasswordRepeat.Text)
+            {
+                pbPasswordMatch1.Visible = true;
+                pbPasswordMatch2.Visible = true;
+            }
+            else
+            {
+                pbPasswordMatch1.Visible = false;
+                pbPasswordMatch2.Visible = false;
+            }
+        }
     }
 }

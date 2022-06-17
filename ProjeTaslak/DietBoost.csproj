@@ -207,6 +207,7 @@
     <None Include="Resources\Confirm_40px.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\check_circle_240px.png" />
     <Content Include="Resources\orange_48px.ico" />
     <Content Include="Resources\orange_48px.png" />
   </ItemGroup>
