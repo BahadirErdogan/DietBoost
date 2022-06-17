@@ -109,6 +109,7 @@
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
+            this.lvUsers.FullRowSelect = true;
             this.lvUsers.GridLines = true;
             this.lvUsers.HideSelection = false;
             this.lvUsers.Location = new System.Drawing.Point(18, 26);

@@ -113,16 +113,27 @@ namespace ProjeTaslak
         }
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
-            Category category = new Category();
-            category.Name = txtCategoryName.Text;
-            categoryService.Insert(category);
+            if (string.IsNullOrEmpty(txtCategoryName.Text)) MessageBox.Show("Failed.");
+            else
+            {
+                Category category = new Category();
+                category.Name = txtCategoryName.Text;
+                category.CreationDate = DateTime.Now;
+
+                categoryService.Insert(category);
+                FillCategoryComboBox();
+                MessageBox.Show("Category is successfully added to the list.");
+            }
+            
+            
         }
         public void FillCategoryComboBox()
         {
+            cbCategory.Items.Clear();
             List<Category> categories = GetCategoryList();
             foreach (var item in categories)
             {
-                cbCategory.Items.Add(item);
+                cbCategory.Items.Add(item.Name);
             }
         }
 
