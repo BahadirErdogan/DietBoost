@@ -23,14 +23,14 @@ namespace ProjeTaslak.Entities
         public string LastName { get; set; }
         public string Gender { get; set; }
         public DateTime BirthDate { get; set; }
-           
 
+        private int _age;
         public int Age 
         {
-            get { return Age; }
+            get { return _age; }
             set
             {
-                Age = DateTime.Now.Year - BirthDate.Year;
+                _age = DateTime.Now.Year - BirthDate.Year;
             }
         }
         public string Phone { get; set; }

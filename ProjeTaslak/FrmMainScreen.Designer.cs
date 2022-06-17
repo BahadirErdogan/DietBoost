@@ -38,24 +38,24 @@ namespace ProjeTaslak
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotalCalorieByMeal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDailyCalorieIntake = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblRecommendedCalorie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
             this.lvMeals = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label7 = new System.Windows.Forms.Label();
             this.dtpMeals = new System.Windows.Forms.DateTimePicker();
-            this.btnChangeMeals = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.btnMeals = new System.Windows.Forms.Button();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -72,43 +72,43 @@ namespace ProjeTaslak
             this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(763, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(763, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.accountToolStripMenuItem.Text = "Account";
             // 
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.aboutUsToolStripMenuItem.Text = "About Us";
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.updateToolStripMenuItem.Text = "Update";
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.logOutToolStripMenuItem.Text = "Log Out";
             // 
-            // label9
+            // lblTotalCalorieByMeal
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.label9.Location = new System.Drawing.Point(579, 570);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 20);
-            this.label9.TabIndex = 73;
-            this.label9.Text = "300";
+            this.lblTotalCalorieByMeal.AutoSize = true;
+            this.lblTotalCalorieByMeal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.lblTotalCalorieByMeal.Location = new System.Drawing.Point(579, 570);
+            this.lblTotalCalorieByMeal.Name = "lblTotalCalorieByMeal";
+            this.lblTotalCalorieByMeal.Size = new System.Drawing.Size(32, 16);
+            this.lblTotalCalorieByMeal.TabIndex = 73;
+            this.lblTotalCalorieByMeal.Text = "300";
             // 
             // label8
             // 
@@ -116,7 +116,7 @@ namespace ProjeTaslak
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label8.Location = new System.Drawing.Point(435, 570);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(138, 20);
+            this.label8.Size = new System.Drawing.Size(114, 16);
             this.label8.TabIndex = 72;
             this.label8.Text = "Total Callories:";
             // 
@@ -161,35 +161,35 @@ namespace ProjeTaslak
             this.progressBar1.Size = new System.Drawing.Size(491, 23);
             this.progressBar1.TabIndex = 69;
             // 
-            // label5
+            // lblDailyCalorieIntake
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.label5.Location = new System.Drawing.Point(476, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(39, 20);
-            this.label5.TabIndex = 68;
-            this.label5.Text = "300";
+            this.lblDailyCalorieIntake.AutoSize = true;
+            this.lblDailyCalorieIntake.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.lblDailyCalorieIntake.Location = new System.Drawing.Point(474, 120);
+            this.lblDailyCalorieIntake.Name = "lblDailyCalorieIntake";
+            this.lblDailyCalorieIntake.Size = new System.Drawing.Size(32, 16);
+            this.lblDailyCalorieIntake.TabIndex = 68;
+            this.lblDailyCalorieIntake.Text = "300";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.label4.Location = new System.Drawing.Point(285, 121);
+            this.label4.Location = new System.Drawing.Point(295, 121);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(187, 20);
+            this.label4.Size = new System.Drawing.Size(144, 16);
             this.label4.TabIndex = 67;
-            this.label4.Text = "Daily Current Calorie";
+            this.label4.Text = "Daily Calorie Intake";
             // 
-            // label3
+            // lblRecommendedCalorie
             // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.label3.Location = new System.Drawing.Point(201, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
-            this.label3.TabIndex = 66;
-            this.label3.Text = "700";
+            this.lblRecommendedCalorie.AutoSize = true;
+            this.lblRecommendedCalorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.lblRecommendedCalorie.Location = new System.Drawing.Point(238, 121);
+            this.lblRecommendedCalorie.Name = "lblRecommendedCalorie";
+            this.lblRecommendedCalorie.Size = new System.Drawing.Size(32, 16);
+            this.lblRecommendedCalorie.TabIndex = 66;
+            this.lblRecommendedCalorie.Text = "700";
             // 
             // label2
             // 
@@ -197,24 +197,24 @@ namespace ProjeTaslak
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label2.Location = new System.Drawing.Point(29, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(166, 20);
+            this.label2.Size = new System.Drawing.Size(203, 16);
             this.label2.TabIndex = 65;
-            this.label2.Text = "Daily Calorie Limit";
+            this.label2.Text = "Recommended Calorie Limit";
             // 
-            // button1
+            // btnReports
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.button1.Image = global::ProjeTaslak.Properties.Resources.Reports4;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(586, 226);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 56);
-            this.button1.TabIndex = 64;
-            this.button1.Text = "Reports";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnReports.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.btnReports.Image = global::ProjeTaslak.Properties.Resources.Reports4;
+            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReports.Location = new System.Drawing.Point(586, 226);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(139, 56);
+            this.btnReports.TabIndex = 64;
+            this.btnReports.Text = "Reports";
+            this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.UseVisualStyleBackColor = true;
             // 
             // lvMeals
             // 
@@ -254,7 +254,7 @@ namespace ProjeTaslak
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label7.Location = new System.Drawing.Point(37, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
+            this.label7.Size = new System.Drawing.Size(50, 16);
             this.label7.TabIndex = 62;
             this.label7.Text = "Meals";
             // 
@@ -268,34 +268,34 @@ namespace ProjeTaslak
             this.dtpMeals.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpMeals.Location = new System.Drawing.Point(261, 193);
             this.dtpMeals.Name = "dtpMeals";
-            this.dtpMeals.Size = new System.Drawing.Size(143, 26);
+            this.dtpMeals.Size = new System.Drawing.Size(143, 22);
             this.dtpMeals.TabIndex = 61;
             // 
-            // btnChangeMeals
+            // btnMeals
             // 
-            this.btnChangeMeals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeMeals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnChangeMeals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.btnChangeMeals.Image = global::ProjeTaslak.Properties.Resources.melaIcon;
-            this.btnChangeMeals.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChangeMeals.Location = new System.Drawing.Point(425, 226);
-            this.btnChangeMeals.Name = "btnChangeMeals";
-            this.btnChangeMeals.Size = new System.Drawing.Size(139, 56);
-            this.btnChangeMeals.TabIndex = 60;
-            this.btnChangeMeals.Text = "My Meals";
-            this.btnChangeMeals.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChangeMeals.UseVisualStyleBackColor = true;
+            this.btnMeals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMeals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnMeals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.btnMeals.Image = global::ProjeTaslak.Properties.Resources.melaIcon;
+            this.btnMeals.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMeals.Location = new System.Drawing.Point(425, 226);
+            this.btnMeals.Name = "btnMeals";
+            this.btnMeals.Size = new System.Drawing.Size(139, 56);
+            this.btnMeals.TabIndex = 60;
+            this.btnMeals.Text = "My Meals";
+            this.btnMeals.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMeals.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // lblUserName
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.label6.Location = new System.Drawing.Point(137, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 25);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "@userName";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.lblUserName.Location = new System.Drawing.Point(137, 75);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(107, 20);
+            this.lblUserName.TabIndex = 75;
+            this.lblUserName.Text = "@userName";
             // 
             // label1
             // 
@@ -305,32 +305,32 @@ namespace ProjeTaslak
             this.label1.Location = new System.Drawing.Point(28, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 25);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 74;
             this.label1.Text = "Welcome";
             // 
             // FrmMainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
             this.ClientSize = new System.Drawing.Size(763, 657);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblTotalCalorieByMeal);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblDailyCalorieIntake);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblRecommendedCalorie);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReports);
             this.Controls.Add(this.lvMeals);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dtpMeals);
-            this.Controls.Add(this.btnChangeMeals);
+            this.Controls.Add(this.btnMeals);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -353,24 +353,24 @@ namespace ProjeTaslak
         private System.Windows.Forms.ToolStripMenuItem aboutUsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTotalCalorieByMeal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDailyCalorieIntake;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblRecommendedCalorie;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.ListView lvMeals;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpMeals;
-        private System.Windows.Forms.Button btnChangeMeals;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnMeals;
+        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label1;
     }
 }
