@@ -61,6 +61,12 @@
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAddCategory = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.grpKullaniciAktivasyon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGramPortion)).BeginInit();
@@ -91,19 +97,27 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(403, 540);
+            this.groupBox1.Size = new System.Drawing.Size(518, 540);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Activation";
             // 
             // lvUsers
             // 
+            this.lvUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvUsers.GridLines = true;
             this.lvUsers.HideSelection = false;
-            this.lvUsers.Location = new System.Drawing.Point(18, 23);
+            this.lvUsers.Location = new System.Drawing.Point(18, 26);
             this.lvUsers.Name = "lvUsers";
-            this.lvUsers.Size = new System.Drawing.Size(366, 486);
+            this.lvUsers.Size = new System.Drawing.Size(493, 486);
             this.lvUsers.TabIndex = 19;
             this.lvUsers.UseCompatibleStateImageBehavior = false;
+            this.lvUsers.View = System.Windows.Forms.View.Details;
+            this.lvUsers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvUsers_MouseDoubleClick);
             // 
             // grpKullaniciAktivasyon
             // 
@@ -210,6 +224,7 @@
             this.btnUpdateFood.Size = new System.Drawing.Size(75, 50);
             this.btnUpdateFood.TabIndex = 22;
             this.btnUpdateFood.UseVisualStyleBackColor = true;
+            this.btnUpdateFood.Click += new System.EventHandler(this.btnUpdateFood_Click);
             // 
             // btnAddFood
             // 
@@ -222,6 +237,7 @@
             this.btnAddFood.Size = new System.Drawing.Size(75, 50);
             this.btnAddFood.TabIndex = 21;
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // label9
             // 
@@ -234,12 +250,18 @@
             // 
             // lvFoods
             // 
+            this.lvFoods.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lvFoods.GridLines = true;
             this.lvFoods.HideSelection = false;
             this.lvFoods.Location = new System.Drawing.Point(368, 41);
             this.lvFoods.Name = "lvFoods";
             this.lvFoods.Size = new System.Drawing.Size(180, 305);
             this.lvFoods.TabIndex = 19;
             this.lvFoods.UseCompatibleStateImageBehavior = false;
+            this.lvFoods.View = System.Windows.Forms.View.Details;
+            this.lvFoods.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFoods_MouseDoubleClick);
             // 
             // txtFoodName
             // 
@@ -350,6 +372,7 @@
             this.btnExit.Size = new System.Drawing.Size(50, 48);
             this.btnExit.TabIndex = 22;
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // groupBox2
             // 
@@ -393,13 +416,42 @@
             this.btnAddCategory.Size = new System.Drawing.Size(75, 50);
             this.btnAddCategory.TabIndex = 31;
             this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "First Name";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Last Name";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Username";
+            this.columnHeader3.Width = 229;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Status";
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Food Name";
+            this.columnHeader5.Width = 116;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Status";
             // 
             // FrmAdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
-            this.ClientSize = new System.Drawing.Size(988, 625);
+            this.ClientSize = new System.Drawing.Size(1103, 625);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox1);
@@ -410,6 +462,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdminPanel";
             this.Text = "Admin Panel";
+            this.Load += new System.EventHandler(this.FrmAdminPanel_Load);
             this.groupBox1.ResumeLayout(false);
             this.grpKullaniciAktivasyon.ResumeLayout(false);
             this.grpKullaniciAktivasyon.PerformLayout();
@@ -460,5 +513,11 @@
         private System.Windows.Forms.TextBox txtCategoryName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

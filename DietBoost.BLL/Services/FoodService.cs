@@ -90,14 +90,24 @@ namespace DietBoost.BLL.Services
             return foodRepository.Update(food);
         }
         /// <summary>
-        /// Seçili yiyeceği siler.
+        /// Seçili yiyeceği Aktif'e alır.
         /// </summary>
         /// <param name="food"></param>
         /// <returns>bool</returns>
-        public bool Delete(Food food)
+        public bool FoodActivated(Food food)
         {
             CheckFoodId(food.ID);
-            return foodRepository.Delete(food);
+            return foodRepository.FoodActivated(food);
+        }
+        /// <summary>
+        /// Seçili yiyeceği Pasif'e alır.
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns>bool</returns>
+        public bool FoodDeactivated(Food food)
+        {
+            CheckFoodId(food.ID);
+            return foodRepository.FoodDeactivated(food);
         }
         /// <summary>
         /// Yazılan string ifadeye göre string ifadeyi içeren yiyecek listesi döndürür.

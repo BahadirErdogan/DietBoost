@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjeTaslak.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace ProjeTaslak
 {
     public partial class FrmMainScreen : Form
     {
-        public FrmMainScreen()
+        User user;
+        public FrmMainScreen(User _user)
         {
             InitializeComponent();
+            user = _user;
         }
     }
 }
