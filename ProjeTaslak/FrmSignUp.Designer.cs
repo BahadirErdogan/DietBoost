@@ -32,12 +32,12 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkUserAgreement = new System.Windows.Forms.LinkLabel();
             this.cbUserAgreement = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblStrength = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPasswordRepeat = new System.Windows.Forms.TextBox();
@@ -55,9 +55,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudHeight = new System.Windows.Forms.NumericUpDown();
+            this.nudWeightGoal = new System.Windows.Forms.NumericUpDown();
+            this.nudWeight = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,9 +69,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeightGoal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).BeginInit();
             this.SuspendLayout();
             // 
             // label19
@@ -104,15 +104,15 @@
             this.label17.TabIndex = 26;
             this.label17.Text = "Welcome to DietBoost App!";
             // 
-            // linkLabel1
+            // linkUserAgreement
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(693, 438);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(145, 20);
-            this.linkLabel1.TabIndex = 25;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "User Agreement";
+            this.linkUserAgreement.AutoSize = true;
+            this.linkUserAgreement.Location = new System.Drawing.Point(693, 438);
+            this.linkUserAgreement.Name = "linkUserAgreement";
+            this.linkUserAgreement.Size = new System.Drawing.Size(145, 20);
+            this.linkUserAgreement.TabIndex = 25;
+            this.linkUserAgreement.TabStop = true;
+            this.linkUserAgreement.Text = "User Agreement";
             // 
             // cbUserAgreement
             // 
@@ -147,11 +147,12 @@
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.lblStrength);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtPasswordRepeat);
@@ -174,20 +175,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account";
             // 
-            // label13
+            // lblStrength
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(184, 275);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 20);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Weak!";
+            this.lblStrength.AutoSize = true;
+            this.lblStrength.ForeColor = System.Drawing.Color.Red;
+            this.lblStrength.Location = new System.Drawing.Point(184, 275);
+            this.lblStrength.Name = "lblStrength";
+            this.lblStrength.Size = new System.Drawing.Size(61, 20);
+            this.lblStrength.TabIndex = 17;
+            this.lblStrength.Text = "Weak!";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(10, 275);
+            this.label11.Location = new System.Drawing.Point(8, 275);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(174, 20);
             this.label11.TabIndex = 16;
@@ -212,22 +213,23 @@
             // 
             // mtxtPhone
             // 
-            this.mtxtPhone.Location = new System.Drawing.Point(188, 145);
+            this.mtxtPhone.Location = new System.Drawing.Point(188, 148);
             this.mtxtPhone.Name = "mtxtPhone";
             this.mtxtPhone.Size = new System.Drawing.Size(183, 26);
             this.mtxtPhone.TabIndex = 14;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(188, 187);
+            this.txtPassword.Location = new System.Drawing.Point(188, 189);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(183, 26);
             this.txtPassword.TabIndex = 8;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(188, 103);
+            this.txtEmail.Location = new System.Drawing.Point(188, 107);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(183, 26);
             this.txtEmail.TabIndex = 7;
@@ -268,7 +270,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 233);
+            this.label5.Location = new System.Drawing.Point(20, 234);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(162, 20);
             this.label5.TabIndex = 4;
@@ -297,9 +299,9 @@
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.nudHeight);
+            this.groupBox1.Controls.Add(this.nudWeightGoal);
+            this.groupBox1.Controls.Add(this.nudWeight);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label9);
@@ -343,26 +345,26 @@
             this.label14.TabIndex = 61;
             this.label14.Text = "cm";
             // 
-            // numericUpDown3
+            // nudHeight
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(171, 139);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(150, 26);
-            this.numericUpDown3.TabIndex = 60;
+            this.nudHeight.Location = new System.Drawing.Point(171, 139);
+            this.nudHeight.Name = "nudHeight";
+            this.nudHeight.Size = new System.Drawing.Size(150, 26);
+            this.nudHeight.TabIndex = 60;
             // 
-            // numericUpDown2
+            // nudWeightGoal
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(171, 228);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(150, 26);
-            this.numericUpDown2.TabIndex = 59;
+            this.nudWeightGoal.Location = new System.Drawing.Point(171, 228);
+            this.nudWeightGoal.Name = "nudWeightGoal";
+            this.nudWeightGoal.Size = new System.Drawing.Size(150, 26);
+            this.nudWeightGoal.TabIndex = 59;
             // 
-            // numericUpDown1
+            // nudWeight
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(171, 184);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 26);
-            this.numericUpDown1.TabIndex = 58;
+            this.nudWeight.Location = new System.Drawing.Point(171, 184);
+            this.nudWeight.Name = "nudWeight";
+            this.nudWeight.Size = new System.Drawing.Size(150, 26);
+            this.nudWeight.TabIndex = 58;
             // 
             // label12
             // 
@@ -449,7 +451,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkUserAgreement);
             this.Controls.Add(this.cbUserAgreement);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnConfirm);
@@ -467,9 +469,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeightGoal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,12 +482,12 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkUserAgreement;
         private System.Windows.Forms.CheckBox cbUserAgreement;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblStrength;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPasswordRepeat;
@@ -503,9 +505,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudHeight;
+        private System.Windows.Forms.NumericUpDown nudWeightGoal;
+        private System.Windows.Forms.NumericUpDown nudWeight;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
