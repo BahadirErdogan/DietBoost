@@ -64,12 +64,6 @@
     <Compile Include="FrmAdminPanel.Designer.cs">
       <DependentUpon>FrmAdminPanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFoodDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmFoodDetails.Designer.cs">
-      <DependentUpon>FrmFoodDetails.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmFoodSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,9 +110,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAdminPanel.resx">
       <DependentUpon>FrmAdminPanel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmFoodDetails.resx">
-      <DependentUpon>FrmFoodDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFoodSearch.resx">
       <DependentUpon>FrmFoodSearch.cs</DependentUpon>

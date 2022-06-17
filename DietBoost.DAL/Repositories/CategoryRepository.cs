@@ -15,6 +15,11 @@ namespace DietBoost.DAL.Repositories
         {
             context = new DietBoostDbContext();
         }
+
+        /// <summary>
+        /// Kategorileri getirir
+        /// </summary>
+        /// <returns></returns>
         public List<Category> GetCategories()
         {
             return context.Categories.ToList();

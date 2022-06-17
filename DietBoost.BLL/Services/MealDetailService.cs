@@ -1,4 +1,4 @@
-﻿using DietBoost.DAL.Context;
+﻿using DietBoost.DAL.Repositories;
 using ProjeTaslak.Entities;
 using ProjeTaslak.Enums;
 using System;
@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DietBoost.DAL.Repositories
+namespace DietBoost.BLL.Services
 {
-    public class MealDetailRepository
+    public class MealDetailService
     {
-        DietBoostDbContext context;
-        public MealDetailRepository()
-        {
-            context = new DietBoostDbContext();
-        }
+        MealDetailRepository mealDetailRepository;
 
+        public MealDetailService()
+        {
+            mealDetailRepository = new MealDetailRepository();
+        }
         /// <summary>
         /// Kullanıcı ana ekranında ; Seçilen tarihe göre meal details döndürür.(Tüm öğünler için)
         /// </summary>
@@ -24,12 +24,8 @@ namespace DietBoost.DAL.Repositories
         /// <returns>List<MealDetail></returns>
         public List<MealDetail> GetMealDetailsByDate(DateTime date)
         {
-            return context.MealDetails.Where(a => a.Meal.MealDate == date).ToList();
+            return mealDetailRepository.GetMealDetailsByDate(date);
         }
-
-       
-
-
         /// <summary>
         /// Meal formunda; tarih ve öğün tipi seçimine göre meal details döndürür.
         /// </summary>
@@ -38,10 +34,12 @@ namespace DietBoost.DAL.Repositories
         /// <returns>List<MealDetail></returns>
         public List<MealDetail> GetMealDetailsByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
-            return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).ToList();
+            if (string.IsNullOrWhiteSpace(mealType.ToString()) || mealDate > DateTime.Now)
+            {
+                throw new Exception("Please select meal type or select correct date.");
+            }
+            return mealDetailRepository.GetMealDetailsByMealDateAndMealType(mealDate, mealType);
         }
-
-
         /// <summary>
         /// Meal formunda güncelleme butonuna basıldığında foodId ve MealId'ye göre 
         /// Meal Details döndürüp Food formunda bu meal detailsin bilgilerini kullanmak için kullanacağız. 
@@ -52,11 +50,13 @@ namespace DietBoost.DAL.Repositories
         /// <returns></returns>
         public MealDetail GetMealDetailByMealIdAndFoodId(int mealId, int foodId)
         {
-            MealDetail mealDetail = new MealDetail();
-            mealDetail = context.MealDetails.Where(a => a.MealID == mealId && a.FoodID == foodId).SingleOrDefault();
-            return mealDetail;
+            if(string.IsNullOrWhiteSpace(mealId.ToString()) || string.IsNullOrWhiteSpace(foodId.ToString()))
+            {
+                throw new Exception("Please select meal or food.");
+            }
+            return mealDetailRepository.GetMealDetailByMealIdAndFoodId(mealId, foodId);
         }
 
     }
-}
 
+}
