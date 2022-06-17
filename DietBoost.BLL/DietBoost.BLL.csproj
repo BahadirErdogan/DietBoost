@@ -51,9 +51,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\MealService.cs" />
+    <Compile Include="Services\PasswordService.cs" />
+    <Compile Include="Services\UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DietBoost.DAL\DietBoost.DAL.csproj">
+      <Project>{D2245CB3-E487-474E-92BE-C32B64F9C1A2}</Project>
+      <Name>DietBoost.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DietBoost.Model\DietBoost.Model.csproj">
+      <Project>{4C38307F-C603-491F-B6DE-95EA9AC73C4C}</Project>
+      <Name>DietBoost.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

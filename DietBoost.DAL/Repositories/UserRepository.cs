@@ -34,7 +34,7 @@ namespace DietBoost.DAL.Repositories
             updatedUser.FirstName = user.FirstName;
             updatedUser.LastName = user.LastName;
             updatedUser.Gender = user.Gender;
-            updatedUser.Length = user.Length;
+            updatedUser.Height = user.Height;
             updatedUser.Phone = user.Phone;
 
             return context.SaveChanges() > 0;

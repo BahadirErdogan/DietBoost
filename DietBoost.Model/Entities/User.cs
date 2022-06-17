@@ -37,7 +37,7 @@ namespace ProjeTaslak.Entities
         public string Phone { get; set; }
         public decimal Weight { get; set; }
         public decimal WeightGoal { get; set; }
-        public decimal Length { get; set; }
+        public decimal Height { get; set; }
         public UserType UserType { get; set; }
         public bool IsActive { get; set; }
         public string FullName { get { return $"{FirstName} {LastName}"; } }
