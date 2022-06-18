@@ -21,7 +21,7 @@ namespace ProjeTaslak
             InitializeComponent();
             user = _user;
             mealDetailService = new MealDetailService();
-            lblUserName.Text = user.FirstName;
+            lblUserName.Text = user.FullName.ToUpper();
             lblRecommendedCalorie.Text = CalculateRecomendedDailyCalorie(user).ToString();
             lblSelectedDailyCalorieInTake.Text = CalculateSelectedDailyCalorie().ToString();
             lblTodaysCalorieIntake.Text = CalculateTodaysDailyCalorie().ToString();
@@ -143,7 +143,7 @@ namespace ProjeTaslak
 
         private void accountToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAccount frmAccount = new FrmAccount();
+            FrmAccount frmAccount = new FrmAccount(user);
             this.Hide();
             frmAccount.ShowDialog();
             this.Show();

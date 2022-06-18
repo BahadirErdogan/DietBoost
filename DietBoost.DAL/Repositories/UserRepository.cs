@@ -13,10 +13,12 @@ namespace DietBoost.DAL.Repositories
     {
         DietBoostDbContext context;
         PasswordRepository passwordRepository;
+        
         public UserRepository()
         {
             context = new DietBoostDbContext();
             passwordRepository = new PasswordRepository();
+            User user=new User();
         }
 
         public bool Insert(User user)
