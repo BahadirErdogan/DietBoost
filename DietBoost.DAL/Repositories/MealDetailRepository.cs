@@ -27,9 +27,6 @@ namespace DietBoost.DAL.Repositories
             return context.MealDetails.Where(a => a.Meal.MealDate == date).ToList();
         }
 
-       
-
-
         /// <summary>
         /// Meal formunda; tarih ve öğün tipi seçimine göre meal details döndürür.
         /// </summary>

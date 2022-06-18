@@ -224,9 +224,11 @@ namespace ProjeTaslak
             this.columnHeader2,
             this.columnHeader3});
             this.lvMeals.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.lvMeals.FullRowSelect = true;
             this.lvMeals.GridLines = true;
             this.lvMeals.HideSelection = false;
             this.lvMeals.Location = new System.Drawing.Point(40, 226);
+            this.lvMeals.MultiSelect = false;
             this.lvMeals.Name = "lvMeals";
             this.lvMeals.Size = new System.Drawing.Size(440, 393);
             this.lvMeals.TabIndex = 63;

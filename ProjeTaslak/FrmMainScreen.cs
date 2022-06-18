@@ -32,21 +32,9 @@ namespace ProjeTaslak
             FillListView();
 
         }
-        private void btnMeals_Click(object sender, EventArgs e)
-        {
-            FrmMeal frmMeal = new FrmMeal();
-            this.Hide();
-            frmMeal.ShowDialog();
-            this.Show();
-        }
+        
 
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            FrmReports frmReports = new FrmReports();
-            this.Hide();
-            frmReports.ShowDialog();
-            this.Show();
-        }
+        
 
         private void FillListView()
         {
@@ -129,8 +117,20 @@ namespace ProjeTaslak
             }
             return calorieLimit;
         }
-
-
+        private void btnMeals_Click(object sender, EventArgs e)
+        {
+            FrmMeal frmMeal = new FrmMeal(user);
+            this.Hide();
+            frmMeal.ShowDialog();
+            this.Show();
+        }
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            FrmReports frmReports = new FrmReports();
+            this.Hide();
+            frmReports.ShowDialog();
+            this.Show();
+        }
     }
 }
 

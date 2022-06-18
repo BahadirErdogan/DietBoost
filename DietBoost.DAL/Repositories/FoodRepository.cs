@@ -66,5 +66,13 @@ namespace DietBoost.DAL.Repositories
         {
             return context.Foods.Where(a => a.Name.ToLower().Contains(text.ToLower())).ToList();
         }
+        public List<Food> GetFilteredFood(string text, int categoryID)
+        {
+            return context.Foods.Where(a => a.Name.ToLower().Contains(text.ToLower()) && a.CategoryID == categoryID).ToList();
+        }
+        public List<Food> GetFilteredFood(int categoryID)
+        {
+            return context.Foods.Where(a => a.CategoryID == categoryID).ToList();
+        }
     }
 }

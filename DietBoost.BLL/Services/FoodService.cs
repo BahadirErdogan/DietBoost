@@ -63,7 +63,7 @@ namespace DietBoost.BLL.Services
                 if (item.Name == food.Name) throw new Exception("This food name already exists.");
                
             }
-            if (string.IsNullOrWhiteSpace(food.Name)||string.IsNullOrWhiteSpace(food.Categories.Name))
+            if (string.IsNullOrWhiteSpace(food.Name)|| food.CategoryID < 0)
             {
                 throw new Exception("Please fill all requirements.");
             }
@@ -83,7 +83,7 @@ namespace DietBoost.BLL.Services
                 if (item.Name == food.Name) throw new Exception("This food name already exists.");
 
             }
-            if (string.IsNullOrWhiteSpace(food.Name) || string.IsNullOrWhiteSpace(food.Categories.Name))
+            if (string.IsNullOrWhiteSpace(food.Name) || string.IsNullOrWhiteSpace(food.Category.Name))
             {
                 throw new Exception("Please fill all requirements.");
             }           
@@ -117,6 +117,14 @@ namespace DietBoost.BLL.Services
         public List<Food> GetFilteredFood(string text)
         {
             return foodRepository.GetFilteredFood(text);
+        }
+        public List<Food> GetFilteredFood(string text, int categoryID)
+        {
+            return foodRepository.GetFilteredFood(text,categoryID);
+        } 
+        public List<Food> GetFilteredFood(int categoryID)
+        {
+            return foodRepository.GetFilteredFood(categoryID);
         }
 
     }

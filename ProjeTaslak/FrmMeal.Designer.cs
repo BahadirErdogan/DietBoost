@@ -89,6 +89,7 @@
             this.lvMealDetails.HideSelection = false;
             this.lvMealDetails.Location = new System.Drawing.Point(24, 128);
             this.lvMealDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.lvMealDetails.MultiSelect = false;
             this.lvMealDetails.Name = "lvMealDetails";
             this.lvMealDetails.Size = new System.Drawing.Size(369, 184);
             this.lvMealDetails.TabIndex = 58;

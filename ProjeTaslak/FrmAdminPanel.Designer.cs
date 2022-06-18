@@ -32,7 +32,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lvUsers = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.grpKullaniciAktivasyon = new System.Windows.Forms.GroupBox();
+            this.btnReloadFoodList = new System.Windows.Forms.Button();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.nudGramPortion = new System.Windows.Forms.NumericUpDown();
@@ -45,6 +50,8 @@
             this.btnAddFood = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.lvFoods = new System.Windows.Forms.ListView();
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,17 +63,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtImagePath = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtCategoryName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAddCategory = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpKullaniciAktivasyon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGramPortion)).BeginInit();
@@ -120,8 +121,28 @@
             this.lvUsers.View = System.Windows.Forms.View.Details;
             this.lvUsers.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvUsers_MouseDoubleClick);
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "First Name";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Last Name";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Username";
+            this.columnHeader3.Width = 229;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Status";
+            // 
             // grpKullaniciAktivasyon
             // 
+            this.grpKullaniciAktivasyon.Controls.Add(this.btnReloadFoodList);
             this.grpKullaniciAktivasyon.Controls.Add(this.cbCategory);
             this.grpKullaniciAktivasyon.Controls.Add(this.label11);
             this.grpKullaniciAktivasyon.Controls.Add(this.nudGramPortion);
@@ -155,6 +176,19 @@
             this.grpKullaniciAktivasyon.TabStop = false;
             this.grpKullaniciAktivasyon.Text = "Add Food";
             // 
+            // btnReloadFoodList
+            // 
+            this.btnReloadFoodList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReloadFoodList.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnReloadFoodList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
+            this.btnReloadFoodList.Image = global::ProjeTaslak.Properties.Resources.Reload;
+            this.btnReloadFoodList.Location = new System.Drawing.Point(436, 352);
+            this.btnReloadFoodList.Name = "btnReloadFoodList";
+            this.btnReloadFoodList.Size = new System.Drawing.Size(42, 41);
+            this.btnReloadFoodList.TabIndex = 32;
+            this.btnReloadFoodList.UseVisualStyleBackColor = true;
+            this.btnReloadFoodList.Click += new System.EventHandler(this.btnReloadFoodList_Click);
+            // 
             // cbCategory
             // 
             this.cbCategory.FormattingEnabled = true;
@@ -175,6 +209,11 @@
             // nudGramPortion
             // 
             this.nudGramPortion.Location = new System.Drawing.Point(274, 221);
+            this.nudGramPortion.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudGramPortion.Name = "nudGramPortion";
             this.nudGramPortion.Size = new System.Drawing.Size(88, 26);
             this.nudGramPortion.TabIndex = 28;
@@ -182,6 +221,11 @@
             // nudGramPiece
             // 
             this.nudGramPiece.Location = new System.Drawing.Point(274, 191);
+            this.nudGramPiece.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudGramPiece.Name = "nudGramPiece";
             this.nudGramPiece.Size = new System.Drawing.Size(88, 26);
             this.nudGramPiece.TabIndex = 27;
@@ -189,6 +233,11 @@
             // nudProtein
             // 
             this.nudProtein.Location = new System.Drawing.Point(274, 161);
+            this.nudProtein.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudProtein.Name = "nudProtein";
             this.nudProtein.Size = new System.Drawing.Size(88, 26);
             this.nudProtein.TabIndex = 26;
@@ -196,6 +245,11 @@
             // nudCarbs
             // 
             this.nudCarbs.Location = new System.Drawing.Point(274, 131);
+            this.nudCarbs.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudCarbs.Name = "nudCarbs";
             this.nudCarbs.Size = new System.Drawing.Size(88, 26);
             this.nudCarbs.TabIndex = 25;
@@ -203,6 +257,11 @@
             // nudFat
             // 
             this.nudFat.Location = new System.Drawing.Point(274, 101);
+            this.nudFat.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudFat.Name = "nudFat";
             this.nudFat.Size = new System.Drawing.Size(88, 26);
             this.nudFat.TabIndex = 24;
@@ -210,6 +269,11 @@
             // nudCalorie
             // 
             this.nudCalorie.Location = new System.Drawing.Point(274, 71);
+            this.nudCalorie.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudCalorie.Name = "nudCalorie";
             this.nudCalorie.Size = new System.Drawing.Size(88, 26);
             this.nudCalorie.TabIndex = 23;
@@ -263,6 +327,15 @@
             this.lvFoods.UseCompatibleStateImageBehavior = false;
             this.lvFoods.View = System.Windows.Forms.View.Details;
             this.lvFoods.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvFoods_MouseDoubleClick);
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Food Name";
+            this.columnHeader5.Width = 116;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Status";
             // 
             // txtFoodName
             // 
@@ -362,19 +435,6 @@
             this.txtImagePath.Size = new System.Drawing.Size(257, 26);
             this.txtImagePath.TabIndex = 8;
             // 
-            // btnExit
-            // 
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnExit.Image = global::ProjeTaslak.Properties.Resources.shutdown_40px;
-            this.btnExit.Location = new System.Drawing.Point(925, 12);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(50, 48);
-            this.btnExit.TabIndex = 22;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtCategoryName);
@@ -419,33 +479,18 @@
             this.btnAddCategory.UseVisualStyleBackColor = true;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
-            // columnHeader1
+            // btnExit
             // 
-            this.columnHeader1.Text = "First Name";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Last Name";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Username";
-            this.columnHeader3.Width = 229;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Status";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Food Name";
-            this.columnHeader5.Width = 116;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Status";
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnExit.Image = global::ProjeTaslak.Properties.Resources.shutdown_40px;
+            this.btnExit.Location = new System.Drawing.Point(925, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(50, 48);
+            this.btnExit.TabIndex = 22;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FrmAdminPanel
             // 
@@ -520,5 +565,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button btnReloadFoodList;
     }
 }

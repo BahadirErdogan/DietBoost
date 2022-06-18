@@ -15,7 +15,7 @@ namespace DietBoost.DAL.Configurations
             HasKey(a => a.ID);
             Property(a => a.Name).IsRequired().HasMaxLength(50);
 
-            HasRequired(a => a.Categories).WithMany(a => a.Foods).HasForeignKey(a => a.CategoryID);
+            HasRequired(a => a.Category).WithMany(a => a.Foods).HasForeignKey(a => a.CategoryID);
         }
     }
 

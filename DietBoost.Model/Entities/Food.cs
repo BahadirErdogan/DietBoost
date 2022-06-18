@@ -35,7 +35,7 @@ namespace ProjeTaslak.Entities
 
 
         public virtual ICollection<MealDetail> MealDetails { get; set; }
-        public virtual Category Categories { get; set; }
+        public virtual Category Category { get; set; }
       
     }
 }

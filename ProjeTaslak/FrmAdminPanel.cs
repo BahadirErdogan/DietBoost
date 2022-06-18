@@ -28,7 +28,10 @@ namespace ProjeTaslak
 
         private void FrmAdminPanel_Load(object sender, EventArgs e)
         {
-            Reload();
+            //Reload();
+            ListUsers();
+            ListFoods();
+            FillCategoryComboBox();
         }
         private void Reload()
         {
@@ -48,8 +51,9 @@ namespace ProjeTaslak
                 food.Protein = nudProtein.Value;
                 food.PieceGram = nudGramPiece.Value;
                 food.PortionGram = nudGramPortion.Value;
-                food.Categories.Name = cbCategory.SelectedItem.ToString();
+                food.CategoryID = (int)cbCategory.SelectedValue;
                 food.Image = txtImagePath.Text;
+                food.CreationDate = DateTime.Now.Date;
                 foodService.Insert(food);
                 MessageBox.Show("Food added successfully.");
             }
@@ -72,7 +76,7 @@ namespace ProjeTaslak
                 food.Protein = nudProtein.Value;
                 food.PieceGram = nudGramPiece.Value;
                 food.PortionGram = nudGramPortion.Value;
-                food.Categories.Name = cbCategory.SelectedItem.ToString();
+                food.Category.Name = cbCategory.SelectedValue.ToString();
                 food.Image = txtImagePath.Text;
                 foodService.Update(food);
                 MessageBox.Show("Food updated successfully.");
@@ -124,10 +128,10 @@ namespace ProjeTaslak
             {
                 Category category = new Category();
                 category.Name = txtCategoryName.Text;
-                category.CreationDate = DateTime.Now;
+                category.CreationDate = DateTime.Now.Date;
 
                 categoryService.Insert(category);
-                Reload();
+                FillCategoryComboBox();
                 MessageBox.Show("Category is successfully added to the list.");
             }
             
@@ -135,8 +139,8 @@ namespace ProjeTaslak
         }
         public void FillCategoryComboBox()
         {
-            cbCategory.Items.Clear();
-            cbCategory.DataSource = categoryService.GetCategories();
+            List<Category> categories = categoryService.GetCategories();
+            cbCategory.DataSource = categories;
             cbCategory.DisplayMember = "Name";
             cbCategory.ValueMember = "ID";
         }
@@ -154,7 +158,7 @@ namespace ProjeTaslak
                 string[] items = { item.Name, status };
                 ListViewItem lvi = new ListViewItem(items);
                 lvi.Tag = item.ID;
-                lvUsers.Items.Add(lvi);
+                lvFoods.Items.Add(lvi);
             }
         }
         private void lvFoods_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -179,6 +183,11 @@ namespace ProjeTaslak
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnReloadFoodList_Click(object sender, EventArgs e)
+        {
+            ListFoods();
         }
     }
 }

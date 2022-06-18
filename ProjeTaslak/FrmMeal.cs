@@ -18,9 +18,11 @@ namespace ProjeTaslak
         MealService mealService;
         FoodService foodService;
         MealDetailService mealDetailService;
-        public FrmMeal()
+        User user;
+        public FrmMeal(User _user)
         {
             InitializeComponent();
+            user = _user;
             mealService = new MealService();
             foodService = new FoodService();
             mealDetailService = new MealDetailService();
