@@ -216,6 +216,10 @@
       <Project>{400BD276-B7CE-4E48-80F8-CFA49B3B6085}</Project>
       <Name>DietBoost.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DietBoost.DAL\DietBoost.DAL.csproj">
+      <Project>{D2245CB3-E487-474E-92BE-C32B64F9C1A2}</Project>
+      <Name>DietBoost.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DietBoost.Model\DietBoost.Model.csproj">
       <Project>{4C38307F-C603-491F-B6DE-95EA9AC73C4C}</Project>
       <Name>DietBoost.Model</Name>

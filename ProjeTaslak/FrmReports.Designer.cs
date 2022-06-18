@@ -113,13 +113,14 @@ namespace ProjeTaslak
             this.cbReports.Name = "cbReports";
             this.cbReports.Size = new System.Drawing.Size(288, 32);
             this.cbReports.TabIndex = 51;
+            this.cbReports.SelectedIndexChanged += new System.EventHandler(this.cbReports_SelectedIndexChanged);
             // 
             // FrmReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
-            this.ClientSize = new System.Drawing.Size(700, 623);
+            this.ClientSize = new System.Drawing.Size(691, 618);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
