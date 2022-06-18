@@ -40,6 +40,14 @@ namespace DietBoost.BLL.Services
             }
             return mealDetailRepository.GetMealDetailsByMealDateAndMealType(mealDate, mealType);
         }
+        public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
+        {
+            if (string.IsNullOrWhiteSpace(mealType.ToString()) || mealDate > DateTime.Now)
+            {
+                throw new Exception("Please select meal type or select correct date.");
+            }
+            return mealDetailRepository.GetMealDetailByMealDateAndMealType(mealDate, mealType);
+        }
         /// <summary>
         /// Meal formunda güncelleme butonuna basıldığında foodId ve MealId'ye göre 
         /// Meal Details döndürüp Food formunda bu meal detailsin bilgilerini kullanmak için kullanacağız. 

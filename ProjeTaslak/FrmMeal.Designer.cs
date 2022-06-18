@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMeal));
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblSelectedDailyCalorieInTake = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lvMealDetails = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,15 +59,15 @@
             this.label6.TabIndex = 61;
             this.label6.Text = "Meal :";
             // 
-            // label4
+            // lblSelectedDailyCalorieInTake
             // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.label4.Location = new System.Drawing.Point(144, 325);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(124, 20);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "@totalCalorie";
+            this.lblSelectedDailyCalorieInTake.AutoSize = true;
+            this.lblSelectedDailyCalorieInTake.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.lblSelectedDailyCalorieInTake.Location = new System.Drawing.Point(144, 325);
+            this.lblSelectedDailyCalorieInTake.Name = "lblSelectedDailyCalorieInTake";
+            this.lblSelectedDailyCalorieInTake.Size = new System.Drawing.Size(124, 20);
+            this.lblSelectedDailyCalorieInTake.TabIndex = 60;
+            this.lblSelectedDailyCalorieInTake.Text = "@totalCalorie";
             // 
             // pictureBox1
             // 
@@ -89,6 +89,7 @@
             this.lvMealDetails.HideSelection = false;
             this.lvMealDetails.Location = new System.Drawing.Point(24, 128);
             this.lvMealDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.lvMealDetails.MultiSelect = false;
             this.lvMealDetails.Name = "lvMealDetails";
             this.lvMealDetails.Size = new System.Drawing.Size(369, 184);
             this.lvMealDetails.TabIndex = 58;
@@ -153,6 +154,7 @@
             this.btnAddFood.TabIndex = 54;
             this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // dtpDate
             // 
@@ -218,7 +220,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
             this.ClientSize = new System.Drawing.Size(464, 356);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblSelectedDailyCalorieInTake);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lvMealDetails);
             this.Controls.Add(this.label3);
@@ -244,7 +246,7 @@
         #endregion
 
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSelectedDailyCalorieInTake;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ListView lvMealDetails;
         private System.Windows.Forms.ColumnHeader columnHeader1;

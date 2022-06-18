@@ -23,16 +23,27 @@ namespace DietBoost.DAL.Strategy
                 IsActive = true,
                 CreationDate = DateTime.Now,
                 UserName = "admin",
+                Gender = "Male",
+                BirthDate = DateTime.Now,
+                Phone = "00000000000",
+                Weight = 1,
+                Height = 1,
+                WeightGoal = 1,
                 UserType = ProjeTaslak.Enums.UserType.Admin, // İlk proje dosyasının adı kalmış!! DietBoost'u görmüyor..
             };
             user.Passwords.Add(new Password()
             {
                 CreationDate = DateTime.Now,
                 Text="admin1234"
-
             });
+            Category category = new Category
+            {
+                CreationDate = DateTime.Now,
+                Name = "Categories"
+            };
                 
             context.Users.Add(user);
+            context.Categories.Add(category);
             context.SaveChanges();
         }
 

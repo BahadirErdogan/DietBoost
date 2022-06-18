@@ -63,7 +63,7 @@ namespace DietBoost.BLL.Services
                 if (item.Name == food.Name) throw new Exception("This food name already exists.");
                
             }
-            if (string.IsNullOrWhiteSpace(food.Name)||string.IsNullOrWhiteSpace(food.Categories.Name))
+            if (string.IsNullOrWhiteSpace(food.Name)|| food.CategoryID < 0)
             {
                 throw new Exception("Please fill all requirements.");
             }
@@ -83,21 +83,31 @@ namespace DietBoost.BLL.Services
                 if (item.Name == food.Name) throw new Exception("This food name already exists.");
 
             }
-            if (string.IsNullOrWhiteSpace(food.Name) || string.IsNullOrWhiteSpace(food.Categories.Name))
+            if (string.IsNullOrWhiteSpace(food.Name) || string.IsNullOrWhiteSpace(food.Category.Name))
             {
                 throw new Exception("Please fill all requirements.");
             }           
             return foodRepository.Update(food);
         }
         /// <summary>
-        /// Seçili yiyeceği siler.
+        /// Seçili yiyeceği Aktif'e alır.
         /// </summary>
         /// <param name="food"></param>
         /// <returns>bool</returns>
-        public bool Delete(Food food)
+        public bool FoodActivated(Food food)
         {
             CheckFoodId(food.ID);
-            return foodRepository.Delete(food);
+            return foodRepository.FoodActivated(food);
+        }
+        /// <summary>
+        /// Seçili yiyeceği Pasif'e alır.
+        /// </summary>
+        /// <param name="food"></param>
+        /// <returns>bool</returns>
+        public bool FoodDeactivated(Food food)
+        {
+            CheckFoodId(food.ID);
+            return foodRepository.FoodDeactivated(food);
         }
         /// <summary>
         /// Yazılan string ifadeye göre string ifadeyi içeren yiyecek listesi döndürür.
@@ -107,6 +117,14 @@ namespace DietBoost.BLL.Services
         public List<Food> GetFilteredFood(string text)
         {
             return foodRepository.GetFilteredFood(text);
+        }
+        public List<Food> GetFilteredFood(string text, int categoryID)
+        {
+            return foodRepository.GetFilteredFood(text,categoryID);
+        } 
+        public List<Food> GetFilteredFood(int categoryID)
+        {
+            return foodRepository.GetFilteredFood(categoryID);
         }
 
     }

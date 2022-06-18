@@ -27,9 +27,6 @@ namespace DietBoost.DAL.Repositories
             return context.MealDetails.Where(a => a.Meal.MealDate == date).ToList();
         }
 
-       
-
-
         /// <summary>
         /// Meal formunda; tarih ve öğün tipi seçimine göre meal details döndürür.
         /// </summary>
@@ -40,7 +37,10 @@ namespace DietBoost.DAL.Repositories
         {
             return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).ToList();
         }
-
+        public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
+        {
+            return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).FirstOrDefault();
+        }
 
         /// <summary>
         /// Meal formunda güncelleme butonuna basıldığında foodId ve MealId'ye göre 

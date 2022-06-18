@@ -32,12 +32,13 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkUserAgreement = new System.Windows.Forms.LinkLabel();
             this.cbUserAgreement = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.pbPasswordMatch1 = new System.Windows.Forms.PictureBox();
+            this.lblStrength = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPasswordRepeat = new System.Windows.Forms.TextBox();
@@ -55,9 +56,9 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudHeight = new System.Windows.Forms.NumericUpDown();
+            this.nudWeightGoal = new System.Windows.Forms.NumericUpDown();
+            this.nudWeight = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,12 +67,15 @@
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
             this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.pbPasswordMatch2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPasswordMatch1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeightGoal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPasswordMatch2)).BeginInit();
             this.SuspendLayout();
             // 
             // label19
@@ -80,7 +84,7 @@
             this.label19.BackColor = System.Drawing.Color.Transparent;
             this.label19.Location = new System.Drawing.Point(52, 59);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(393, 20);
+            this.label19.Size = new System.Drawing.Size(336, 17);
             this.label19.TabIndex = 28;
             this.label19.Text = "And Start \"Boosting Your Health\" Right Away!";
             // 
@@ -90,7 +94,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Location = new System.Drawing.Point(33, 42);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(375, 20);
+            this.label18.Size = new System.Drawing.Size(323, 17);
             this.label18.TabIndex = 27;
             this.label18.Text = "Please fill in the required information below";
             // 
@@ -100,26 +104,26 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Location = new System.Drawing.Point(24, 25);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(242, 20);
+            this.label17.Size = new System.Drawing.Size(204, 17);
             this.label17.TabIndex = 26;
             this.label17.Text = "Welcome to DietBoost App!";
             // 
-            // linkLabel1
+            // linkUserAgreement
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(693, 438);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(145, 20);
-            this.linkLabel1.TabIndex = 25;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "User Agreement";
+            this.linkUserAgreement.AutoSize = true;
+            this.linkUserAgreement.Location = new System.Drawing.Point(693, 438);
+            this.linkUserAgreement.Name = "linkUserAgreement";
+            this.linkUserAgreement.Size = new System.Drawing.Size(125, 17);
+            this.linkUserAgreement.TabIndex = 25;
+            this.linkUserAgreement.TabStop = true;
+            this.linkUserAgreement.Text = "User Agreement";
             // 
             // cbUserAgreement
             // 
             this.cbUserAgreement.AutoSize = true;
             this.cbUserAgreement.Location = new System.Drawing.Point(550, 437);
             this.cbUserAgreement.Name = "cbUserAgreement";
-            this.cbUserAgreement.Size = new System.Drawing.Size(150, 24);
+            this.cbUserAgreement.Size = new System.Drawing.Size(129, 21);
             this.cbUserAgreement.TabIndex = 24;
             this.cbUserAgreement.Text = "Please accept";
             this.cbUserAgreement.UseVisualStyleBackColor = true;
@@ -147,11 +151,14 @@
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.pbPasswordMatch2);
+            this.groupBox2.Controls.Add(this.pbPasswordMatch1);
+            this.groupBox2.Controls.Add(this.lblStrength);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtPasswordRepeat);
@@ -174,22 +181,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account";
             // 
-            // label13
+            // pbPasswordMatch1
             // 
-            this.label13.AutoSize = true;
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(184, 275);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(61, 20);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "Weak!";
+            this.pbPasswordMatch1.Image = global::ProjeTaslak.Properties.Resources.check_circle_240px;
+            this.pbPasswordMatch1.Location = new System.Drawing.Point(365, 185);
+            this.pbPasswordMatch1.Name = "pbPasswordMatch1";
+            this.pbPasswordMatch1.Size = new System.Drawing.Size(16, 29);
+            this.pbPasswordMatch1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPasswordMatch1.TabIndex = 18;
+            this.pbPasswordMatch1.TabStop = false;
+            // 
+            // lblStrength
+            // 
+            this.lblStrength.AutoSize = true;
+            this.lblStrength.ForeColor = System.Drawing.Color.Red;
+            this.lblStrength.Location = new System.Drawing.Point(178, 275);
+            this.lblStrength.Name = "lblStrength";
+            this.lblStrength.Size = new System.Drawing.Size(52, 17);
+            this.lblStrength.TabIndex = 17;
+            this.lblStrength.Text = "Weak!";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(10, 275);
+            this.label11.Location = new System.Drawing.Point(8, 275);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(174, 20);
+            this.label11.Size = new System.Drawing.Size(149, 17);
             this.label11.TabIndex = 16;
             this.label11.Text = "Password Strength:";
             // 
@@ -198,52 +215,54 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(100, 148);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 20);
+            this.label10.Size = new System.Drawing.Size(59, 17);
             this.label10.TabIndex = 15;
             this.label10.Text = "Phone:";
             // 
             // txtPasswordRepeat
             // 
-            this.txtPasswordRepeat.Location = new System.Drawing.Point(188, 230);
+            this.txtPasswordRepeat.Location = new System.Drawing.Point(182, 230);
             this.txtPasswordRepeat.Name = "txtPasswordRepeat";
             this.txtPasswordRepeat.PasswordChar = '*';
-            this.txtPasswordRepeat.Size = new System.Drawing.Size(183, 26);
+            this.txtPasswordRepeat.Size = new System.Drawing.Size(183, 23);
             this.txtPasswordRepeat.TabIndex = 9;
+            this.txtPasswordRepeat.TextChanged += new System.EventHandler(this.txtPasswordRepeat_TextChanged);
             // 
             // mtxtPhone
             // 
-            this.mtxtPhone.Location = new System.Drawing.Point(188, 145);
+            this.mtxtPhone.Location = new System.Drawing.Point(182, 148);
             this.mtxtPhone.Name = "mtxtPhone";
-            this.mtxtPhone.Size = new System.Drawing.Size(183, 26);
+            this.mtxtPhone.Size = new System.Drawing.Size(183, 23);
             this.mtxtPhone.TabIndex = 14;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(188, 187);
+            this.txtPassword.Location = new System.Drawing.Point(182, 189);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(183, 26);
+            this.txtPassword.Size = new System.Drawing.Size(183, 23);
             this.txtPassword.TabIndex = 8;
+            this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(188, 103);
+            this.txtEmail.Location = new System.Drawing.Point(182, 107);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(183, 26);
+            this.txtEmail.Size = new System.Drawing.Size(183, 23);
             this.txtEmail.TabIndex = 7;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(188, 66);
+            this.txtSurname.Location = new System.Drawing.Point(182, 66);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(183, 26);
+            this.txtSurname.Size = new System.Drawing.Size(183, 23);
             this.txtSurname.TabIndex = 6;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(188, 25);
+            this.txtName.Location = new System.Drawing.Point(182, 25);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(183, 26);
+            this.txtName.Size = new System.Drawing.Size(183, 23);
             this.txtName.TabIndex = 5;
             // 
             // label2
@@ -251,7 +270,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(105, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Name:";
             // 
@@ -261,16 +280,16 @@
             this.label1.Location = new System.Drawing.Point(101, 106);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "E-mail:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 233);
+            this.label5.Location = new System.Drawing.Point(20, 234);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 20);
+            this.label5.Size = new System.Drawing.Size(139, 17);
             this.label5.TabIndex = 4;
             this.label5.Text = "Repeat Password:";
             // 
@@ -279,7 +298,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(82, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Surname:";
             // 
@@ -288,7 +307,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(77, 190);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 20);
+            this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Password:";
             // 
@@ -297,9 +316,9 @@
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.numericUpDown3);
-            this.groupBox1.Controls.Add(this.numericUpDown2);
-            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.nudHeight);
+            this.groupBox1.Controls.Add(this.nudWeightGoal);
+            this.groupBox1.Controls.Add(this.nudWeight);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label9);
@@ -321,7 +340,7 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(333, 230);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 20);
+            this.label16.Size = new System.Drawing.Size(25, 17);
             this.label16.TabIndex = 63;
             this.label16.Text = "kg";
             // 
@@ -330,7 +349,7 @@
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(333, 186);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 20);
+            this.label15.Size = new System.Drawing.Size(25, 17);
             this.label15.TabIndex = 62;
             this.label15.Text = "kg";
             // 
@@ -339,37 +358,52 @@
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(333, 141);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 20);
+            this.label14.Size = new System.Drawing.Size(28, 17);
             this.label14.TabIndex = 61;
             this.label14.Text = "cm";
             // 
-            // numericUpDown3
+            // nudHeight
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(171, 139);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(150, 26);
-            this.numericUpDown3.TabIndex = 60;
+            this.nudHeight.Location = new System.Drawing.Point(171, 139);
+            this.nudHeight.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+            this.nudHeight.Name = "nudHeight";
+            this.nudHeight.Size = new System.Drawing.Size(150, 23);
+            this.nudHeight.TabIndex = 60;
             // 
-            // numericUpDown2
+            // nudWeightGoal
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(171, 228);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(150, 26);
-            this.numericUpDown2.TabIndex = 59;
+            this.nudWeightGoal.Location = new System.Drawing.Point(171, 228);
+            this.nudWeightGoal.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
+            this.nudWeightGoal.Name = "nudWeightGoal";
+            this.nudWeightGoal.Size = new System.Drawing.Size(150, 23);
+            this.nudWeightGoal.TabIndex = 59;
             // 
-            // numericUpDown1
+            // nudWeight
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(171, 184);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(150, 26);
-            this.numericUpDown1.TabIndex = 58;
+            this.nudWeight.Location = new System.Drawing.Point(171, 184);
+            this.nudWeight.Maximum = new decimal(new int[] {
+            600,
+            0,
+            0,
+            0});
+            this.nudWeight.Name = "nudWeight";
+            this.nudWeight.Size = new System.Drawing.Size(150, 23);
+            this.nudWeight.TabIndex = 58;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(10, 230);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(118, 20);
+            this.label12.Size = new System.Drawing.Size(102, 17);
             this.label12.TabIndex = 15;
             this.label12.Text = "Weight Goal:";
             // 
@@ -378,7 +412,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(45, 54);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 20);
+            this.label6.Size = new System.Drawing.Size(67, 17);
             this.label6.TabIndex = 6;
             this.label6.Text = "Gender:";
             // 
@@ -387,7 +421,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(49, 186);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(73, 20);
+            this.label9.Size = new System.Drawing.Size(63, 17);
             this.label9.TabIndex = 10;
             this.label9.Text = "Weight:";
             // 
@@ -396,7 +430,7 @@
             this.rbMale.AutoSize = true;
             this.rbMale.Location = new System.Drawing.Point(171, 50);
             this.rbMale.Name = "rbMale";
-            this.rbMale.Size = new System.Drawing.Size(70, 24);
+            this.rbMale.Size = new System.Drawing.Size(60, 21);
             this.rbMale.TabIndex = 5;
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
@@ -407,7 +441,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(52, 141);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 20);
+            this.label8.Size = new System.Drawing.Size(60, 17);
             this.label8.TabIndex = 9;
             this.label8.Text = "Height:";
             // 
@@ -416,7 +450,7 @@
             this.rbFemale.AutoSize = true;
             this.rbFemale.Location = new System.Drawing.Point(273, 50);
             this.rbFemale.Name = "rbFemale";
-            this.rbFemale.Size = new System.Drawing.Size(91, 24);
+            this.rbFemale.Size = new System.Drawing.Size(78, 21);
             this.rbFemale.TabIndex = 6;
             this.rbFemale.TabStop = true;
             this.rbFemale.Text = "Female";
@@ -427,7 +461,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(39, 98);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 20);
+            this.label7.Size = new System.Drawing.Size(73, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "Birthday:";
             // 
@@ -436,12 +470,22 @@
             this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpBirthDay.Location = new System.Drawing.Point(171, 93);
             this.dtpBirthDay.Name = "dtpBirthDay";
-            this.dtpBirthDay.Size = new System.Drawing.Size(193, 26);
+            this.dtpBirthDay.Size = new System.Drawing.Size(193, 23);
             this.dtpBirthDay.TabIndex = 7;
+            // 
+            // pbPasswordMatch2
+            // 
+            this.pbPasswordMatch2.Image = global::ProjeTaslak.Properties.Resources.check_circle_240px;
+            this.pbPasswordMatch2.Location = new System.Drawing.Point(365, 227);
+            this.pbPasswordMatch2.Name = "pbPasswordMatch2";
+            this.pbPasswordMatch2.Size = new System.Drawing.Size(16, 29);
+            this.pbPasswordMatch2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPasswordMatch2.TabIndex = 19;
+            this.pbPasswordMatch2.TabStop = false;
             // 
             // FrmSignUp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
             this.BackgroundImage = global::ProjeTaslak.Properties.Resources.ArkaPlanDeseni;
@@ -449,7 +493,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkUserAgreement);
             this.Controls.Add(this.cbUserAgreement);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnConfirm);
@@ -465,11 +509,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPasswordMatch1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeightGoal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudWeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPasswordMatch2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,12 +526,12 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkUserAgreement;
         private System.Windows.Forms.CheckBox cbUserAgreement;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblStrength;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtPasswordRepeat;
@@ -503,9 +549,9 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudHeight;
+        private System.Windows.Forms.NumericUpDown nudWeightGoal;
+        private System.Windows.Forms.NumericUpDown nudWeight;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
@@ -514,6 +560,8 @@
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpBirthDay;
+        private System.Windows.Forms.PictureBox pbPasswordMatch1;
+        private System.Windows.Forms.PictureBox pbPasswordMatch2;
     }
 }
 

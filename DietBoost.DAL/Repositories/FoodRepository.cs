@@ -48,17 +48,31 @@ namespace DietBoost.DAL.Repositories
 
             return context.SaveChanges() > 0;
         }
-
-        public bool Delete(Food food)
+        public bool FoodActivated(Food food)
         {
-            Food deletedFood = context.Foods.Find(food.ID);
-            deletedFood.IsActive = false;
+            Food activatedFood = context.Foods.Find(food.ID);
+            activatedFood.IsActive = true;
+            return context.SaveChanges() > 0;
+            
+        }
+        public bool FoodDeactivated(Food food)
+        {
+            Food deactivatedFood = context.Foods.Find(food.ID);
+            deactivatedFood.IsActive = false;
             return context.SaveChanges() > 0;
         }
 
         public List<Food> GetFilteredFood(string text)
         {
             return context.Foods.Where(a => a.Name.ToLower().Contains(text.ToLower())).ToList();
+        }
+        public List<Food> GetFilteredFood(string text, int categoryID)
+        {
+            return context.Foods.Where(a => a.Name.ToLower().Contains(text.ToLower()) && a.CategoryID == categoryID).ToList();
+        }
+        public List<Food> GetFilteredFood(int categoryID)
+        {
+            return context.Foods.Where(a => a.CategoryID == categoryID).ToList();
         }
     }
 }
