@@ -38,12 +38,9 @@ namespace DietBoost.DAL.Repositories
             return context.SaveChanges() > 0;
         }
 
-        //public Meal GetFoodsByMealID(DateTime mealDate, MealType mealType)
-        //{
-        //    return context.Meals.Where(a => a.MealDate == mealDate && a.MealType == mealType).FirstOrDefault();
-        //}
 
-       
+
+
 
 
     }

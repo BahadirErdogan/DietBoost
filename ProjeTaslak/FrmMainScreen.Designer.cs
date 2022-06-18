@@ -32,6 +32,7 @@ namespace ProjeTaslak
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainScreen));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -139,7 +140,7 @@ namespace ProjeTaslak
             this.chartDailyPerMacros.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.LabelBackColor = System.Drawing.Color.Black;
+            series1.LabelBackColor = System.Drawing.Color.Transparent;
             series1.LabelBorderColor = System.Drawing.Color.Black;
             series1.Legend = "Legend1";
             series1.Name = "Macronutrients";
@@ -147,6 +148,8 @@ namespace ProjeTaslak
             this.chartDailyPerMacros.Size = new System.Drawing.Size(335, 260);
             this.chartDailyPerMacros.TabIndex = 71;
             this.chartDailyPerMacros.Text = "chart1";
+            title1.Name = "Daily Percentage of Macronutrients";
+            this.chartDailyPerMacros.Titles.Add(title1);
             // 
             // pictureBox1
             // 

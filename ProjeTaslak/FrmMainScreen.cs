@@ -30,6 +30,7 @@ namespace ProjeTaslak
         {
             dtpMeals.Value = DateTime.Now;
             FillListView();
+            lblTodaysCalorieIntake.Text = CalculateTodaysDailyCalorie().ToString();
 
         }
         
@@ -50,7 +51,10 @@ namespace ProjeTaslak
         }
 
 
-
+        /// <summary>
+        /// Bugüne ait öğünlerdeki toplam kaloriyi hesaplar ve decimal döner.
+        /// </summary>
+        /// <returns></returns>
         public decimal CalculateTodaysDailyCalorie()
         {
             DateTime dt = DateTime.Now;
@@ -63,7 +67,10 @@ namespace ProjeTaslak
             return dailyCalorie;
         }
 
-
+        /// <summary>
+        /// Seçili tarihe ait öğünlerdeki toplam kaloriyi hesaplar. Decimal döner.
+        /// </summary>
+        /// <returns></returns>
         public decimal CalculateSelectedDailyCalorie()
         {
             decimal totalDailyCalorie = 0;
@@ -156,10 +163,21 @@ namespace ProjeTaslak
 
         private void dtpMeals_ValueChanged(object sender, EventArgs e)
         {
-            chartDailyPerMacros.Titles.Add("Daily Percentage of Macronutrients");
-            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Fat", "10");
-            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein", "50");
-            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs", "90");
+
+            foreach (var series in chartDailyPerMacros.Series)
+            {
+                series.Points.Clear();
+            }
+
+            double fatTotal = mealDetailService.GetTotalFatFromMealsByDate(user.ID, dtpMeals.Value);
+            double carbsTotal = mealDetailService.GetTotalCarbsFromMealsByDate(user.ID, dtpMeals.Value);
+            double proteinTotal = mealDetailService.GetTotalProteinFromMealsByDate(user.ID, dtpMeals.Value);
+
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Fat", fatTotal);
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein", carbsTotal);
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs", proteinTotal);
+
+            lblSelectedDailyCalorieInTake.Text = CalculateSelectedDailyCalorie().ToString();
             
         }
     }

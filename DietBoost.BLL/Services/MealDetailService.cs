@@ -65,6 +65,39 @@ namespace DietBoost.BLL.Services
             return mealDetailRepository.GetMealDetailByMealIdAndFoodId(mealId, foodId);
         }
 
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların yağlarının değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalFatFromMealsByDate(int userID, DateTime date)
+        {
+            return mealDetailRepository.GetTotalFatFromMealsByDate(userID, date);
+        }
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların karbonhidrat değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalCarbsFromMealsByDate(int userID, DateTime date)
+        {
+            return mealDetailRepository.GetTotalCarbsFromMealsByDate(userID, date);
+        }
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların proteinlerinin değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalProteinFromMealsByDate(int userID, DateTime date)
+        {
+            return mealDetailRepository.GetTotalProteinFromMealsByDate(userID, date);
+        }
+
     }
 
 }
