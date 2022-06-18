@@ -23,14 +23,14 @@ namespace ProjeTaslak
             mealDetailService = new MealDetailService();
             lblUserName.Text = user.FullName.ToUpper();
             lblRecommendedCalorie.Text = CalculateRecomendedDailyCalorie(user).ToString();
-            lblSelectedDailyCalorieInTake.Text = CalculateSelectedDailyCalorie().ToString();
-            lblTodaysCalorieIntake.Text = CalculateTodaysDailyCalorie().ToString();
+            lblSelectedDailyCalorieInTake.Text = CalculateDailyCalorie(dtpMeals.Value).ToString();
+            lblTodaysCalorieIntake.Text = CalculateDailyCalorie().ToString();
         }
         private void FrmMainScreen_Load(object sender, EventArgs e)
         {
             dtpMeals.Value = DateTime.Now;
             FillListView();
-            lblTodaysCalorieIntake.Text = CalculateTodaysDailyCalorie().ToString();
+            lblTodaysCalorieIntake.Text = CalculateDailyCalorie().ToString();
 
         }
         
@@ -50,37 +50,43 @@ namespace ProjeTaslak
             }
         }
 
+ 
 
         /// <summary>
         /// Bugüne ait öğünlerdeki toplam kaloriyi hesaplar ve decimal döner.
         /// </summary>
-        /// <returns></returns>
-        public decimal CalculateTodaysDailyCalorie()
+        /// <returns>decimal</returns>
+        public decimal CalculateDailyCalorie()
         {
-            DateTime dt = DateTime.Now;
+            DateTime dt = DateTime.Today;
             decimal dailyCalorie = 0;
             List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt);
             foreach (var item in meals)
             {
-                dailyCalorie += item.Food.Calorie * item.Quantity;
+                dailyCalorie += item.TotalCalorie;
             }
             return dailyCalorie;
         }
 
+
         /// <summary>
         /// Seçili tarihe ait öğünlerdeki toplam kaloriyi hesaplar. Decimal döner.
         /// </summary>
-        /// <returns></returns>
-        public decimal CalculateSelectedDailyCalorie()
+        /// <param name="date"></param>
+        /// <returns>decimal</returns>
+        public decimal CalculateDailyCalorie(DateTime date)
         {
-            decimal totalDailyCalorie = 0;
-            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpMeals.Value);
+            DateTime dt = date;
+            decimal dailyCalorie = 0;
+            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt);
             foreach (var item in meals)
             {
-                totalDailyCalorie += item.Food.Calorie * item.Quantity;
+                dailyCalorie += item.TotalCalorie;
             }
-            return totalDailyCalorie;
+            return dailyCalorie;
         }
+
+
 
         /// <summary>
         /// HARRİS- BENEDİCT DENKLEMİ(kkal/gün) ne göre kcal hesapları yapıp günlük alınması gereken kalori limitini hesaplar.
@@ -123,6 +129,7 @@ namespace ProjeTaslak
             }
             return calorieLimit;
         }
+        
         private void btnMeals_Click(object sender, EventArgs e)
         {
             FrmMeal frmMeal = new FrmMeal(user);
@@ -130,6 +137,7 @@ namespace ProjeTaslak
             frmMeal.ShowDialog();
             this.Show();
         }
+
         private void btnReports_Click(object sender, EventArgs e)
         {
             FrmReports frmReports = new FrmReports(user);
@@ -177,7 +185,7 @@ namespace ProjeTaslak
             chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein", carbsTotal);
             chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs", proteinTotal);
 
-            lblSelectedDailyCalorieInTake.Text = CalculateSelectedDailyCalorie().ToString();
+            lblSelectedDailyCalorieInTake.Text = CalculateDailyCalorie(dtpMeals.Value).ToString();
             
         }
     }

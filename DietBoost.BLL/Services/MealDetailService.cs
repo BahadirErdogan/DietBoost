@@ -98,6 +98,7 @@ namespace DietBoost.BLL.Services
             return mealDetailRepository.GetTotalProteinFromMealsByDate(userID, date);
         }
 
+
     }
 
 }

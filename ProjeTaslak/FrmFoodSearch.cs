@@ -18,16 +18,24 @@ namespace ProjeTaslak
         FoodService foodService;
         MealDetailService mealDetailService;
         CategoryService categoryService;
-        public FrmFoodSearch()
+        User user;
+        public FrmFoodSearch(User _user)
         {
             InitializeComponent();
-            
+            btnAddFood.Text = "Add";
             mealService = new MealService();
             foodService = new FoodService();
             mealDetailService = new MealDetailService();
             categoryService = new CategoryService();
+            user = _user;
             Reload();
         }
+
+        public FrmFoodSearch(User _user, MealDetail _mealDetail)
+        {
+            btnAddFood.Text = "Update";
+        }
+
         private void Reload()
         {
 
@@ -117,6 +125,9 @@ namespace ProjeTaslak
             }
         }
 
-        
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

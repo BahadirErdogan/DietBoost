@@ -121,9 +121,9 @@ namespace ProjeTaslak
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label8.Location = new System.Drawing.Point(507, 595);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 16);
+            this.label8.Size = new System.Drawing.Size(110, 16);
             this.label8.TabIndex = 72;
-            this.label8.Text = "Total Callories:";
+            this.label8.Text = "Total Calories:";
             // 
             // chartDailyPerMacros
             // 

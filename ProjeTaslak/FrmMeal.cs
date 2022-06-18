@@ -16,26 +16,38 @@ namespace ProjeTaslak
     public partial class FrmMeal : Form
     {
         MealService mealService;
-        FoodService foodService;
         MealDetailService mealDetailService;
         User user;
+
         public FrmMeal(User _user)
         {
             InitializeComponent();
             user = _user;
             mealService = new MealService();
-            foodService = new FoodService();
             mealDetailService = new MealDetailService();
-            Reload();
         }
-        private void Reload()
+
+        private void FrmMeal_Load(object sender, EventArgs e)
         {
-            
-            FillListView();
-            lblSelectedDailyCalorieInTake.Text = CalculateSelectedDailyCalorie().ToString();
             FillMealComboBox();
+            FillListView();
+            lblSelectedMealTotalCalorie.Text = CalculateSelectedDailyCalorie().ToString();
 
         }
+
+        private void cbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillListView();
+            lblSelectedMealTotalCalorie.Text = CalculateSelectedDailyCalorie().ToString();
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+            FillListView();
+            lblSelectedMealTotalCalorie.Text = CalculateSelectedDailyCalorie().ToString();
+        }
+
+
         /// <summary>
         /// Meal comboxına mealtype enum'ı içindeki öğünleri doldurur.
         /// </summary>
@@ -49,52 +61,120 @@ namespace ProjeTaslak
             }
         }
 
+        /// <summary>
+        /// ListView'i doldurur.
+        /// </summary>
         private void FillListView()
         {
+            MealType mealType = GetMealTypeFromComboBox();
 
-            lvMealDetails.Items.Clear();
-            if (cbMeals.SelectedItem != null)
+            if (cbMeals.SelectedIndex > 0)
             {
-                MealDetail meal = mealDetailService.GetMealDetailByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
-                //List<MealDetail> meals = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
-               
-               // foreach (var item in meals)
+                List<MealDetail> mealDetails = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, mealType);
+
+                ListViewItem lvi;
+
+                foreach (var item in mealDetails)
                 {
-
-
-                    string[] items = { meal.Quantity.ToString(), meal.Food.Name, (meal.Food.Calorie * meal.Quantity).ToString() };
-                    ListViewItem lvi = new ListViewItem(items);
-                    lvi.Tag = meal.Food.Calorie * meal.Quantity;
+                    lvi = new ListViewItem();
+                    lvi.Text = item.Quantity.ToString();
+                    lvi.SubItems.Add(item.Food.Name);
+                    lvi.SubItems.Add(item.TotalCalorie.ToString());
                     lvMealDetails.Items.Add(lvi);
                 }
             }
-            else return;
+
+
+            #region Berk'in ilk kodu
+            //lvMealDetails.Items.Clear();
+            //if (cbMeals.SelectedItem != null)
+            //{
+            //    MealDetail meal = mealDetailService.GetMealDetailByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
+            //    //List<MealDetail> meals = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
+
+            //   // foreach (var item in meals)
+            //    {
+
+
+            //        string[] items = { meal.Quantity.ToString(), meal.Food.Name, (meal.Food.Calorie * meal.Quantity).ToString() };
+            //        ListViewItem lvi = new ListViewItem(items);
+            //        lvi.Tag = meal.Food.Calorie * meal.Quantity;
+            //        lvMealDetails.Items.Add(lvi);
+            //    }
+            //}
+            //else return;
+            #endregion
         }
+
+        /// <summary>
+        /// Seçili tarih ve öğündeki alınan toplam kaloriyi döndürür.
+        /// </summary>
+        /// <returns>decimal</returns>
         public decimal CalculateSelectedDailyCalorie()
         {
+            MealType mealType = GetMealTypeFromComboBox();
             decimal totalDailyCalorie = 0;
-            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpDate.Value);
+            List<MealDetail> meals = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, mealType);
+                
             foreach (var item in meals)
             {
-                totalDailyCalorie += item.Food.Calorie * item.Quantity;
+                totalDailyCalorie += item.TotalCalorie;
             }
             return totalDailyCalorie;
+        }
+
+
+        /// <summary>
+        /// Combobox'da seçilen öğüne göre MealType tipinde mealtype döner. (FillListView içeriisndeki servisde kullanıldı.)
+        /// </summary>
+        /// <returns></returns>
+        public MealType GetMealTypeFromComboBox()
+        {
+            MealType mealType;
+
+            switch (cbMeals.SelectedIndex)
+            {
+                case 0:
+                    mealType = MealType.Breakfast;
+                    break;
+                case 1:
+                    mealType = MealType.Elevenses;
+                    break;
+                case 2:
+                    mealType = MealType.Lunch;
+                    break;
+                case 3:
+                    mealType = MealType.Snack;
+                    break;
+                default:
+                    mealType = MealType.Dinner;
+                    break;
+            }
+
+            return mealType;
+
         }
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
 
-
-            FrmFoodSearch frmFoodSearch = new FrmFoodSearch();
+            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user);
             this.Hide();
             frmFoodSearch.ShowDialog();
             this.Show();
-            
+
         }
 
-        private void cbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnUpdateMeal_Click(object sender, EventArgs e)
         {
-            FillListView();
+           
+            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user);
+            this.Hide();
+            frmFoodSearch.ShowDialog();
+            this.Show();
+
         }
+
+    
     }
 }
