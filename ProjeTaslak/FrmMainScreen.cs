@@ -34,8 +34,6 @@ namespace ProjeTaslak
         }
         
 
-        
-
         private void FillListView()
         {
 
@@ -76,6 +74,7 @@ namespace ProjeTaslak
             }
             return totalDailyCalorie;
         }
+
         /// <summary>
         /// HARRİS- BENEDİCT DENKLEMİ(kkal/gün) ne göre kcal hesapları yapıp günlük alınması gereken kalori limitini hesaplar.
         /// BMH(erkek) =66.5+13.75A+5.0B-6.77Y , BMH(kadın)=655.1+9.56A+1.85B-4.67Y
@@ -130,6 +129,38 @@ namespace ProjeTaslak
             this.Hide();
             frmReports.ShowDialog();
             this.Show();
+        }
+
+        private void updateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Your version is up to date.");
+        }
+
+        private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This project was developed by\n\nBahadır Erdoğan,\nBerk Başdemir,\nEnes Cihan,\nSinem Pamık\n\nas part of the BilgeAdam-Boost Program.\n\nContact Information:\n\nbahadirerdogan@outlook.com.tr\nbasdemirberk@gmail.com\nens.chn35@gmail.com\nsnmpmk93@gmail.com");
+        }
+
+        private void accountToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAccount frmAccount = new FrmAccount();
+            this.Hide();
+            frmAccount.ShowDialog();
+            this.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();       
+        }
+
+        private void dtpMeals_ValueChanged(object sender, EventArgs e)
+        {
+            chartDailyPerMacros.Titles.Add("Daily Percentage of Macronutrients");
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Fat", "10");
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein", "50");
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs", "90");
+            
         }
     }
 }

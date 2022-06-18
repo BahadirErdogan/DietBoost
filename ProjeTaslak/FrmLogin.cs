@@ -65,6 +65,7 @@ namespace ProjeTaslak
                 MessageBox.Show(ex.Message);
             }
 
+
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

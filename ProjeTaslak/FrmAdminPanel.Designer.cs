@@ -86,7 +86,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label10.Location = new System.Drawing.Point(21, 18);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(184, 29);
+            this.label10.Size = new System.Drawing.Size(148, 24);
             this.label10.TabIndex = 24;
             this.label10.Text = "ADMIN PANEL";
             // 
@@ -194,7 +194,7 @@
             this.cbCategory.FormattingEnabled = true;
             this.cbCategory.Location = new System.Drawing.Point(241, 253);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(121, 28);
+            this.cbCategory.Size = new System.Drawing.Size(121, 24);
             this.cbCategory.TabIndex = 30;
             // 
             // label11
@@ -202,7 +202,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(17, 250);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(81, 20);
+            this.label11.Size = new System.Drawing.Size(69, 17);
             this.label11.TabIndex = 29;
             this.label11.Text = "Category:";
             // 
@@ -215,7 +215,7 @@
             0,
             0});
             this.nudGramPortion.Name = "nudGramPortion";
-            this.nudGramPortion.Size = new System.Drawing.Size(88, 26);
+            this.nudGramPortion.Size = new System.Drawing.Size(88, 23);
             this.nudGramPortion.TabIndex = 28;
             // 
             // nudGramPiece
@@ -227,7 +227,7 @@
             0,
             0});
             this.nudGramPiece.Name = "nudGramPiece";
-            this.nudGramPiece.Size = new System.Drawing.Size(88, 26);
+            this.nudGramPiece.Size = new System.Drawing.Size(88, 23);
             this.nudGramPiece.TabIndex = 27;
             // 
             // nudProtein
@@ -239,7 +239,7 @@
             0,
             0});
             this.nudProtein.Name = "nudProtein";
-            this.nudProtein.Size = new System.Drawing.Size(88, 26);
+            this.nudProtein.Size = new System.Drawing.Size(88, 23);
             this.nudProtein.TabIndex = 26;
             // 
             // nudCarbs
@@ -251,7 +251,7 @@
             0,
             0});
             this.nudCarbs.Name = "nudCarbs";
-            this.nudCarbs.Size = new System.Drawing.Size(88, 26);
+            this.nudCarbs.Size = new System.Drawing.Size(88, 23);
             this.nudCarbs.TabIndex = 25;
             // 
             // nudFat
@@ -263,7 +263,7 @@
             0,
             0});
             this.nudFat.Name = "nudFat";
-            this.nudFat.Size = new System.Drawing.Size(88, 26);
+            this.nudFat.Size = new System.Drawing.Size(88, 23);
             this.nudFat.TabIndex = 24;
             // 
             // nudCalorie
@@ -275,7 +275,7 @@
             0,
             0});
             this.nudCalorie.Name = "nudCalorie";
-            this.nudCalorie.Size = new System.Drawing.Size(88, 26);
+            this.nudCalorie.Size = new System.Drawing.Size(88, 23);
             this.nudCalorie.TabIndex = 23;
             // 
             // btnUpdateFood
@@ -309,7 +309,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(364, 18);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(60, 20);
+            this.label9.Size = new System.Drawing.Size(51, 17);
             this.label9.TabIndex = 20;
             this.label9.Text = "Foods:";
             // 
@@ -341,7 +341,7 @@
             // 
             this.txtFoodName.Location = new System.Drawing.Point(274, 41);
             this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(88, 26);
+            this.txtFoodName.Size = new System.Drawing.Size(88, 23);
             this.txtFoodName.TabIndex = 18;
             // 
             // label8
@@ -349,7 +349,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(17, 220);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(260, 20);
+            this.label8.Size = new System.Drawing.Size(218, 17);
             this.label8.TabIndex = 17;
             this.label8.Text = "How many grams is one portion ?";
             // 
@@ -358,7 +358,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(18, 290);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 20);
+            this.label7.Size = new System.Drawing.Size(50, 17);
             this.label7.TabIndex = 16;
             this.label7.Text = "Image:";
             // 
@@ -379,7 +379,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(17, 189);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 20);
+            this.label6.Size = new System.Drawing.Size(204, 17);
             this.label6.TabIndex = 15;
             this.label6.Text = "How many grams is one piece?";
             // 
@@ -388,7 +388,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(17, 158);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 20);
+            this.label5.Size = new System.Drawing.Size(115, 17);
             this.label5.TabIndex = 14;
             this.label5.Text = "Protein% (100g):";
             // 
@@ -397,7 +397,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(17, 127);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 20);
+            this.label4.Size = new System.Drawing.Size(107, 17);
             this.label4.TabIndex = 13;
             this.label4.Text = "Carbs% (100g):";
             // 
@@ -406,7 +406,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(17, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
+            this.label3.Size = new System.Drawing.Size(102, 17);
             this.label3.TabIndex = 12;
             this.label3.Text = "Calorie (100g):";
             // 
@@ -415,7 +415,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 20);
+            this.label2.Size = new System.Drawing.Size(90, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Fat% (100g):";
             // 
@@ -424,7 +424,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.Size = new System.Drawing.Size(81, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "FoodName:";
             // 
@@ -432,7 +432,7 @@
             // 
             this.txtImagePath.Location = new System.Drawing.Point(22, 315);
             this.txtImagePath.Name = "txtImagePath";
-            this.txtImagePath.Size = new System.Drawing.Size(257, 26);
+            this.txtImagePath.Size = new System.Drawing.Size(257, 23);
             this.txtImagePath.TabIndex = 8;
             // 
             // groupBox2
@@ -454,7 +454,7 @@
             // 
             this.txtCategoryName.Location = new System.Drawing.Point(153, 42);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(172, 26);
+            this.txtCategoryName.Size = new System.Drawing.Size(172, 23);
             this.txtCategoryName.TabIndex = 31;
             // 
             // label12
@@ -462,7 +462,7 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(17, 43);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(130, 20);
+            this.label12.Size = new System.Drawing.Size(110, 17);
             this.label12.TabIndex = 31;
             this.label12.Text = "Category Name:";
             // 
@@ -494,7 +494,7 @@
             // 
             // FrmAdminPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
             this.ClientSize = new System.Drawing.Size(1103, 625);

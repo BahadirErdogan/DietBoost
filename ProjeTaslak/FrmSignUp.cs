@@ -115,7 +115,6 @@ namespace ProjeTaslak
         }
 
 
-
         /// <summary>
         /// 2 Textboxdaki şifrelerin eşleşip eşleşmediğinin kontrol eder. Eşleşiyorsa yeşil tik işaretini visible yapar.
         /// </summary>

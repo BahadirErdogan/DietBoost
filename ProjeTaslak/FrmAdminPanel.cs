@@ -32,6 +32,7 @@ namespace ProjeTaslak
             ListUsers();
             ListFoods();
             FillCategoryComboBox();
+            SetNumericUpDowns();
         }
         private void Reload()
         {
@@ -187,7 +188,14 @@ namespace ProjeTaslak
 
         private void btnReloadFoodList_Click(object sender, EventArgs e)
         {
+
             ListFoods();
+        }
+
+        private void SetNumericUpDowns()
+        {
+            nudCalorie.Increment = 0.5m;
+   
         }
     }
 }
