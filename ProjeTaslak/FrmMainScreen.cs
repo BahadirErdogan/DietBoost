@@ -132,7 +132,7 @@ namespace ProjeTaslak
         }
         private void btnReports_Click(object sender, EventArgs e)
         {
-            FrmReports frmReports = new FrmReports();
+            FrmReports frmReports = new FrmReports(user);
             this.Hide();
             frmReports.ShowDialog();
             this.Show();

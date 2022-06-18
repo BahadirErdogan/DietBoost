@@ -184,6 +184,7 @@
             this.cbMeals.Name = "cbMeals";
             this.cbMeals.Size = new System.Drawing.Size(155, 28);
             this.cbMeals.TabIndex = 51;
+            this.cbMeals.SelectedIndexChanged += new System.EventHandler(this.cbMeals_SelectedIndexChanged);
             // 
             // btnRemoveFood
             // 

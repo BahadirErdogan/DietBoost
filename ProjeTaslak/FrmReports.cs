@@ -15,46 +15,110 @@ namespace ProjeTaslak
 {
     public partial class FrmReports : Form
     {
+        User user;
         CategoryService categoryService;
         DietBoostDbContext context;
-        public FrmReports()
+        public FrmReports(User _user)
         {
             InitializeComponent();
             categoryService = new CategoryService();
             context = new DietBoostDbContext();
+            user = _user;
+            lblFullName.Text =user.FullName.ToUpper();
+           
+        }
+        private void FrmReports_Load(object sender, EventArgs e)
+        {
+            
+            dgvReports.DataSource = null;
+           
+            List<string> raporlar = new List<string>();
+            raporlar.Add("Reports");
+            raporlar.Add("Meal Based Daily Report");
+            raporlar.Add("Total Calories Intake Report");
+            raporlar.Add("Comparison Report");
+            raporlar.Add("Number Of Foods Eaten Per Meal ");
+            raporlar.Add("Most Eaten Food(Top3)");
+            cbReports.DataSource = raporlar;
+            
+
         }
 
         private void cbReports_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(cbReports.Text)) MessageBox.Show("Failed.");
-            else
-            {
-                List<string> raporlar = new List<string> { "Gün Sonu  Raporu", "Kıyas Raporları", "Yemek Çeşidi Raporu" };
-                cbReports.DataSource=raporlar;
-                
 
-                if (cbReports.SelectedIndex == 0)
+
+
+            //Öğün Bazlı Günlük Rapor
+            if (cbReports.SelectedIndex == 1)
                 {
-                    dataGridView1.DataSource = context.MealDetails.GroupBy(G => G.MealID).Select(a => new
+                    dgvReports.DataSource = context.MealDetails.Where(a=>a.Meal.MealDate==DateTime.Today 
+                    && user.ID== a.Meal.UserID).GroupBy(g => g.MealID).Select(b => new
                     {
-                        
-                        Sum = a.Sum(T => T.Food.PortionCalorie*T.Quantity),
-                        
-                    }).ToList();
-                }
-                else if(cbReports.SelectedIndex == 1)
-                {
-                    //dataGridView1.DataSource=(from F in context.Foods join Md in context.MealDetails on F.ID equals Md.FoodID 
-                    //                          join M in context.Meals on Md.MealID equals M.ID
-                    //                          select new
-                    //                          {
-                    //                              F.Name,
-                    //                              M.MealType
-                    //                          }).ToList();
 
-                    
+                        Username = user.FullName,
+                        MealId = b.Key,
+                        MealType = b.Select(a => a.Meal.MealType),
+                        TotalCalorie=b.Sum(a=>a.TotalCalorie)
+
+                    }).ToList();
+                                               
                 }
-            }
+                //Günlük alınan toplam kalori
+                else if (cbReports.SelectedIndex == 2)
+                {
+                    dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.MealDate == DateTime.Today
+                    && user.ID == a.Meal.UserID).GroupBy(g => g.Meal.MealDate).Select(b => new
+                    {
+
+                        Username = user.FullName,
+                        mealDate= b.Key,
+                        TotalCalorie = b.Sum(a => a.TotalCalorie)
+
+                    }).ToList();
+
+                }
+                //karşılaştırma Raporu
+                else if(cbReports.SelectedIndex == 3)
+                {
+                dgvReports.DataSource = context.MealDetails.GroupBy(a => a.Meal.MealType).Select(a => new
+                {
+                    ToBeCompared = user.FullName,
+                    Mealtype = a.Key,
+                    CategoryName = a.Select(b => b.Food.Category.Name)
+                 
+                }).ToList();
+                }
+                //Öğünlerde hangi Yemeklerin ne kadar yendiği
+                else if (cbReports.SelectedIndex == 4)
+                {
+                    dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.UserID == user.ID).GroupBy(a => a.FoodID).Select(b => new
+                    {
+                        FoodId = b.Key,
+                        FoodName = b.Select(a => a.Food.Name),
+                        MealName = b.Select(a => a.Meal.MealType),
+                        Quantity = b.Sum(a => a.Quantity)
+
+                    }).OrderByDescending(T => T.Quantity).ToList();
+                }
+                //En  çok yenen 3 yemek 
+                else if(cbReports.SelectedIndex == 5)
+                {
+                    dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.UserID == user.ID).GroupBy(a => a.FoodID).Select(b => new
+                    {
+                        FoodId = b.Key,
+                        FoodName = b.Select(a => a.Food.Name),
+                        Quantity = b.Sum(a => a.Quantity)
+                    }).OrderByDescending(c => c.Quantity).Take(3).ToList();
+                }
+                else
+                {
+                    dgvReports.DataSource = null;
+                }
+
         }
+
+
     }
 }
+

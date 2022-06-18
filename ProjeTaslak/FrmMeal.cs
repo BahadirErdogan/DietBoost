@@ -36,6 +36,9 @@ namespace ProjeTaslak
             FillMealComboBox();
 
         }
+        /// <summary>
+        /// Meal comboxına mealtype enum'ı içindeki öğünleri doldurur.
+        /// </summary>
         public void FillMealComboBox()
         {
             cbMeals.Items.Clear();
@@ -54,13 +57,16 @@ namespace ProjeTaslak
             {
                 MealDetail meal = mealDetailService.GetMealDetailByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
                 //List<MealDetail> meals = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
-                //foreach (var item in meals)
-                //{
+               
+               // foreach (var item in meals)
+                {
+
+
                     string[] items = { meal.Quantity.ToString(), meal.Food.Name, (meal.Food.Calorie * meal.Quantity).ToString() };
                     ListViewItem lvi = new ListViewItem(items);
                     lvi.Tag = meal.Food.Calorie * meal.Quantity;
                     lvMealDetails.Items.Add(lvi);
-                //}
+                }
             }
             else return;
         }
@@ -84,6 +90,11 @@ namespace ProjeTaslak
             frmFoodSearch.ShowDialog();
             this.Show();
             
+        }
+
+        private void cbMeals_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillListView();
         }
     }
 }
