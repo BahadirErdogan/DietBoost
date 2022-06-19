@@ -48,6 +48,7 @@ namespace DietBoost.BLL.Services
             }
             return mealDetailRepository.GetMealDetailByMealDateAndMealType(mealDate, mealType);
         }
+
         /// <summary>
         /// Meal formunda güncelleme butonuna basıldığında foodId ve MealId'ye göre 
         /// Meal Details döndürüp Food formunda bu meal detailsin bilgilerini kullanmak için kullanacağız. 
@@ -108,10 +109,69 @@ namespace DietBoost.BLL.Services
         {
             if (string.IsNullOrWhiteSpace(mealDetail.PortionType.ToString()) || string.IsNullOrWhiteSpace(mealDetail.Quantity.ToString())) throw new Exception("PortionType and Quantity are required.");
             return mealDetailRepository.Insert(mealDetail);
+           
         }
+
+        //public bool Insert(MealDetail _mealDetail,PortionType _portionType)
+        //{
+        //    PortionType portionType = _portionType;
+        //    MealDetail mealDetail = _mealDetail;
+
+        //    if (string.IsNullOrWhiteSpace(mealDetail.PortionType.ToString()) || string.IsNullOrWhiteSpace(mealDetail.Quantity.ToString())) throw new Exception("PortionType and Quantity are required.");
+            
+        //    if (portionType==PortionType.Piece)
+        //    {
+        //        mealDetail.TotalCalorie = mealDetail.Food.PieceCalorie * mealDetail.Quantity;
+        //    }
+        //    else if (portionType == PortionType.Gram)
+        //    {
+        //        mealDetail.TotalCalorie = mealDetail.Food.GramCalorie  * mealDetail.Quantity;
+        //    }
+        //    else if(portionType == PortionType.Portion)
+        //    {
+        //        mealDetail.TotalCalorie = mealDetail.Food.PortionCalorie * mealDetail.Quantity;
+        //    }
+        //    else
+        //    {
+        //        throw new Exception("Error");
+        //    }
+
+        //    return mealDetailRepository.Insert(mealDetail);
+        //}
+
+
+
+        //{
+        //    get { return _totalCalorie; }
+        //    set
+        //    {
+        //        if (PortionType == PortionType.Piece)
+        //        {
+        //            value = Food.PieceCalorie * Quantity;
+        //        }
+        //        else if (PortionType == PortionType.Gram)
+        //        {
+        //            value = Food.GramCalorie * Quantity;
+        //        }
+        //        else
+        //        {
+        //            value = Food.PortionCalorie * Quantity;
+        //        }
+        //    }
+        //}
+
+
+
+
+        //public List<MealDetail> GetAllMealDetails()
+        //{
+        //    return mealDetailRepository.GetAllMealDetails();
+        //}
 
         //UserIdye göre bütün Mealdetailleri çekecek metod oluşturuyoruz. 
 
     }
+
+
 
 }

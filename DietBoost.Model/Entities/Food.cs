@@ -13,9 +13,9 @@ namespace ProjeTaslak.Entities
         {
             MealDetails = new HashSet<MealDetail>();
         }
-        private decimal _pieceCalorie;
-        private decimal _portionCalorie;
-        private decimal _gramCalorie;
+        //private decimal _pieceCalorie;
+        //private decimal _portionCalorie;
+        //private decimal _gramCalorie;
         public string Name { get; set; }
         public decimal Calorie { get; set; }
         public decimal Fat { get; set; }
@@ -24,9 +24,12 @@ namespace ProjeTaslak.Entities
         public decimal PieceGram { get; set; }
         public decimal PortionGram { get; set; }
 
-        public decimal PieceCalorie { get => _pieceCalorie; set => _pieceCalorie = (Calorie / 100) * PieceGram; }
-        public decimal PortionCalorie { get => _portionCalorie; set => _portionCalorie = (Calorie / 100) * PortionGram; }
-        public decimal GramCalorie { get => _gramCalorie; set => _gramCalorie = (Calorie / 100); }
+        //public decimal PieceCalorie { get { return _pieceCalorie; }  set { value= (Calorie / 100) * PieceGram; }  }
+        //public decimal PortionCalorie { get { return _portionCalorie; }  set { value = (Calorie / 100) * PortionGram; } }
+        //public decimal GramCalorie { get { return _gramCalorie; }  set { value = (Calorie / 100); } }
+        public decimal PieceCalorie { get; set; }
+        public decimal PortionCalorie { get; set; }
+        public decimal GramCalorie { get; set; }
 
         public string Image { get; set; }
         public bool IsActive { get; set; }

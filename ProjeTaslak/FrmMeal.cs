@@ -70,6 +70,7 @@ namespace ProjeTaslak
 
             if (cbMeals.SelectedIndex > 0)
             {
+
                 List<MealDetail> mealDetails = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, mealType);
 
                 ListViewItem lvi;
@@ -161,6 +162,8 @@ namespace ProjeTaslak
             meal.MealDate=dtpDate.Value;
             meal.MealType=GetMealTypeFromComboBox();
             meal.UserID = user.ID;
+            meal.CreationDate=DateTime.Now;
+            mealService.Insert(meal);
             FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user,meal);
             this.Hide();
             frmFoodSearch.ShowDialog();

@@ -14,26 +14,9 @@ namespace ProjeTaslak.Entities
         public int FoodID { get; set; }
         public int Quantity { get; set; }
 
-        private decimal _totalCalorie;
-        public decimal TotalCalorie
-        {
-            get { return _totalCalorie; }
-            set
-            {
-                if (PortionType == PortionType.Piece)
-                {
-                    _totalCalorie = Food.PieceCalorie * Quantity;
-                }
-                else if (PortionType == PortionType.Gram)
-                {
-                    _totalCalorie = Food.GramCalorie * Quantity;
-                }
-                else
-                {
-                    _totalCalorie = Food.PortionCalorie * Quantity;
-                }
-            }
-        }
+        
+        public decimal TotalCalorie { get; set; }
+       
 
         public PortionType PortionType { get; set; }
 

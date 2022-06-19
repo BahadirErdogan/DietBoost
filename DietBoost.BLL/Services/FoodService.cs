@@ -67,6 +67,10 @@ namespace DietBoost.BLL.Services
             {
                 throw new Exception("Please fill all requirements.");
             }
+           
+            food.PieceCalorie = (food.Calorie) / 100 * food.PieceGram;
+            food.PortionCalorie = (food.Calorie) / 100 * food.PortionGram;
+            food.GramCalorie = (food.Calorie) / 100;
             return foodRepository.Insert(food);
         }
         /// <summary>
@@ -126,6 +130,7 @@ namespace DietBoost.BLL.Services
         {
             return foodRepository.GetFilteredFood(categoryID);
         }
+        
 
     }
     

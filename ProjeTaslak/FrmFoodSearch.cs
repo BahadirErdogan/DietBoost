@@ -143,13 +143,14 @@ namespace ProjeTaslak
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
+            PortionType portionType=GetPortionTypeFromComboBox();
             MealDetail mealDetail = new MealDetail();
             //mealDetail.Food.Name=(lvFoods.SelectedItems[0].Text);
             mealDetail.FoodID = (int)lvFoods.SelectedItems[0].Tag;
             mealDetail.Quantity = (int)nudQuantity.Value;
             mealDetail.PortionType = GetPortionTypeFromComboBox();
             mealDetail.MealID = meal.ID;
-            mealDetailService.Insert(mealDetail);
+            mealDetailService.Insert(mealDetail/*portionType*/);
            
         }
         public PortionType GetPortionTypeFromComboBox()
