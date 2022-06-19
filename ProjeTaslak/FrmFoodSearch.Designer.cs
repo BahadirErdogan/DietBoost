@@ -74,7 +74,7 @@
             this.txtSearchFood.Location = new System.Drawing.Point(246, -84);
             this.txtSearchFood.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearchFood.Name = "txtSearchFood";
-            this.txtSearchFood.Size = new System.Drawing.Size(279, 23);
+            this.txtSearchFood.Size = new System.Drawing.Size(279, 26);
             this.txtSearchFood.TabIndex = 41;
             // 
             // label1
@@ -83,7 +83,7 @@
             this.label1.Location = new System.Drawing.Point(771, -48);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 17);
+            this.label1.Size = new System.Drawing.Size(90, 20);
             this.label1.TabIndex = 38;
             this.label1.Text = "Categories";
             // 
@@ -94,7 +94,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label9.Location = new System.Drawing.Point(528, 240);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 15);
+            this.label9.Size = new System.Drawing.Size(55, 18);
             this.label9.TabIndex = 101;
             this.label9.Text = "(100gr)";
             // 
@@ -106,7 +106,7 @@
             this.label10.Location = new System.Drawing.Point(526, 215);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(101, 20);
+            this.label10.Size = new System.Drawing.Size(123, 25);
             this.label10.TabIndex = 100;
             this.label10.Text = "Food Name";
             // 
@@ -116,7 +116,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label8.Location = new System.Drawing.Point(671, 319);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 17);
+            this.label8.Size = new System.Drawing.Size(40, 20);
             this.label8.TabIndex = 99;
             this.label8.Text = "cals";
             // 
@@ -126,7 +126,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label7.Location = new System.Drawing.Point(671, 299);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 17);
+            this.label7.Size = new System.Drawing.Size(31, 20);
             this.label7.TabIndex = 98;
             this.label7.Text = "XX";
             // 
@@ -208,7 +208,7 @@
             this.cbCategories.FormattingEnabled = true;
             this.cbCategories.Location = new System.Drawing.Point(159, 21);
             this.cbCategories.Name = "cbCategories";
-            this.cbCategories.Size = new System.Drawing.Size(329, 24);
+            this.cbCategories.Size = new System.Drawing.Size(329, 28);
             this.cbCategories.TabIndex = 91;
             this.cbCategories.SelectedIndexChanged += new System.EventHandler(this.cbCategories_SelectedIndexChanged);
             // 
@@ -219,7 +219,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label6.Location = new System.Drawing.Point(56, 104);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 16);
+            this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 90;
             this.label6.Text = "Foods";
             // 
@@ -228,7 +228,7 @@
             this.nudQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.nudQuantity.Location = new System.Drawing.Point(189, 312);
             this.nudQuantity.Name = "nudQuantity";
-            this.nudQuantity.Size = new System.Drawing.Size(80, 23);
+            this.nudQuantity.Size = new System.Drawing.Size(80, 26);
             this.nudQuantity.TabIndex = 89;
             // 
             // label5
@@ -238,7 +238,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label5.Location = new System.Drawing.Point(56, 347);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 16);
+            this.label5.Size = new System.Drawing.Size(127, 20);
             this.label5.TabIndex = 88;
             this.label5.Text = "Portion Type :";
             // 
@@ -247,7 +247,7 @@
             this.cbPortionType.FormattingEnabled = true;
             this.cbPortionType.Location = new System.Drawing.Point(189, 344);
             this.cbPortionType.Name = "cbPortionType";
-            this.cbPortionType.Size = new System.Drawing.Size(80, 24);
+            this.cbPortionType.Size = new System.Drawing.Size(80, 28);
             this.cbPortionType.TabIndex = 87;
             // 
             // label3
@@ -258,7 +258,7 @@
             this.label3.Location = new System.Drawing.Point(53, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 16);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 86;
             this.label3.Text = "Search";
             // 
@@ -267,7 +267,7 @@
             this.txtSearch.Location = new System.Drawing.Point(159, 55);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(329, 23);
+            this.txtSearch.Size = new System.Drawing.Size(329, 26);
             this.txtSearch.TabIndex = 85;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -278,7 +278,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label2.Location = new System.Drawing.Point(53, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 84;
             this.label2.Text = "Categories";
             // 
@@ -290,7 +290,7 @@
             this.label4.Location = new System.Drawing.Point(92, 314);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 16);
+            this.label4.Size = new System.Drawing.Size(91, 20);
             this.label4.TabIndex = 83;
             this.label4.Text = "Quantity :";
             // 
@@ -357,7 +357,7 @@
             // 
             // FrmFoodSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
             this.ClientSize = new System.Drawing.Size(931, 412);

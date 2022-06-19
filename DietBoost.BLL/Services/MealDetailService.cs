@@ -98,6 +98,17 @@ namespace DietBoost.BLL.Services
             return mealDetailRepository.GetTotalProteinFromMealsByDate(userID, date);
         }
 
+        public List<PortionType> GetPortionTypes()
+        {
+            List<PortionType> portionType = new List<PortionType>();
+            portionType = Enum.GetValues(typeof(PortionType)).Cast<PortionType>().ToList();
+            return portionType;
+        }
+        public bool Insert(MealDetail mealDetail)
+        {
+            if (string.IsNullOrWhiteSpace(mealDetail.PortionType.ToString()) || string.IsNullOrWhiteSpace(mealDetail.Quantity.ToString())) throw new Exception("PortionType and Quantity are required.");
+            return mealDetailRepository.Insert(mealDetail);
+        }
 
     }
 

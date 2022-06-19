@@ -1,5 +1,6 @@
 ﻿using DietBoost.BLL.Services;
 using ProjeTaslak.Entities;
+using ProjeTaslak.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,6 +43,7 @@ namespace ProjeTaslak
             FillFilteredListView();
             //FillListView();
             FillCategoryComboBox();
+            FillPortionTypeComboBox();
         }
 
         public void FillCategoryComboBox()
@@ -50,8 +52,17 @@ namespace ProjeTaslak
             cbCategories.DataSource = categories;
             cbCategories.DisplayMember = "Name";
             cbCategories.ValueMember = "ID";
-            Category category = new Category();
+            Category category = new Category();//Bunu berke sor.
         }
+        public void FillPortionTypeComboBox()
+        {
+            cbPortionType.Items.Clear();
+            List<PortionType> portionTypes = mealDetailService.GetPortionTypes();
+            foreach (var item in portionTypes)
+            {
+                cbPortionType.Items.Add(item.ToString());
+            }
+        }   
         
         private void FillFilteredListView()
         {
@@ -125,8 +136,34 @@ namespace ProjeTaslak
             }
         }
 
+
         private void btnAddFood_Click(object sender, EventArgs e)
         {
+            MealDetail mealDetail = new MealDetail();
+            mealDetail.Food.Name=(lvFoods.SelectedItems[0].Text);
+            mealDetail.Quantity = (int)nudQuantity.Value;
+            mealDetail.PortionType = GetPortionTypeFromComboBox();
+            mealDetailService.Insert(mealDetail);
+            
+        }
+        public PortionType GetPortionTypeFromComboBox()
+        {
+            PortionType portionType;
+
+            switch (cbPortionType.SelectedIndex)
+            {
+                case 0:
+                    portionType = PortionType.Gram;
+                    break;
+                case 1:
+                    portionType = PortionType.Portion;
+                    break;
+                default:
+                    portionType = PortionType.Piece;
+                    break;
+            }
+
+            return portionType;
 
         }
     }

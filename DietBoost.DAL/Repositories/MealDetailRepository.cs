@@ -132,6 +132,11 @@ namespace DietBoost.DAL.Repositories
             return total;
 
         }
+        public bool Insert(MealDetail mealDetail)
+        {
+            context.MealDetails.Add(mealDetail);
+            return context.SaveChanges() > 0;
+        }
 
 
     }
