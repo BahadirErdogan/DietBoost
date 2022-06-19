@@ -54,7 +54,7 @@
             this.label6.Location = new System.Drawing.Point(20, 70);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(61, 20);
             this.label6.TabIndex = 61;
             this.label6.Text = "Meal :";
             // 
@@ -64,7 +64,7 @@
             this.lblSelectedMealTotalCalorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.lblSelectedMealTotalCalorie.Location = new System.Drawing.Point(183, 325);
             this.lblSelectedMealTotalCalorie.Name = "lblSelectedMealTotalCalorie";
-            this.lblSelectedMealTotalCalorie.Size = new System.Drawing.Size(140, 17);
+            this.lblSelectedMealTotalCalorie.Size = new System.Drawing.Size(164, 20);
             this.lblSelectedMealTotalCalorie.TabIndex = 60;
             this.lblSelectedMealTotalCalorie.Text = "@totalMealCalorie";
             // 
@@ -117,7 +117,7 @@
             this.label3.Location = new System.Drawing.Point(24, 107);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 17);
+            this.label3.Size = new System.Drawing.Size(115, 20);
             this.label3.TabIndex = 57;
             this.label3.Text = "Meal Details";
             // 
@@ -127,7 +127,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label2.Location = new System.Drawing.Point(24, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 17);
+            this.label2.Size = new System.Drawing.Size(179, 20);
             this.label2.TabIndex = 56;
             this.label2.Text = "Total Meal Calories:";
             // 
@@ -136,7 +136,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(212, 324);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(13, 17);
+            this.label1.Size = new System.Drawing.Size(15, 20);
             this.label1.TabIndex = 55;
             this.label1.Text = " ";
             // 
@@ -160,7 +160,7 @@
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(89, 37);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(155, 23);
+            this.dtpDate.Size = new System.Drawing.Size(155, 26);
             this.dtpDate.TabIndex = 53;
             this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
@@ -172,7 +172,7 @@
             this.label5.Location = new System.Drawing.Point(20, 42);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 16);
+            this.label5.Size = new System.Drawing.Size(61, 20);
             this.label5.TabIndex = 52;
             this.label5.Text = "Date :";
             // 
@@ -182,7 +182,7 @@
             this.cbMeals.Location = new System.Drawing.Point(89, 67);
             this.cbMeals.Margin = new System.Windows.Forms.Padding(4);
             this.cbMeals.Name = "cbMeals";
-            this.cbMeals.Size = new System.Drawing.Size(155, 24);
+            this.cbMeals.Size = new System.Drawing.Size(155, 28);
             this.cbMeals.TabIndex = 51;
             this.cbMeals.SelectedIndexChanged += new System.EventHandler(this.cbMeals_SelectedIndexChanged);
             // 
@@ -203,10 +203,10 @@
             // 
             // FrmMeal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
-            this.ClientSize = new System.Drawing.Size(464, 356);
+            this.ClientSize = new System.Drawing.Size(468, 381);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblSelectedMealTotalCalorie);
             this.Controls.Add(this.pictureBox1);

@@ -37,9 +37,10 @@ namespace ProjeTaslak
 
         private void FillListView()
         {
+            //Servise userId eklenecek 
 
             lvMeals.Items.Clear();
-            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpMeals.Value);
+            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpMeals.Value); 
 
             foreach (var item in meals)
             {

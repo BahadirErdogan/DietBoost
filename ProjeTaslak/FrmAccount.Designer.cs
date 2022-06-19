@@ -54,7 +54,7 @@
             this.gbPassword = new System.Windows.Forms.GroupBox();
             this.txtRepeatPassword = new System.Windows.Forms.TextBox();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
             this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -331,7 +331,7 @@
             // 
             this.gbPassword.Controls.Add(this.txtRepeatPassword);
             this.gbPassword.Controls.Add(this.txtNewPassword);
-            this.gbPassword.Controls.Add(this.btnUpdate);
+            this.gbPassword.Controls.Add(this.btnUpdatePassword);
             this.gbPassword.Controls.Add(this.txtOldPassword);
             this.gbPassword.Controls.Add(this.label5);
             this.gbPassword.Controls.Add(this.label4);
@@ -366,18 +366,18 @@
             this.txtNewPassword.Size = new System.Drawing.Size(126, 30);
             this.txtNewPassword.TabIndex = 4;
             // 
-            // btnUpdate
+            // btnUpdatePassword
             // 
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Image = global::ProjeTaslak.Properties.Resources.save2;
-            this.btnUpdate.Location = new System.Drawing.Point(140, 149);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(49, 34);
-            this.btnUpdate.TabIndex = 67;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePassword.ForeColor = System.Drawing.Color.Transparent;
+            this.btnUpdatePassword.Image = global::ProjeTaslak.Properties.Resources.save2;
+            this.btnUpdatePassword.Location = new System.Drawing.Point(140, 149);
+            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(49, 34);
+            this.btnUpdatePassword.TabIndex = 67;
+            this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // txtOldPassword
             // 
@@ -485,7 +485,7 @@
         private System.Windows.Forms.GroupBox gbPassword;
         private System.Windows.Forms.TextBox txtRepeatPassword;
         private System.Windows.Forms.TextBox txtNewPassword;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnUpdatePassword;
         private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

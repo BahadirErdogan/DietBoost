@@ -20,7 +20,9 @@ namespace ProjeTaslak
         MealDetailService mealDetailService;
         CategoryService categoryService;
         User user;
-        public FrmFoodSearch(User _user)
+        Meal meal;
+        MealDetail mealDetail;
+        public FrmFoodSearch(User _user,Meal _meal)
         {
             InitializeComponent();
             btnAddFood.Text = "Add";
@@ -30,11 +32,13 @@ namespace ProjeTaslak
             categoryService = new CategoryService();
             user = _user;
             Reload();
+            meal = _meal;
         }
 
         public FrmFoodSearch(User _user, MealDetail _mealDetail)
         {
             btnAddFood.Text = "Update";
+            mealDetail = _mealDetail;
         }
 
         private void Reload()
@@ -140,11 +144,13 @@ namespace ProjeTaslak
         private void btnAddFood_Click(object sender, EventArgs e)
         {
             MealDetail mealDetail = new MealDetail();
-            mealDetail.Food.Name=(lvFoods.SelectedItems[0].Text);
+            //mealDetail.Food.Name=(lvFoods.SelectedItems[0].Text);
+            mealDetail.FoodID = (int)lvFoods.SelectedItems[0].Tag;
             mealDetail.Quantity = (int)nudQuantity.Value;
             mealDetail.PortionType = GetPortionTypeFromComboBox();
+            mealDetail.MealID = meal.ID;
             mealDetailService.Insert(mealDetail);
-            
+           
         }
         public PortionType GetPortionTypeFromComboBox()
         {

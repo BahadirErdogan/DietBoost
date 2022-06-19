@@ -110,6 +110,8 @@ namespace DietBoost.BLL.Services
             return mealDetailRepository.Insert(mealDetail);
         }
 
+        //UserIdye göre bütün Mealdetailleri çekecek metod oluşturuyoruz. 
+
     }
 
 }

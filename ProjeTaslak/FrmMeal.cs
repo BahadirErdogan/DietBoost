@@ -157,8 +157,11 @@ namespace ProjeTaslak
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-
-            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user);
+            Meal meal= new Meal();
+            meal.MealDate=dtpDate.Value;
+            meal.MealType=GetMealTypeFromComboBox();
+            meal.UserID = user.ID;
+            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user,meal);
             this.Hide();
             frmFoodSearch.ShowDialog();
             this.Show();
@@ -167,8 +170,9 @@ namespace ProjeTaslak
 
         private void btnUpdateMeal_Click(object sender, EventArgs e)
         {
+            MealDetail mealDetail=new MealDetail();
            
-            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user);
+            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user, mealDetail);
             this.Hide();
             frmFoodSearch.ShowDialog();
             this.Show();

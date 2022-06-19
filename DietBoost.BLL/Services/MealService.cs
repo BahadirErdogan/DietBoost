@@ -36,5 +36,6 @@ namespace DietBoost.BLL.Services
             mealTypes = Enum.GetValues(typeof(MealType)).Cast<MealType>().ToList();
             return mealTypes;
         }
+        
     }
 }
