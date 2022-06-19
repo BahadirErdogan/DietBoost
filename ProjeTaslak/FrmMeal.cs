@@ -163,6 +163,10 @@ namespace ProjeTaslak
             meal.MealType=GetMealTypeFromComboBox();
             meal.UserID = user.ID;
             meal.CreationDate=DateTime.Now;
+
+
+
+
             mealService.Insert(meal);
             FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user,meal);
             this.Hide();

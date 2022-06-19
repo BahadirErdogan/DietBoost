@@ -143,15 +143,37 @@ namespace ProjeTaslak
 
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-            PortionType portionType=GetPortionTypeFromComboBox();
+            //PortionType portionType = new PortionType();
             MealDetail mealDetail = new MealDetail();
-            //mealDetail.Food.Name=(lvFoods.SelectedItems[0].Text);
+
+            //portionType = GetPortionTypeFromComboBox();
+            
             mealDetail.FoodID = (int)lvFoods.SelectedItems[0].Tag;
             mealDetail.Quantity = (int)nudQuantity.Value;
             mealDetail.PortionType = GetPortionTypeFromComboBox();
-            mealDetail.MealID = meal.ID;
-            mealDetailService.Insert(mealDetail/*portionType*/);
-           
+            mealDetail.MealID = meal.ID;          
+
+            if (mealDetail.PortionType == PortionType.Piece)
+            {
+                mealDetail.TotalCalorie = mealDetail.Food.PieceCalorie * mealDetail.Quantity;
+            }
+            else if (mealDetail.PortionType == PortionType.Gram)
+            {
+                mealDetail.TotalCalorie = mealDetail.Food.GramCalorie * mealDetail.Quantity;
+            }
+            else if (mealDetail.PortionType == PortionType.Portion)
+            {
+                mealDetail.TotalCalorie = mealDetail.Food.PortionCalorie * mealDetail.Quantity;
+            }
+            else
+            {
+                throw new Exception("Error");
+            }
+
+            mealDetailService.Insert(mealDetail);
+       
+          
+
         }
         public PortionType GetPortionTypeFromComboBox()
         {

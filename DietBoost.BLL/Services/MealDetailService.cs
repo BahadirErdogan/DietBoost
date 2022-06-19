@@ -38,7 +38,7 @@ namespace DietBoost.BLL.Services
             {
                 throw new Exception("Please select meal type or select correct date.");
             }
-            return mealDetailRepository.GetMealDetailsByMealDateAndMealType(mealDate, mealType);
+            return mealDetailRepository.GetMealDetails();
         }
         public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
@@ -112,22 +112,22 @@ namespace DietBoost.BLL.Services
            
         }
 
-        //public bool Insert(MealDetail _mealDetail,PortionType _portionType)
+        //public bool Insert(MealDetail _mealDetail, PortionType _portionType)
         //{
         //    PortionType portionType = _portionType;
         //    MealDetail mealDetail = _mealDetail;
 
         //    if (string.IsNullOrWhiteSpace(mealDetail.PortionType.ToString()) || string.IsNullOrWhiteSpace(mealDetail.Quantity.ToString())) throw new Exception("PortionType and Quantity are required.");
-            
-        //    if (portionType==PortionType.Piece)
+
+        //    if (portionType == PortionType.Piece)
         //    {
         //        mealDetail.TotalCalorie = mealDetail.Food.PieceCalorie * mealDetail.Quantity;
         //    }
         //    else if (portionType == PortionType.Gram)
         //    {
-        //        mealDetail.TotalCalorie = mealDetail.Food.GramCalorie  * mealDetail.Quantity;
+        //        mealDetail.TotalCalorie = mealDetail.Food.GramCalorie * mealDetail.Quantity;
         //    }
-        //    else if(portionType == PortionType.Portion)
+        //    else if (portionType == PortionType.Portion)
         //    {
         //        mealDetail.TotalCalorie = mealDetail.Food.PortionCalorie * mealDetail.Quantity;
         //    }
@@ -136,41 +136,41 @@ namespace DietBoost.BLL.Services
         //        throw new Exception("Error");
         //    }
 
-        //    return mealDetailRepository.Insert(mealDetail);
-        //}
+            //    return mealDetailRepository.Insert(mealDetail);
+            //}
 
 
 
-        //{
-        //    get { return _totalCalorie; }
-        //    set
-        //    {
-        //        if (PortionType == PortionType.Piece)
-        //        {
-        //            value = Food.PieceCalorie * Quantity;
-        //        }
-        //        else if (PortionType == PortionType.Gram)
-        //        {
-        //            value = Food.GramCalorie * Quantity;
-        //        }
-        //        else
-        //        {
-        //            value = Food.PortionCalorie * Quantity;
-        //        }
-        //    }
-        //}
+            //{
+            //    get { return _totalCalorie; }
+            //    set
+            //    {
+            //        if (PortionType == PortionType.Piece)
+            //        {
+            //            value = Food.PieceCalorie * Quantity;
+            //        }
+            //        else if (PortionType == PortionType.Gram)
+            //        {
+            //            value = Food.GramCalorie * Quantity;
+            //        }
+            //        else
+            //        {
+            //            value = Food.PortionCalorie * Quantity;
+            //        }
+            //    }
+            //}
 
 
 
 
-        //public List<MealDetail> GetAllMealDetails()
-        //{
-        //    return mealDetailRepository.GetAllMealDetails();
-        //}
+            //public List<MealDetail> GetAllMealDetails()
+            //{
+            //    return mealDetailRepository.GetAllMealDetails();
+            //}
 
-        //UserIdye göre bütün Mealdetailleri çekecek metod oluşturuyoruz. 
+            //UserIdye göre bütün Mealdetailleri çekecek metod oluşturuyoruz. 
 
-    }
+        }
 
 
 

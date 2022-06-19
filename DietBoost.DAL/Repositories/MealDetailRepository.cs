@@ -33,11 +33,12 @@ namespace DietBoost.DAL.Repositories
         /// <param name="mealDate"></param>
         /// <param name="mealType"></param>
         /// <returns>List<MealDetail></returns>
-        public List<MealDetail> GetMealDetailsByMealDateAndMealType(DateTime mealDate, MealType mealType)
+        public List<MealDetail> GetMealDetails()
         {
+            List<MealDetail> mealDetails = context.MealDetails.ToList();
+            return mealDetails;
+            //Where(a => a.MealID == a.Meal.ID)
 
-            return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).ToList();
-           
         }
         public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
