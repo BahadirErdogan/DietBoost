@@ -40,6 +40,11 @@ namespace DietBoost.BLL.Services
             }
             return mealDetailRepository.GetMealDetails();
         }
+
+        public List<MealDetail> GetFoodDetails()
+        {     
+            return mealDetailRepository.GetFoodDetails();
+        }
         public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
             if (string.IsNullOrWhiteSpace(mealType.ToString()) || mealDate > DateTime.Now)

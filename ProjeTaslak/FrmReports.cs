@@ -52,28 +52,22 @@ namespace ProjeTaslak
             //Öğün Bazlı Günlük Rapor
             if (cbReports.SelectedIndex == 1)
                 {
-                    dgvReports.DataSource = context.MealDetails.Where(a=>a.Meal.MealDate==DateTime.Today 
-                    && user.ID== a.Meal.UserID).GroupBy(g => g.MealID).Select(b => new
-                    {
+                dgvReports.DataSource = context.MealDetails.GroupBy(a => a.Meal.MealDate).Select(b => new
+                {
+                    MealDate = b.Key,
+                    MealName = context.Meals.Select(c => c.MealType).FirstOrDefault(),
+                    Sum = b.Sum(a => a.TotalCalorie)
 
-                        Username = user.FullName,
-                        MealId = b.Key,
-                        MealType = b.Select(a => a.Meal.MealType),
-                        TotalCalorie=b.Sum(a=>a.TotalCalorie)
+                }).ToList();
 
-                    }).ToList();
-                                               
-                }
+            }
                 //Günlük alınan toplam kalori
                 else if (cbReports.SelectedIndex == 2)
                 {
-                    dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.MealDate == DateTime.Today
-                    && user.ID == a.Meal.UserID).GroupBy(g => g.Meal.MealDate).Select(b => new
+                    dgvReports.DataSource = context.MealDetails.GroupBy(a=>a.Meal.MealDate).Select(b => new
                     {
-
-                        Username = user.FullName,
-                        mealDate= b.Key,
-                        TotalCalorie = b.Sum(a => a.TotalCalorie)
+                       MealDate=b.Key,
+                       Sum= b.Sum(a=>a.TotalCalorie)
 
                     }).ToList();
 
@@ -81,22 +75,22 @@ namespace ProjeTaslak
                 //karşılaştırma Raporu
                 else if(cbReports.SelectedIndex == 3)
                 {
-                dgvReports.DataSource = context.MealDetails.GroupBy(a => a.Meal.MealType).Select(a => new
+                dgvReports.DataSource = context.MealDetails.Where(a=>a.FoodID==a.Food.ID).GroupBy(a => a.Meal.MealType).Select(a => new
                 {
                     ToBeCompared = user.FullName,
                     Mealtype = a.Key,
-                    CategoryName = a.Select(b => b.Food.Category.Name)
-                 
+                    CategoryName = context.Foods.Where(c => c.Category.ID == c.CategoryID).Select(c => c.Category.Name).FirstOrDefault(),
+
                 }).ToList();
                 }
                 //Öğünlerde hangi Yemeklerin ne kadar yendiği
                 else if (cbReports.SelectedIndex == 4)
                 {
-                    dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.UserID == user.ID).GroupBy(a => a.FoodID).Select(b => new
+                    dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.UserID == user.ID && a.FoodID==a.Food.ID).GroupBy(a => a.FoodID).Select(b => new
                     {
                         FoodId = b.Key,
-                        FoodName = b.Select(a => a.Food.Name),
-                        MealName = b.Select(a => a.Meal.MealType),
+                        FoodName =  context.Foods.Where(a => a.ID == b.Key).Select(c => c.Name).FirstOrDefault(),
+                        MealName = context.Meals.Where(a => a.ID == b.Key).Select(c => c.MealType).FirstOrDefault(),
                         Quantity = b.Sum(a => a.Quantity)
 
                     }).OrderByDescending(T => T.Quantity).ToList();
@@ -107,7 +101,7 @@ namespace ProjeTaslak
                     dgvReports.DataSource = context.MealDetails.Where(a => a.Meal.UserID == user.ID).GroupBy(a => a.FoodID).Select(b => new
                     {
                         FoodId = b.Key,
-                        FoodName = b.Select(a => a.Food.Name),
+                        FoodName = context.Foods.Where(a => a.ID == b.Key).Select(c => c.Name).FirstOrDefault(),
                         Quantity = b.Sum(a => a.Quantity)
                     }).OrderByDescending(c => c.Quantity).Take(3).ToList();
                 }

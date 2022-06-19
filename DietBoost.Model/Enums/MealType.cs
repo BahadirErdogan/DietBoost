@@ -8,7 +8,8 @@ namespace ProjeTaslak.Enums
 {
     public enum MealType
     {
-        Breakfast=1,
+        Meals=1,
+        Breakfast,
         Elevenses,
         Lunch,
         Snack,

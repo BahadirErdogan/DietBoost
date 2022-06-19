@@ -18,6 +18,7 @@ namespace ProjeTaslak
         MealService mealService;
         MealDetailService mealDetailService;
         User user;
+        Meal meal;
 
         public FrmMeal(User _user)
         {
@@ -66,14 +67,18 @@ namespace ProjeTaslak
         /// </summary>
         private void FillListView()
         {
+            
+            lvMealDetails.Items.Clear();
             MealType mealType = GetMealTypeFromComboBox();
 
-            if (cbMeals.SelectedIndex > 0)
+
+            if (cbMeals.SelectedIndex >0)
             {
 
                 List<MealDetail> mealDetails = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, mealType);
 
                 ListViewItem lvi;
+                
 
                 foreach (var item in mealDetails)
                 {
@@ -84,27 +89,7 @@ namespace ProjeTaslak
                     lvMealDetails.Items.Add(lvi);
                 }
             }
-
-
-            #region Berk'in ilk kodu
-            //lvMealDetails.Items.Clear();
-            //if (cbMeals.SelectedItem != null)
-            //{
-            //    MealDetail meal = mealDetailService.GetMealDetailByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
-            //    //List<MealDetail> meals = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, (MealType)cbMeals.SelectedItem);
-
-            //   // foreach (var item in meals)
-            //    {
-
-
-            //        string[] items = { meal.Quantity.ToString(), meal.Food.Name, (meal.Food.Calorie * meal.Quantity).ToString() };
-            //        ListViewItem lvi = new ListViewItem(items);
-            //        lvi.Tag = meal.Food.Calorie * meal.Quantity;
-            //        lvMealDetails.Items.Add(lvi);
-            //    }
-            //}
-            //else return;
-            #endregion
+            
         }
 
         /// <summary>
@@ -116,43 +101,48 @@ namespace ProjeTaslak
             MealType mealType = GetMealTypeFromComboBox();
             decimal totalDailyCalorie = 0;
             List<MealDetail> meals = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, mealType);
-                
-            foreach (var item in meals)
+            if(cbMeals.SelectedIndex > 0)
             {
+               foreach (var item in meals)
+                {
                 totalDailyCalorie += item.TotalCalorie;
+                }
+            
             }
             return totalDailyCalorie;
+
         }
 
 
         /// <summary>
-        /// Combobox'da seçilen öğüne göre MealType tipinde mealtype döner. (FillListView içeriisndeki servisde kullanıldı.)
+        /// Combobox'da seçilen öğüne göre MealType tipinde mealtype döner. (FillListView içeriisndeki serviste kullanıldı.)
         /// </summary>
         /// <returns></returns>
         public MealType GetMealTypeFromComboBox()
         {
-            MealType mealType;
+            MealType mealType=new MealType();
 
             switch (cbMeals.SelectedIndex)
             {
-                case 0:
+                case 1:
                     mealType = MealType.Breakfast;
                     break;
-                case 1:
+                case 2:
                     mealType = MealType.Elevenses;
                     break;
-                case 2:
+                case 3:
                     mealType = MealType.Lunch;
                     break;
-                case 3:
+                case 4:
                     mealType = MealType.Snack;
                     break;
-                default:
+                case 5:
                     mealType = MealType.Dinner;
                     break;
+                    
             }
-
             return mealType;
+
 
         }
 
@@ -177,12 +167,13 @@ namespace ProjeTaslak
 
         private void btnUpdateMeal_Click(object sender, EventArgs e)
         {
-            MealDetail mealDetail=new MealDetail();
-           
-            FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user, mealDetail);
-            this.Hide();
-            frmFoodSearch.ShowDialog();
-            this.Show();
+            MessageBox.Show("In Maintenance..:/");
+            //MealDetail mealDetail=new MealDetail();
+
+            //FrmFoodSearch frmFoodSearch = new FrmFoodSearch(user, mealDetail);
+            //this.Hide();
+            //frmFoodSearch.ShowDialog();
+            //this.Show();
 
         }
 

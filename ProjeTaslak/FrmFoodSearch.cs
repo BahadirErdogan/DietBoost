@@ -45,7 +45,6 @@ namespace ProjeTaslak
         {
 
             FillFilteredListView();
-            //FillListView();
             FillCategoryComboBox();
             FillPortionTypeComboBox();
         }
@@ -56,7 +55,6 @@ namespace ProjeTaslak
             cbCategories.DataSource = categories;
             cbCategories.DisplayMember = "Name";
             cbCategories.ValueMember = "ID";
-            Category category = new Category();//Bunu berke sor.
         }
         public void FillPortionTypeComboBox()
         {
@@ -140,30 +138,34 @@ namespace ProjeTaslak
             }
         }
 
-
+      
         private void btnAddFood_Click(object sender, EventArgs e)
         {
-            //PortionType portionType = new PortionType();
-            MealDetail mealDetail = new MealDetail();
-
-            //portionType = GetPortionTypeFromComboBox();
             
+
+            MealDetail mealDetail = new MealDetail();
+            Food food= new Food();
+            food= foodService.GetByFoodId((int)lvFoods.SelectedItems[0].Tag);
+            //PortionType portionType = mealDetail.PortionType;
+            //PortionType portionType = GetPortionTypeFromComboBox();
+            //mealDetailService.GetFoodDetails();
             mealDetail.FoodID = (int)lvFoods.SelectedItems[0].Tag;
             mealDetail.Quantity = (int)nudQuantity.Value;
             mealDetail.PortionType = GetPortionTypeFromComboBox();
-            mealDetail.MealID = meal.ID;          
+            mealDetail.MealID = meal.ID;
+            
 
-            if (mealDetail.PortionType == PortionType.Piece)
+            if (cbPortionType.SelectedItem.ToString()=="Piece")
             {
-                mealDetail.TotalCalorie = mealDetail.Food.PieceCalorie * mealDetail.Quantity;
+                mealDetail.TotalCalorie = food.PieceCalorie * mealDetail.Quantity;
             }
-            else if (mealDetail.PortionType == PortionType.Gram)
+            else if (cbPortionType.SelectedItem.ToString() == "Gram")
             {
-                mealDetail.TotalCalorie = mealDetail.Food.GramCalorie * mealDetail.Quantity;
+                mealDetail.TotalCalorie = food.GramCalorie * mealDetail.Quantity;
             }
-            else if (mealDetail.PortionType == PortionType.Portion)
+            else if (cbPortionType.SelectedItem.ToString() == "Portion")
             {
-                mealDetail.TotalCalorie = mealDetail.Food.PortionCalorie * mealDetail.Quantity;
+                mealDetail.TotalCalorie = food.PortionCalorie * mealDetail.Quantity;
             }
             else
             {
@@ -171,8 +173,11 @@ namespace ProjeTaslak
             }
 
             mealDetailService.Insert(mealDetail);
-       
-          
+
+
+            MessageBox.Show("Food saved Successfully");
+            this.Close();
+
 
         }
         public PortionType GetPortionTypeFromComboBox()

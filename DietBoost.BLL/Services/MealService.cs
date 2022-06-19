@@ -40,6 +40,10 @@ namespace DietBoost.BLL.Services
             mealTypes = Enum.GetValues(typeof(MealType)).Cast<MealType>().ToList();
             return mealTypes;
         }
-        
+        public MealType GetMealType(int mealId)
+        {
+            return mealRepository.GetMealType(mealId);
+        }
+
     }
 }

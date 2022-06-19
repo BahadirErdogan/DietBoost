@@ -35,11 +35,18 @@ namespace DietBoost.DAL.Repositories
         /// <returns>List<MealDetail></returns>
         public List<MealDetail> GetMealDetails()
         {
-            List<MealDetail> mealDetails = context.MealDetails.ToList();
+            List<MealDetail> mealDetails = context.MealDetails.Where(a => a.MealID == a.Meal.ID).ToList();
             return mealDetails;
-            //Where(a => a.MealID == a.Meal.ID)
+            
 
         }
+        public List<MealDetail> GetFoodDetails()
+        {
+            List<MealDetail> mealDetails = context.MealDetails.Where(a => a.FoodID== a.Food.ID).ToList();
+            return mealDetails;
+          
+        }
+
         public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
             return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).FirstOrDefault();
@@ -141,10 +148,7 @@ namespace DietBoost.DAL.Repositories
             return context.SaveChanges() > 0;
         }
 
-        public List<MealDetail> GetAllMealDetails()
-        {
-            return context.MealDetails.ToList();
-        }
+      
       
 
     }

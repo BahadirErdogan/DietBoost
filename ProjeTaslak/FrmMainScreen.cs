@@ -62,6 +62,7 @@ namespace ProjeTaslak
             DateTime dt = DateTime.Today;
             decimal dailyCalorie = 0;
             List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt);
+            
             foreach (var item in meals)
             {
                 dailyCalorie += item.TotalCalorie;

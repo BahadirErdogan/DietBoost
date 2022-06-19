@@ -74,6 +74,9 @@ namespace DietBoost.DAL.Repositories
         {
             return context.Foods.Where(a => a.CategoryID == categoryID).ToList();
         }
+       
+
         
+
     }
 }
