@@ -23,6 +23,10 @@ namespace DietBoost.BLL.Services
         public bool Insert(Meal meal)
         {
             if (string.IsNullOrWhiteSpace(meal.MealType.ToString()) || string.IsNullOrWhiteSpace(meal.MealDate.ToString())) throw new Exception("Meal Type and Meal Date are required.");
+
+          
+
+
             return mealRepository.Insert(meal);
         }
         public bool Update(Meal meal)
@@ -36,5 +40,10 @@ namespace DietBoost.BLL.Services
             mealTypes = Enum.GetValues(typeof(MealType)).Cast<MealType>().ToList();
             return mealTypes;
         }
+        public MealType GetMealType(int mealId)
+        {
+            return mealRepository.GetMealType(mealId);
+        }
+
     }
 }

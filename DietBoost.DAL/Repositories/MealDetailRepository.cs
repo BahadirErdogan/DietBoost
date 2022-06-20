@@ -22,9 +22,9 @@ namespace DietBoost.DAL.Repositories
         /// </summary>
         /// <param name="date"></param>
         /// <returns>List<MealDetail></returns>
-        public List<MealDetail> GetMealDetailsByDate(DateTime date)
+        public List<MealDetail> GetMealDetailsByDate(DateTime date,User user)
         {
-            return context.MealDetails.Where(a => a.Meal.MealDate == date).ToList();
+            return context.MealDetails.Where(a => a.Meal.MealDate == date && a.Meal.User.ID == user.ID).ToList();
         }
 
         /// <summary>
@@ -33,10 +33,28 @@ namespace DietBoost.DAL.Repositories
         /// <param name="mealDate"></param>
         /// <param name="mealType"></param>
         /// <returns>List<MealDetail></returns>
-        public List<MealDetail> GetMealDetailsByMealDateAndMealType(DateTime mealDate, MealType mealType)
+        public List<MealDetail> GetMealDetails()
         {
-            return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).ToList();
+            List<MealDetail> mealDetails = context.MealDetails.Where(a => a.MealID == a.Meal.ID).ToList();
+            return mealDetails;
+            
+
         }
+
+        public List<MealDetail> GetMealDetails(DateTime date, MealType mealType,User user)
+        {
+            List<MealDetail> mealDetails = context.MealDetails.Where(a => a.Meal.MealDate == date && a.Meal.MealType == mealType && a.Meal.User.ID == user.ID).ToList();
+            return mealDetails;
+            
+
+        }
+        public List<MealDetail> GetFoodDetails()
+        {
+            List<MealDetail> mealDetails = context.MealDetails.Where(a => a.FoodID== a.Food.ID).ToList();
+            return mealDetails;
+          
+        }
+
         public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
             return context.MealDetails.Where(a => a.Meal.MealDate == mealDate && a.Meal.MealType == mealType).FirstOrDefault();
@@ -56,6 +74,90 @@ namespace DietBoost.DAL.Repositories
             mealDetail = context.MealDetails.Where(a => a.MealID == mealId && a.FoodID == foodId).SingleOrDefault();
             return mealDetail;
         }
+
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların yağlarının değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalFatFromMealsByDate(int userID, DateTime date)
+        {
+            double total;
+
+            total = Convert.ToDouble((from md in context.MealDetails
+                                      join m in context.Meals on md.MealID equals m.ID
+                                      join f in context.Foods on md.FoodID equals f.ID
+                                      where m.MealDate == date && m.UserID == userID
+                                      group md by md.MealID into g
+                                      select new
+                                      {
+
+                                          Sum = g.Sum(a => a.Food.Fat)
+                                      }).FirstOrDefault());
+
+            return total;
+
+        }
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların karbonhidrat değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalCarbsFromMealsByDate(int userID, DateTime date)
+        {
+            double total;
+
+            total = Convert.ToDouble((from md in context.MealDetails
+                                      join m in context.Meals on md.MealID equals m.ID
+                                      join f in context.Foods on md.FoodID equals f.ID
+                                      where m.MealDate == date && m.UserID == userID
+                                      group md by md.MealID into g
+                                      select new
+                                      {
+
+                                          Sum = g.Sum(a => a.Food.Carbs)
+                                      }).FirstOrDefault());
+
+            return total;
+
+        }
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların proteinlerinin değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalProteinFromMealsByDate(int userID, DateTime date)
+        {
+            double total;
+
+            total = Convert.ToDouble((from md in context.MealDetails
+                                      join m in context.Meals on md.MealID equals m.ID
+                                      join f in context.Foods on md.FoodID equals f.ID
+                                      where m.MealDate == date && m.UserID == userID
+                                      group md by md.MealID into g
+                                      select new
+                                      {
+
+                                          Sum = g.Sum(a => a.Food.Protein)
+                                      }).FirstOrDefault());
+
+            return total;
+
+        }
+        public bool Insert(MealDetail mealDetail)
+        {
+            context.MealDetails.Add(mealDetail);
+            return context.SaveChanges() > 0;
+        }
+
+      
+      
 
     }
 }

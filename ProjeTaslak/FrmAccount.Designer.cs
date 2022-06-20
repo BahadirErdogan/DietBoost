@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAccount));
             this.gbAccount = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.rbFemale = new System.Windows.Forms.RadioButton();
@@ -52,10 +52,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.gbPassword = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRepeatPassword = new System.Windows.Forms.TextBox();
+            this.txtNewPassword = new System.Windows.Forms.TextBox();
+            this.btnUpdatePassword = new System.Windows.Forms.Button();
+            this.txtOldPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             // 
             // gbAccount
             // 
-            this.gbAccount.Controls.Add(this.button1);
+            this.gbAccount.Controls.Add(this.btnUpdateUser);
             this.gbAccount.Controls.Add(this.label12);
             this.gbAccount.Controls.Add(this.rbMale);
             this.gbAccount.Controls.Add(this.rbFemale);
@@ -101,17 +101,18 @@
             this.gbAccount.TabStop = false;
             this.gbAccount.Text = "Account";
             // 
-            // button1
+            // btnUpdateUser
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Image = global::ProjeTaslak.Properties.Resources.save2;
-            this.button1.Location = new System.Drawing.Point(124, 330);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(49, 34);
-            this.button1.TabIndex = 68;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateUser.ForeColor = System.Drawing.Color.Transparent;
+            this.btnUpdateUser.Image = global::ProjeTaslak.Properties.Resources.save2;
+            this.btnUpdateUser.Location = new System.Drawing.Point(124, 330);
+            this.btnUpdateUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(49, 34);
+            this.btnUpdateUser.TabIndex = 68;
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
             // label12
             // 
@@ -153,6 +154,11 @@
             this.nudHeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.nudHeight.Location = new System.Drawing.Point(129, 204);
             this.nudHeight.Margin = new System.Windows.Forms.Padding(2);
+            this.nudHeight.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.nudHeight.Name = "nudHeight";
             this.nudHeight.Size = new System.Drawing.Size(94, 30);
             this.nudHeight.TabIndex = 76;
@@ -255,6 +261,11 @@
             this.nudWeightGoal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.nudWeightGoal.Location = new System.Drawing.Point(127, 277);
             this.nudWeightGoal.Margin = new System.Windows.Forms.Padding(2);
+            this.nudWeightGoal.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.nudWeightGoal.Name = "nudWeightGoal";
             this.nudWeightGoal.Size = new System.Drawing.Size(94, 30);
             this.nudWeightGoal.TabIndex = 58;
@@ -276,6 +287,11 @@
             this.nudWeight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.nudWeight.Location = new System.Drawing.Point(127, 242);
             this.nudWeight.Margin = new System.Windows.Forms.Padding(2);
+            this.nudWeight.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.nudWeight.Name = "nudWeight";
             this.nudWeight.Size = new System.Drawing.Size(94, 30);
             this.nudWeight.TabIndex = 57;
@@ -313,10 +329,10 @@
             // 
             // gbPassword
             // 
-            this.gbPassword.Controls.Add(this.textBox3);
-            this.gbPassword.Controls.Add(this.textBox2);
-            this.gbPassword.Controls.Add(this.btnUpdate);
-            this.gbPassword.Controls.Add(this.textBox1);
+            this.gbPassword.Controls.Add(this.txtRepeatPassword);
+            this.gbPassword.Controls.Add(this.txtNewPassword);
+            this.gbPassword.Controls.Add(this.btnUpdatePassword);
+            this.gbPassword.Controls.Add(this.txtOldPassword);
             this.gbPassword.Controls.Add(this.label5);
             this.gbPassword.Controls.Add(this.label4);
             this.gbPassword.Controls.Add(this.label1);
@@ -330,47 +346,48 @@
             this.gbPassword.TabStop = false;
             this.gbPassword.Text = "Password";
             // 
-            // textBox3
+            // txtRepeatPassword
             // 
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.textBox3.Location = new System.Drawing.Point(224, 102);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(126, 30);
-            this.textBox3.TabIndex = 5;
+            this.txtRepeatPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.txtRepeatPassword.Location = new System.Drawing.Point(224, 102);
+            this.txtRepeatPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRepeatPassword.Name = "txtRepeatPassword";
+            this.txtRepeatPassword.PasswordChar = '*';
+            this.txtRepeatPassword.Size = new System.Drawing.Size(126, 30);
+            this.txtRepeatPassword.TabIndex = 5;
             // 
-            // textBox2
+            // txtNewPassword
             // 
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.textBox2.Location = new System.Drawing.Point(224, 62);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(126, 30);
-            this.textBox2.TabIndex = 4;
+            this.txtNewPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.txtNewPassword.Location = new System.Drawing.Point(224, 62);
+            this.txtNewPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNewPassword.Name = "txtNewPassword";
+            this.txtNewPassword.PasswordChar = '*';
+            this.txtNewPassword.Size = new System.Drawing.Size(126, 30);
+            this.txtNewPassword.TabIndex = 4;
             // 
-            // btnUpdate
+            // btnUpdatePassword
             // 
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.Image = global::ProjeTaslak.Properties.Resources.save2;
-            this.btnUpdate.Location = new System.Drawing.Point(140, 149);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(49, 34);
-            this.btnUpdate.TabIndex = 67;
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdatePassword.ForeColor = System.Drawing.Color.Transparent;
+            this.btnUpdatePassword.Image = global::ProjeTaslak.Properties.Resources.save2;
+            this.btnUpdatePassword.Location = new System.Drawing.Point(140, 149);
+            this.btnUpdatePassword.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdatePassword.Name = "btnUpdatePassword";
+            this.btnUpdatePassword.Size = new System.Drawing.Size(49, 34);
+            this.btnUpdatePassword.TabIndex = 67;
+            this.btnUpdatePassword.UseVisualStyleBackColor = true;
+            this.btnUpdatePassword.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // textBox1
+            // txtOldPassword
             // 
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
-            this.textBox1.Location = new System.Drawing.Point(224, 23);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(126, 30);
-            this.textBox1.TabIndex = 3;
+            this.txtOldPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
+            this.txtOldPassword.Location = new System.Drawing.Point(224, 23);
+            this.txtOldPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtOldPassword.Name = "txtOldPassword";
+            this.txtOldPassword.PasswordChar = '*';
+            this.txtOldPassword.Size = new System.Drawing.Size(126, 30);
+            this.txtOldPassword.TabIndex = 3;
             // 
             // label5
             // 
@@ -428,6 +445,7 @@
             this.Name = "FrmAccount";
             this.Text = "Account";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
+            this.Load += new System.EventHandler(this.FrmAccount_Load);
             this.gbAccount.ResumeLayout(false);
             this.gbAccount.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudHeight)).EndInit();
@@ -443,7 +461,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbAccount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdateUser;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.RadioButton rbFemale;
@@ -465,10 +483,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.GroupBox gbPassword;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRepeatPassword;
+        private System.Windows.Forms.TextBox txtNewPassword;
+        private System.Windows.Forms.Button btnUpdatePassword;
+        private System.Windows.Forms.TextBox txtOldPassword;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;

@@ -28,6 +28,7 @@ namespace ProjeTaslak
 
         private void FrmAdminPanel_Load(object sender, EventArgs e)
         {
+            
             //Reload();
             ListUsers();
             ListFoods();

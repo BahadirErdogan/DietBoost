@@ -41,7 +41,8 @@ namespace DietBoost.DAL.Strategy
                 CreationDate = DateTime.Now,
                 Name = "Categories"
             };
-                
+           
+
             context.Users.Add(user);
             context.Categories.Add(category);
             context.SaveChanges();

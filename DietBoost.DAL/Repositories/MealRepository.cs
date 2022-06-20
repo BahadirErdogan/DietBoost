@@ -20,10 +20,7 @@ namespace DietBoost.DAL.Repositories
         {
             return context.Meals.Where(a => a.UserID == userID).ToList();
         }
-        public Meal GetByNoteId(int noteID)
-        {
-            return context.Meals.Find(noteID);
-        }
+
         public bool Insert(Meal meal)
         {
             context.Meals.Add(meal);
@@ -38,12 +35,16 @@ namespace DietBoost.DAL.Repositories
             return context.SaveChanges() > 0;
         }
 
-        //public Meal GetFoodsByMealID(DateTime mealDate, MealType mealType)
-        //{
-        //    return context.Meals.Where(a => a.MealDate == mealDate && a.MealType == mealType).FirstOrDefault();
-        //}
+        public MealType GetMealType(int mealId)
+        {
+            Meal meal=context.Meals.Find(mealId);
+            return meal.MealType;
+        }
 
-       
+
+
+
+
 
 
     }

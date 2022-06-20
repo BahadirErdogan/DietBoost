@@ -1,5 +1,6 @@
 ﻿using DietBoost.BLL.Services;
 using ProjeTaslak.Entities;
+using ProjeTaslak.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,22 +19,34 @@ namespace ProjeTaslak
         FoodService foodService;
         MealDetailService mealDetailService;
         CategoryService categoryService;
-        public FrmFoodSearch()
+        User user;
+        Meal meal;
+        MealDetail mealDetail;
+        public FrmFoodSearch(User _user,Meal _meal)
         {
             InitializeComponent();
-            
+            btnAddFood.Text = "Add";
             mealService = new MealService();
             foodService = new FoodService();
             mealDetailService = new MealDetailService();
             categoryService = new CategoryService();
+            user = _user;
             Reload();
+            meal = _meal;
         }
+
+        public FrmFoodSearch(User _user, MealDetail _mealDetail)
+        {
+            btnAddFood.Text = "Update";
+            mealDetail = _mealDetail;
+        }
+
         private void Reload()
         {
 
             FillFilteredListView();
-            //FillListView();
             FillCategoryComboBox();
+            FillPortionTypeComboBox();
         }
 
         public void FillCategoryComboBox()
@@ -42,8 +55,16 @@ namespace ProjeTaslak
             cbCategories.DataSource = categories;
             cbCategories.DisplayMember = "Name";
             cbCategories.ValueMember = "ID";
-            Category category = new Category();
         }
+        public void FillPortionTypeComboBox()
+        {
+            cbPortionType.Items.Clear();
+            List<PortionType> portionTypes = mealDetailService.GetPortionTypes();
+            foreach (var item in portionTypes)
+            {
+                cbPortionType.Items.Add(item.ToString());
+            }
+        }   
         
         private void FillFilteredListView()
         {
@@ -117,6 +138,67 @@ namespace ProjeTaslak
             }
         }
 
-        
+      
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            
+
+            MealDetail mealDetail = new MealDetail();
+            Food food= new Food();
+            food= foodService.GetByFoodId((int)lvFoods.SelectedItems[0].Tag);
+            //PortionType portionType = mealDetail.PortionType;
+            //PortionType portionType = GetPortionTypeFromComboBox();
+            //mealDetailService.GetFoodDetails();
+            mealDetail.FoodID = (int)lvFoods.SelectedItems[0].Tag;
+            mealDetail.Quantity = (int)nudQuantity.Value;
+            mealDetail.PortionType = GetPortionTypeFromComboBox();
+            mealDetail.MealID = meal.ID;
+            
+
+            if (cbPortionType.SelectedItem.ToString()=="Piece")
+            {
+                mealDetail.TotalCalorie = food.PieceCalorie * mealDetail.Quantity;
+            }
+            else if (cbPortionType.SelectedItem.ToString() == "Gram")
+            {
+                mealDetail.TotalCalorie = food.GramCalorie * mealDetail.Quantity;
+            }
+            else if (cbPortionType.SelectedItem.ToString() == "Portion")
+            {
+                mealDetail.TotalCalorie = food.PortionCalorie * mealDetail.Quantity;
+            }
+            else
+            {
+                throw new Exception("Error");
+            }
+
+            mealDetailService.Insert(mealDetail);
+
+
+            MessageBox.Show("Food saved Successfully");
+            this.Close();
+
+
+        }
+        public PortionType GetPortionTypeFromComboBox()
+        {
+            PortionType portionType;
+
+            switch (cbPortionType.SelectedIndex)
+            {
+                case 0:
+                    portionType = PortionType.Gram;
+                    break;
+                case 1:
+                    portionType = PortionType.Portion;
+                    break;
+                default:
+                    portionType = PortionType.Piece;
+                    break;
+            }
+
+            return portionType;
+
+        }
     }
 }

@@ -208,7 +208,7 @@
             this.cbCategories.FormattingEnabled = true;
             this.cbCategories.Location = new System.Drawing.Point(159, 21);
             this.cbCategories.Name = "cbCategories";
-            this.cbCategories.Size = new System.Drawing.Size(275, 28);
+            this.cbCategories.Size = new System.Drawing.Size(329, 28);
             this.cbCategories.TabIndex = 91;
             this.cbCategories.SelectedIndexChanged += new System.EventHandler(this.cbCategories_SelectedIndexChanged);
             // 
@@ -267,7 +267,7 @@
             this.txtSearch.Location = new System.Drawing.Point(159, 55);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(5);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(275, 26);
+            this.txtSearch.Size = new System.Drawing.Size(329, 26);
             this.txtSearch.TabIndex = 85;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -306,9 +306,9 @@
             this.btnAddFood.Name = "btnAddFood";
             this.btnAddFood.Size = new System.Drawing.Size(108, 48);
             this.btnAddFood.TabIndex = 82;
-            this.btnAddFood.Text = "Done  ";
             this.btnAddFood.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.btnAddFood_Click);
             // 
             // lvFoods
             // 

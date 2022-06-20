@@ -22,9 +22,9 @@ namespace DietBoost.BLL.Services
         /// </summary>
         /// <param name="date"></param>
         /// <returns>List<MealDetail></returns>
-        public List<MealDetail> GetMealDetailsByDate(DateTime date)
+        public List<MealDetail> GetMealDetailsByDate(DateTime date,User user)
         {
-            return mealDetailRepository.GetMealDetailsByDate(date);
+            return mealDetailRepository.GetMealDetailsByDate(date,user);
         }
         /// <summary>
         /// Meal formunda; tarih ve öğün tipi seçimine göre meal details döndürür.
@@ -38,7 +38,21 @@ namespace DietBoost.BLL.Services
             {
                 throw new Exception("Please select meal type or select correct date.");
             }
-            return mealDetailRepository.GetMealDetailsByMealDateAndMealType(mealDate, mealType);
+            return mealDetailRepository.GetMealDetails();
+        }
+        public List<MealDetail> GetMealDetails (DateTime date, MealType mealType, User user)
+        {
+            if (string.IsNullOrWhiteSpace(mealType.ToString()) || date > DateTime.Now)
+            {
+                throw new Exception("Please select meal type or select correct date.");
+                
+            }
+            return mealDetailRepository.GetMealDetails(date, mealType, user);
+        }
+
+        public List<MealDetail> GetFoodDetails()
+        {     
+            return mealDetailRepository.GetFoodDetails();
         }
         public MealDetail GetMealDetailByMealDateAndMealType(DateTime mealDate, MealType mealType)
         {
@@ -48,6 +62,7 @@ namespace DietBoost.BLL.Services
             }
             return mealDetailRepository.GetMealDetailByMealDateAndMealType(mealDate, mealType);
         }
+
         /// <summary>
         /// Meal formunda güncelleme butonuna basıldığında foodId ve MealId'ye göre 
         /// Meal Details döndürüp Food formunda bu meal detailsin bilgilerini kullanmak için kullanacağız. 
@@ -65,6 +80,112 @@ namespace DietBoost.BLL.Services
             return mealDetailRepository.GetMealDetailByMealIdAndFoodId(mealId, foodId);
         }
 
-    }
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların yağlarının değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalFatFromMealsByDate(int userID, DateTime date)
+        {
+            return mealDetailRepository.GetTotalFatFromMealsByDate(userID, date);
+        }
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların karbonhidrat değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalCarbsFromMealsByDate(int userID, DateTime date)
+        {
+            return mealDetailRepository.GetTotalCarbsFromMealsByDate(userID, date);
+        }
+
+        /// <summary>
+        /// User Id ve Meal Date e göre meal içerisindeki foodların proteinlerinin değerlerini toplar ve double döner.
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <param name="date"></param>
+        /// <returns>double</returns>
+        public double GetTotalProteinFromMealsByDate(int userID, DateTime date)
+        {
+            return mealDetailRepository.GetTotalProteinFromMealsByDate(userID, date);
+        }
+
+        public List<PortionType> GetPortionTypes()
+        {
+            List<PortionType> portionType = new List<PortionType>();
+            portionType = Enum.GetValues(typeof(PortionType)).Cast<PortionType>().ToList();
+            return portionType;
+        }
+        public bool Insert(MealDetail mealDetail)
+        {
+            if (string.IsNullOrWhiteSpace(mealDetail.PortionType.ToString()) || string.IsNullOrWhiteSpace(mealDetail.Quantity.ToString())) throw new Exception("PortionType and Quantity are required.");
+            return mealDetailRepository.Insert(mealDetail);
+           
+        }
+
+        //public bool Insert(MealDetail _mealDetail, PortionType _portionType)
+        //{
+        //    PortionType portionType = _portionType;
+        //    MealDetail mealDetail = _mealDetail;
+
+        //    if (string.IsNullOrWhiteSpace(mealDetail.PortionType.ToString()) || string.IsNullOrWhiteSpace(mealDetail.Quantity.ToString())) throw new Exception("PortionType and Quantity are required.");
+
+        //    if (portionType == PortionType.Piece)
+        //    {
+        //        mealDetail.TotalCalorie = mealDetail.Food.PieceCalorie * mealDetail.Quantity;
+        //    }
+        //    else if (portionType == PortionType.Gram)
+        //    {
+        //        mealDetail.TotalCalorie = mealDetail.Food.GramCalorie * mealDetail.Quantity;
+        //    }
+        //    else if (portionType == PortionType.Portion)
+        //    {
+        //        mealDetail.TotalCalorie = mealDetail.Food.PortionCalorie * mealDetail.Quantity;
+        //    }
+        //    else
+        //    {
+        //        throw new Exception("Error");
+        //    }
+
+            //    return mealDetailRepository.Insert(mealDetail);
+            //}
+
+
+
+            //{
+            //    get { return _totalCalorie; }
+            //    set
+            //    {
+            //        if (PortionType == PortionType.Piece)
+            //        {
+            //            value = Food.PieceCalorie * Quantity;
+            //        }
+            //        else if (PortionType == PortionType.Gram)
+            //        {
+            //            value = Food.GramCalorie * Quantity;
+            //        }
+            //        else
+            //        {
+            //            value = Food.PortionCalorie * Quantity;
+            //        }
+            //    }
+            //}
+
+
+
+
+            //public List<MealDetail> GetAllMealDetails()
+            //{
+            //    return mealDetailRepository.GetAllMealDetails();
+            //}
+
+            //UserIdye göre bütün Mealdetailleri çekecek metod oluşturuyoruz. 
+
+        }
+
+
 
 }
