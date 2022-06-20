@@ -25,23 +25,30 @@ namespace ProjeTaslak
             lblRecommendedCalorie.Text = CalculateRecomendedDailyCalorie(user).ToString();
             lblSelectedDailyCalorieInTake.Text = CalculateDailyCalorie(dtpMeals.Value).ToString();
             lblTodaysCalorieIntake.Text = CalculateDailyCalorie().ToString();
+
+            
+            lblSelectedDailyCalorieInTake.Text = "";
         }
         private void FrmMainScreen_Load(object sender, EventArgs e)
         {
+            
             dtpMeals.Value = DateTime.Now;
             FillListView();
             lblTodaysCalorieIntake.Text = CalculateDailyCalorie().ToString();
-
+            
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 100;
+            progressBar1.Value = 99;
         }
         
 
         private void FillListView()
         {
             //Servise userId eklenecek 
-
+            if(dtpMeals.Value==)
             lvMeals.Items.Clear();
             List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpMeals.Value); 
-
+            
             foreach (var item in meals)
             {
                 string[] items = { item.Meal.MealType.ToString(),item.Quantity.ToString(), item.Food.Name };
@@ -59,6 +66,7 @@ namespace ProjeTaslak
         /// <returns>decimal</returns>
         public decimal CalculateDailyCalorie()
         {
+            lblTodaysCalorieIntake.Text = "";
             DateTime dt = DateTime.Today;
             decimal dailyCalorie = 0;
             List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt);
@@ -173,7 +181,7 @@ namespace ProjeTaslak
 
         private void dtpMeals_ValueChanged(object sender, EventArgs e)
         {
-
+            FillListView();
             foreach (var series in chartDailyPerMacros.Series)
             {
                 series.Points.Clear();
@@ -183,13 +191,15 @@ namespace ProjeTaslak
             double carbsTotal = mealDetailService.GetTotalCarbsFromMealsByDate(user.ID, dtpMeals.Value);
             double proteinTotal = mealDetailService.GetTotalProteinFromMealsByDate(user.ID, dtpMeals.Value);
 
-            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Fat", fatTotal);
-            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein", carbsTotal);
-            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs", proteinTotal);
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Fat%", fatTotal);
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein%", carbsTotal);
+            chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs%", proteinTotal);
 
             lblSelectedDailyCalorieInTake.Text = CalculateDailyCalorie(dtpMeals.Value).ToString();
             
         }
+
+       
     }
 }
 

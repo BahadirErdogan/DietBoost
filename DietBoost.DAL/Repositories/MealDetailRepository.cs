@@ -24,7 +24,7 @@ namespace DietBoost.DAL.Repositories
         /// <returns>List<MealDetail></returns>
         public List<MealDetail> GetMealDetailsByDate(DateTime date)
         {
-            return context.MealDetails.Where(a => a.Meal.MealDate == date).ToList();
+            return context.MealDetails.Where(a => a.MealID==a.Meal.ID).ToList();
         }
 
         /// <summary>

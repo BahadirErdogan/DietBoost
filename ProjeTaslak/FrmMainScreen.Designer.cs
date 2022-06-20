@@ -73,35 +73,35 @@ namespace ProjeTaslak
             this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(912, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(912, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // accountToolStripMenuItem
             // 
             this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.accountToolStripMenuItem.Text = "Account";
             this.accountToolStripMenuItem.Click += new System.EventHandler(this.accountToolStripMenuItem_Click);
             // 
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.aboutUsToolStripMenuItem.Text = "About Us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // updateToolStripMenuItem
             // 
             this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.updateToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
             this.updateToolStripMenuItem.Text = "Update";
             this.updateToolStripMenuItem.Click += new System.EventHandler(this.updateToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -111,7 +111,7 @@ namespace ProjeTaslak
             this.lblSelectedDailyCalorieInTake.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.lblSelectedDailyCalorieInTake.Location = new System.Drawing.Point(651, 595);
             this.lblSelectedDailyCalorieInTake.Name = "lblSelectedDailyCalorieInTake";
-            this.lblSelectedDailyCalorieInTake.Size = new System.Drawing.Size(32, 16);
+            this.lblSelectedDailyCalorieInTake.Size = new System.Drawing.Size(39, 20);
             this.lblSelectedDailyCalorieInTake.TabIndex = 73;
             this.lblSelectedDailyCalorieInTake.Text = "300";
             // 
@@ -121,7 +121,7 @@ namespace ProjeTaslak
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label8.Location = new System.Drawing.Point(507, 595);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(110, 16);
+            this.label8.Size = new System.Drawing.Size(133, 20);
             this.label8.TabIndex = 72;
             this.label8.Text = "Total Calories:";
             // 
@@ -167,6 +167,7 @@ namespace ProjeTaslak
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(575, 23);
             this.progressBar1.TabIndex = 69;
+           
             // 
             // lblTodaysCalorieIntake
             // 
@@ -174,7 +175,7 @@ namespace ProjeTaslak
             this.lblTodaysCalorieIntake.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.lblTodaysCalorieIntake.Location = new System.Drawing.Point(562, 120);
             this.lblTodaysCalorieIntake.Name = "lblTodaysCalorieIntake";
-            this.lblTodaysCalorieIntake.Size = new System.Drawing.Size(32, 16);
+            this.lblTodaysCalorieIntake.Size = new System.Drawing.Size(39, 20);
             this.lblTodaysCalorieIntake.TabIndex = 68;
             this.lblTodaysCalorieIntake.Text = "300";
             // 
@@ -184,7 +185,7 @@ namespace ProjeTaslak
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label4.Location = new System.Drawing.Point(382, 120);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 16);
+            this.label4.Size = new System.Drawing.Size(187, 20);
             this.label4.TabIndex = 67;
             this.label4.Text = "Daily Calorie Intake -";
             // 
@@ -194,7 +195,7 @@ namespace ProjeTaslak
             this.lblRecommendedCalorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.lblRecommendedCalorie.Location = new System.Drawing.Point(284, 120);
             this.lblRecommendedCalorie.Name = "lblRecommendedCalorie";
-            this.lblRecommendedCalorie.Size = new System.Drawing.Size(32, 16);
+            this.lblRecommendedCalorie.Size = new System.Drawing.Size(39, 20);
             this.lblRecommendedCalorie.TabIndex = 66;
             this.lblRecommendedCalorie.Text = "700";
             // 
@@ -204,7 +205,7 @@ namespace ProjeTaslak
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label2.Location = new System.Drawing.Point(29, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(212, 16);
+            this.label2.Size = new System.Drawing.Size(259, 20);
             this.label2.TabIndex = 65;
             this.label2.Text = "Recommended Calorie Limit -";
             // 
@@ -264,7 +265,7 @@ namespace ProjeTaslak
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.label7.Location = new System.Drawing.Point(37, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 16);
+            this.label7.Size = new System.Drawing.Size(108, 20);
             this.label7.TabIndex = 62;
             this.label7.Text = "Daily Meals";
             // 
@@ -278,7 +279,7 @@ namespace ProjeTaslak
             this.dtpMeals.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpMeals.Location = new System.Drawing.Point(337, 193);
             this.dtpMeals.Name = "dtpMeals";
-            this.dtpMeals.Size = new System.Drawing.Size(143, 22);
+            this.dtpMeals.Size = new System.Drawing.Size(143, 26);
             this.dtpMeals.TabIndex = 61;
             this.dtpMeals.ValueChanged += new System.EventHandler(this.dtpMeals_ValueChanged);
             // 
@@ -305,7 +306,7 @@ namespace ProjeTaslak
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(33)))), ((int)(((byte)(19)))));
             this.lblUserName.Location = new System.Drawing.Point(122, 75);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(107, 20);
+            this.lblUserName.Size = new System.Drawing.Size(131, 25);
             this.lblUserName.TabIndex = 75;
             this.lblUserName.Text = "@userName";
             // 
@@ -317,13 +318,13 @@ namespace ProjeTaslak
             this.label1.Location = new System.Drawing.Point(28, 75);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 74;
             this.label1.Text = "Welcome";
             // 
             // FrmMainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
             this.ClientSize = new System.Drawing.Size(912, 657);
