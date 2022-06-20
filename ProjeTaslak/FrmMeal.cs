@@ -18,7 +18,7 @@ namespace ProjeTaslak
         MealService mealService;
         MealDetailService mealDetailService;
         User user;
-        Meal meal;
+
 
         public FrmMeal(User _user)
         {
@@ -33,6 +33,7 @@ namespace ProjeTaslak
             FillMealComboBox();
             FillListView();
             lblSelectedMealTotalCalorie.Text = CalculateSelectedDailyCalorie().ToString();
+            dtpDate.Value = DateTime.Now.Date;
 
         }
 
@@ -75,7 +76,7 @@ namespace ProjeTaslak
             if (cbMeals.SelectedIndex >0)
             {
 
-                List<MealDetail> mealDetails = mealDetailService.GetMealDetailsByMealDateAndMealType(dtpDate.Value, mealType);
+                List<MealDetail> mealDetails = mealDetailService.GetMealDetails(dtpDate.Value.Date,mealType,user);
 
                 ListViewItem lvi;
                 

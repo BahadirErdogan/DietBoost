@@ -22,9 +22,9 @@ namespace DietBoost.BLL.Services
         /// </summary>
         /// <param name="date"></param>
         /// <returns>List<MealDetail></returns>
-        public List<MealDetail> GetMealDetailsByDate(DateTime date)
+        public List<MealDetail> GetMealDetailsByDate(DateTime date,User user)
         {
-            return mealDetailRepository.GetMealDetailsByDate(date);
+            return mealDetailRepository.GetMealDetailsByDate(date,user);
         }
         /// <summary>
         /// Meal formunda; tarih ve öğün tipi seçimine göre meal details döndürür.
@@ -39,6 +39,15 @@ namespace DietBoost.BLL.Services
                 throw new Exception("Please select meal type or select correct date.");
             }
             return mealDetailRepository.GetMealDetails();
+        }
+        public List<MealDetail> GetMealDetails (DateTime date, MealType mealType, User user)
+        {
+            if (string.IsNullOrWhiteSpace(mealType.ToString()) || date > DateTime.Now)
+            {
+                throw new Exception("Please select meal type or select correct date.");
+                
+            }
+            return mealDetailRepository.GetMealDetails(date, mealType, user);
         }
 
         public List<MealDetail> GetFoodDetails()

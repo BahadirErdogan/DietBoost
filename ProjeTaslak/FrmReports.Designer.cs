@@ -77,7 +77,7 @@ namespace ProjeTaslak
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjeTaslak.Properties.Resources.DietBoostLogo__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(491, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(520, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(195, 94);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -92,7 +92,7 @@ namespace ProjeTaslak
             this.dgvReports.Name = "dgvReports";
             this.dgvReports.RowHeadersWidth = 51;
             this.dgvReports.RowTemplate.Height = 24;
-            this.dgvReports.Size = new System.Drawing.Size(672, 482);
+            this.dgvReports.Size = new System.Drawing.Size(701, 482);
             this.dgvReports.TabIndex = 53;
             // 
             // label3
@@ -109,7 +109,7 @@ namespace ProjeTaslak
             // cbReports
             // 
             this.cbReports.FormattingEnabled = true;
-            this.cbReports.Location = new System.Drawing.Point(180, 80);
+            this.cbReports.Location = new System.Drawing.Point(206, 77);
             this.cbReports.Margin = new System.Windows.Forms.Padding(4);
             this.cbReports.Name = "cbReports";
             this.cbReports.Size = new System.Drawing.Size(288, 32);
@@ -121,7 +121,7 @@ namespace ProjeTaslak
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(200)))), ((int)(((byte)(182)))));
-            this.ClientSize = new System.Drawing.Size(691, 618);
+            this.ClientSize = new System.Drawing.Size(741, 618);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblFullName);

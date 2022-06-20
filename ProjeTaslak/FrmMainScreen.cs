@@ -23,16 +23,16 @@ namespace ProjeTaslak
             mealDetailService = new MealDetailService();
             lblUserName.Text = user.FullName.ToUpper();
             lblRecommendedCalorie.Text = CalculateRecomendedDailyCalorie(user).ToString();
-            lblSelectedDailyCalorieInTake.Text = CalculateDailyCalorie(dtpMeals.Value).ToString();
+
             lblTodaysCalorieIntake.Text = CalculateDailyCalorie().ToString();
 
             
-            lblSelectedDailyCalorieInTake.Text = "";
+
         }
         private void FrmMainScreen_Load(object sender, EventArgs e)
         {
             
-            dtpMeals.Value = DateTime.Now;
+            dtpMeals.Value = DateTime.Now.Date;
             FillListView();
             lblTodaysCalorieIntake.Text = CalculateDailyCalorie().ToString();
             
@@ -45,9 +45,9 @@ namespace ProjeTaslak
         private void FillListView()
         {
             //Servise userId eklenecek 
-            if(dtpMeals.Value==)
+      
             lvMeals.Items.Clear();
-            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpMeals.Value); 
+            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dtpMeals.Value.Date,user); 
             
             foreach (var item in meals)
             {
@@ -69,7 +69,7 @@ namespace ProjeTaslak
             lblTodaysCalorieIntake.Text = "";
             DateTime dt = DateTime.Today;
             decimal dailyCalorie = 0;
-            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt);
+            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt,user);
             
             foreach (var item in meals)
             {
@@ -88,7 +88,7 @@ namespace ProjeTaslak
         {
             DateTime dt = date;
             decimal dailyCalorie = 0;
-            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt);
+            List<MealDetail> meals = mealDetailService.GetMealDetailsByDate(dt,user);
             foreach (var item in meals)
             {
                 dailyCalorie += item.TotalCalorie;
@@ -195,7 +195,7 @@ namespace ProjeTaslak
             chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Protein%", carbsTotal);
             chartDailyPerMacros.Series["Macronutrients"].Points.AddXY("Carbs%", proteinTotal);
 
-            lblSelectedDailyCalorieInTake.Text = CalculateDailyCalorie(dtpMeals.Value).ToString();
+
             
         }
 
